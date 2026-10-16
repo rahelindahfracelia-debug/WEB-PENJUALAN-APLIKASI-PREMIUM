@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StreamVault - Toko Akun Premium Resmi & Bergaransi</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        dark: {
+                            900: '#0b0f19',
+                            800: '#111827',
+                            700: '#1f2937',
+                            600: '#374151',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .glow-effect:hover {
+            box-shadow: 0 0 25px rgba(99, 102, 241, 0.4);
+        }
+    </style>
+</head>
+<body class="bg-dark-900 text-gray-100 antialiased selection:bg-indigo-500 selection:text-white">
+
+    <!-- Header / Navbar -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-dark-900/80 backdrop-blur-md border-b border-dark-700/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Logo -->
+            <a href="#" class="flex items-center gap-3 group">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-indigo-600 to-violet-500 flex items-center justify-center shadow-lg shadow-indigo-500/30 group-hover:scale-105 transition-transform">
+                    <i class="fa-solid fa-bolt text-white text-lg"></i>
+                </div>
+                <span class="text-xl font-bold tracking-tight bg-gradient-to-r from-white via-gray-200 to-indigo-400 bg-clip-text text-transparent">StreamVault</span>
+            </a>
+
+            <!-- Desktop Nav -->
+            <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-gray-300">
+                <a href="#home" class="hover:text-indigo-400 transition-colors">Beranda</a>
+                <a href="#products" class="hover:text-indigo-400 transition-colors">Katalog</a>
+                <a href="#features" class="hover:text-indigo-400 transition-colors">Keunggulan</a>
+                <a href="#testimonials" class="hover:text-indigo-400 transition-colors">Testimoni</a>
+                <a href="#faq" class="hover:text-indigo-400 transition-colors">FAQ</a>
+            </nav>
+
+            <!-- CTA / Contact Header -->
+            <div class="hidden md:flex items-center gap-4">
+                <a href="https://wa.me/6281234567890?text=Halo%20Admin,%20saya%20ingin%20bertanya%20tentang%20akun%20premium." target="_blank" class="px-5 py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-medium text-sm shadow-lg shadow-indigo-600/30 transition-all hover:-translate-y-0.5 flex items-center gap-2">
+                    <i class="fa-brands fa-whatsapp text-lg"></i>
+                    <span>Hubungi Admin</span>
+                </a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="menu-btn" class="md:hidden text-gray-300 hover:text-white focus:outline-none p-2">
+                <i class="fa-solid fa-bars text-xl"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-dark-800 border-b border-dark-700 px-4 pt-2 pb-6 space-y-3">
+            <a href="#home" class="block py-2 text-gray-300 hover:text-indigo-400 font-medium">Beranda</a>
+            <a href="#products" class="block py-2 text-gray-300 hover:text-indigo-400 font-medium">Katalog</a>
+            <a href="#features" class="block py-2 text-gray-300 hover:text-indigo-400 font-medium">Keunggulan</a>
+            <a href="#testimonials" class="block py-2 text-gray-300 hover:text-indigo-400 font-medium">Testimoni</a>
+            <a href="#faq" class="block py-2 text-gray-300 hover:text-indigo-400 font-medium">FAQ</a>
+            <div class="pt-2">
+                <a href="https://wa.me/6281234567890?text=Halo%20Admin,%20saya%20ingin%20bertanya%20tentang%20akun%20premium." target="_blank" class="w-full py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-medium text-sm flex items-center justify-center gap-2 shadow-lg shadow-indigo-600/30">
+                    <i class="fa-brands fa-whatsapp text-lg"></i>
+                    <span>Hubungi Admin</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative pt-32 pb-20 md:pt-44 md:pb-32 overflow-hidden">
+        <!-- Glow background accents -->
+        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-indigo-600/20 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute top-1/3 right-10 w-72 h-72 bg-violet-600/15 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-dark-800 border border-dark-600 text-xs sm:text-sm font-medium text-indigo-400 mb-6 shadow-inner">
+                <span class="flex h-2 w-2 rounded-full bg-indigo-500 animate-pulse"></span>
+                <span>100% Legal, Resmi, & Bergaransi Penuh</span>
+            </div>
+            
+            <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight max-w-4xl mx-auto leading-tight mb-6">
+                Nikmati Hiburan Tanpa Batas dengan <span class="bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">Akun Premium Pilihan</span>
+            </h1>
+
+            <p class="text-base sm:text-lg text-gray-400 max-w-2xl mx-auto mb-10">
+                Streaming film, musik, dan edukasi favoritmu kualitas UHD & tanpa iklan dengan harga super hemat. Proses cepat, otomatis, dan terpercaya.
+            </p>
+
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="#products" class="w-full sm:w-auto px-8 py-4 rounded-2xl bg-indigo-600 hover:bg-indigo-500 text-white font-semibold shadow-xl shadow-indigo-600/30 transition-all hover:-translate-y-1 flex items-center justify-center gap-3">
+                    <span>Lihat Katalog Produk</span>
+                    <i class="fa-solid fa-arrow-down"></i>
+                </a>
+                <a href="https://wa.me/6281234567890?text=Halo%20Admin,%20saya%20mau%20konsultasi%20akun%20premium%20yang%20tersedia." target="_blank" class="w-full sm:w-auto px-8 py-4 rounded-2xl bg-dark-800 hover:bg-dark-700 text-gray-200 border border-dark-600 font-semibold transition-all hover:-translate-y-1 flex items-center justify-center gap-3">
+                    <i class="fa-brands fa-whatsapp text-emerald-400 text-xl"></i>
+                    <span>Tanya via WhatsApp</span>
+                </a>
+            </div>
+
+            <!-- Stats Badge -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto mt-20 pt-10 border-t border-dark-700/60">
+                <div class="text-center">
+                    <h3 class="text-2xl sm:text-3xl font-bold text-white">10.000+</h3>
+                    <p class="text-xs sm:text-sm text-gray-400 mt-1">Pelanggan Puas</p>
+                </div>
+                <div class="text-center">
+                    <h3 class="text-2xl sm:text-3xl font-bold text-white">5 Menit</h3>
+                    <p class="text-xs sm:text-sm text-gray-400 mt-1">Proses Kilat</p>
+                </div>
+                <div class="text-center">
+                    <h3 class="text-2xl sm:text-3xl font-bold text-white">100%</h3>
+                    <p class="text-xs sm:text-sm text-gray-400 mt-1">Garansi Aktif</p>
+                </div>
+                <div class="text-center">
+                    <h3 class="text-2xl sm:text-3xl font-bold text-white">24/7</h3>
+                    <p class="text-xs sm:text-sm text-gray-400 mt-1">Dukungan Admin</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Catalog Section -->
+    <section id="products" class="py-20 bg-dark-800/40 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-xs font-semibold tracking-wider text-indigo-400 uppercase mb-3">Katalog Produk</h2>
+                <p class="text-3xl sm:text-4xl font-extrabold tracking-tight text-white mb-4">Pilih Layanan Streaming Favoritmu</p>
+                <p class="text-gray-400 text-sm sm:text-base">Berbagai pilihan akun premium dengan kualitas terbaik dan harga ramah dikantong.</p>
+            </div>
+
+            <!-- Category Filter Buttons -->
+            <div class="flex flex-wrap items-center justify-center gap-2 mb-12">
+                <button onclick="filterProducts('all')" class="filter-btn px-5 py-2.5 rounded-xl bg-indigo-600 text-white font-medium text-sm transition-all shadow-md shadow-indigo-600/20 active" data-filter="all">Semua</button>
+                <button onclick="filterProducts('streaming')" class="filter-btn px-5 py-2.5 rounded-xl bg-dark-800 hover:bg-dark-700 text-gray-300 font-medium text-sm border border-dark-600 transition-all" data-filter="streaming">Video Streaming</button>
+                <button onclick="filterProducts('music')" class="filter-btn px-5 py-2.5 rounded-xl bg-dark-800 hover:bg-dark-700 text-gray-300 font-medium text-sm border border-dark-600 transition-all" data-filter="music">Music & Audio</button>
+                <button onclick="filterProducts('tools')" class="filter-btn px-5 py-2.5 rounded-xl bg-dark-800 hover:bg-dark-700 text-gray-300 font-medium text-sm border border-dark-600 transition-all" data-filter="tools">Produktivitas</button>
+            </div>
+
+            <!-- Product Grid -->
+            <div id="product-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Netflix Card -->
+                <div class="product-card group bg-dark-800 rounded-3xl p-6 border border-dark-700 hover:border-indigo-500/50 transition-all duration-300 flex flex-col justify-between glow-effect" data-category="streaming">
+                    <div>
+                        <div class="flex items-center justify-between mb-6">
+                            <div class="w-14 h-14 rounded-2xl bg-red-600/15 flex items-center justify-center border border-red-500/30 text-red-500 text-2xl font-bold">
+                                <i class="fa-solid fa-n"></i>
+                            </div>
+                            <span class="px-3 py-1 rounded-full bg-red-500/10 text-red-400 text-xs font-semibold border border-red-500/20">Terlaris</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Netflix Premium UHD</h3>
+                        <p class="text-gray-400 text-sm mb-6">Nonton puas tanpa batas kualitas 4K Ultra HD di semua perangkat kesayanganmu.</p>
+                        
+                        <div class="space-y-3 mb-8 text-sm text-gray-300">
+                            <div class="flex items-center gap-3">
+                                <i class="fa-solid fa-circle-check text-indigo-400"></i>
+                                <span>Resolusi Ultra HD (4K) + HDR</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <i class="fa-solid fa-circle-check text-indigo-400"></i>
+                                <span>No Iklan, Anti On-Hold</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <i class="fa-solid fa-circle-check text-indigo-400"></i>
+                                <span>Garansi Full 1 Bulan</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="flex items-baseline justify-between mb-6 pt-4 border-t border-dark-700">
+                            <span class="text-xs text-gray-400 uppercase tracking-wider font-medium">Mulai dari</span>
+                            <div class="text-right">
+                                <span class="text-2xl font-extrabold text-white">Rp 35.000</span>
+                                <span class="text-xs text-gray-400">/bln</span>
+                            </div>
+                        </div>
+                        <button onclick="orderProduct('Netflix Premium UHD', 'Rp 35.000')" class="w-full py-3.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-semibold text-sm transition-all shadow-lg shadow-indigo-600/30 flex items-center justify-center gap-2 group-hover:scale-[1.02]">
+                            <i class="fa-brands fa-whatsapp text-lg"></i>
+                            <span>Beli Sekarang</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Spotify Card -->
+                <div class="product-card group bg-dark-800 rounded-3xl p-6 border border-dark-700 hover:border-indigo-500/50 transition-all duration-300 flex flex-col justify-between glow-effect" data-category="music">
+                    <div>
+                        <div class="flex items-center justify-between mb-6">
+                            <div class="w-14 h-14 rounded-2xl bg-emerald-600/15 flex items-center justify-center border border-emerald-500/30 text-emerald-500 text-2xl font-bold">
+                                <i class="fa-brands fa-spotify"></i>
+                            </div>
+                            <span class="px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-400 text-xs font-semibold border border-emerald-500/20">Populer</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Spotify Individual / Plan</h3>
+                        <p class="text-gray-400 text-sm mb-6">Dengarkan jutaan lagu bebas iklan, skip sepuasnya, dan kualitas audio jernih.</p>
+                        
+                        <div class="space-y-3 mb-8 text-sm text-gray-300">
+                            <div class="flex items-center gap-3">
+                                <i class="fa-solid fa-circle-check text-indigo-400"></i>
+                                <span>Bebas Iklan & Unlimited Skip</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <i class="fa-solid fa-circle-check text-indigo-400"></i>
+                                <span>Download Lagu Offline</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <i class="fa-solid fa-circle-check text-indigo-400"></i>
+                                <span>Garansi Resmi 1 Bulan</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="flex items-baseline justify-between mb-6 pt-4 border-t border-dark-700">
+                            <span class="text-xs text-gray-400 uppercase tracking-wider font-medium">Mulai dari</span>
+                            <div class="text-right">
+                                <span class="text-2xl font-extrabold text-white">Rp 20.000</span>
+                                <span class="text-xs text-gray-400">/bln</span>
+                            </div>
+                        </div>
+                        <button onclick="orderProduct('Spotify Premium', 'Rp 20.000')" class="w-full py-3.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-semibold text-sm transition-all shadow-lg shadow-indigo-600/30 flex items-center justify-center gap-2 group-hover:scale-[1.02]">
+                            <i class="fa-brands fa-whatsapp text-lg"></i>
+                            <span>Beli Sekarang</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- YouTube Premium Card -->
+                <div class="product-card group bg-dark-800 rounded-3xl p-6 border border-dark-700 hover:border-indigo-500/50 transition-all duration-300 flex flex-col justify-between glow-effect" data-category="streaming">
+                    <div>
+                        <div class="flex items-center justify-between mb-6">
+                            <div class="w-14 h-14 rounded-2xl bg-red-600/15 flex items-center justify-center border border-red-500/30 text-red-500 text-2xl font-bold">
+                                <i class="fa-brands fa-youtube"></i>
+                            </div>
+                            <span class="px-3 py-1 rounded-full bg-red-500/10 text-red-400 text-xs font-semibold border border-red-500/20">Recommended</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">YouTube & YT Music Premium</h3>
+                        <p class="text-gray-400 text-sm mb-6">Nonton YouTube tanpa jeda iklan, bisa putar di latar belakang & YouTube Music.</p>
+                        
+                        <div class="space-y-3 mb-8 text-sm text-gray-300">
+                            <div class="flex items-center gap-3">
+                                <i class="fa-solid fa-circle-check text-indigo-400"></i>
+                                <span>Bebas Iklan Seluruh Video</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <i class="fa-solid fa-circle-check text-indigo-400"></i>
+                                <span>Background Play & Picture-in-Picture</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <i class="fa-solid fa-circle-check text-indigo-400"></i>
+                                <span>Free YouTube Music Included</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="flex items-baseline justify-between mb-6 pt-4 border-t border-dark-700">
+                            <span class="text-xs text-gray-400 uppercase tracking-wider font-medium">Mulai dari</span>
+                            <div class="text-right">
+                                <span class="text-2xl font-extrabold text-white">Rp 15.000</span>
+                                <span class="text-xs text-gray-400">/bln</span>
+                            </div>
+                        </div>
+                        <button onclick="orderProduct('YouTube Premium', 'Rp 15.000')" class="w-full py-3.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-semibold text-sm transition-all shadow-lg shadow-indigo-600/30 flex items-center justify-center gap-2 group-hover:scale-[1.02]">
+                            <i class="fa-brands fa-whatsapp text-lg"></i>
+                            <span>Beli Sekarang</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Disney+ Hotstar Card -->
+                <div class="product-card group bg-dark-800 rounded-3xl p-6 border border-dark-700 hover:border-indigo-500/50 transition-all duration-300 flex flex-col justify-between glow-effect" data-category="streaming">
+                    <div>
+                        <div class="flex items-center justify-between mb-6">
+                            <div class="w-14 h-14 rounded-2xl bg-blue-600/15 flex items-center justify-center border border-blue-500/30 text-blue-400 text-2xl font-bold">
+                                <i class="fa-solid fa-film"></i>
+                            </div>
+                            <span class="px-3 py-1 rounded-full bg-blue-500/10 text-blue-400 text-xs font-semibold border border-blue-500/20">Trending</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Disney+ Hotstar VIP</h3>
+                        <p class="text-gray-400 text-sm mb-6">Saksikan film blockbuster Marvel, Star Wars, Disney, dan serial lokal eksklusif.</p>
+                        
+                        <div class="space-y-3 mb-8 text-sm text-gray-300">
+                            <div class="flex items-center gap-3">
+                                <i class="fa-solid fa-circle-check text-indigo-400"></i>
+                                <span>Akses Film & Series Lengkap</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <i class="fa-solid fa-circle-check text-indigo-400"></i>
+                                <span>Subtitle Bahasa Indonesia</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <i class="fa-solid fa-circle-check text-indigo-400"></i>
+                                <span>Garansi Aktif Full</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="flex items-baseline justify-between mb-6 pt-4 border-t border-dark-700">
+                            <span class="text-xs text-gray-400 uppercase tracking-wider font-medium">Mulai dari</span>
+                            <div class="text-right">
+                                <span class="text-2xl font-extrabold text-white">Rp 25.000</span>
+                                <span class="text-xs text-gray-400">/bln</span>
+                            </div>
+                        </div>
+                        <button onclick="orderProduct('Disney+ Hotstar', 'Rp 25.000')" class="w-full py-3.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-semibold text-sm transition-all shadow-lg shadow-indigo-600/30 flex items-center justify-center gap-2 group-hover:scale-[1.02]">
+                            <i class="fa-brands fa-whatsapp text-lg"></i>
+                            <span>Beli Sekarang</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Canva Pro Card -->
+                <div class="product-card group bg-dark-800 rounded-3xl p-6 border border-dark-700 hover:border-indigo-500/50 transition-all duration-300 flex flex-col justify-between glow-effect" data-category="tools">
+                    <div>
+                        <div class="flex items-center justify-between mb-6">
+                            <div class="w-14 h-14 rounded-2xl bg-purple-600/15 flex items-center justify-center border border-purple-500/30 text-purple-400 text-2xl font-bold">
+                                <i class="fa-solid fa-palette"></i>
+                            </div>
+                            <span class="px-3 py-1 rounded-full bg-purple-500/10 text-purple-400 text-xs font-semibold border border-purple-500/20">Creator Choice</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Canva Pro Team / Edu</h3>
+                        <p class="text-gray-400 text-sm mb-6">Bebas akses jutaan template premium, elemen grafis, dan fitur Magic AI.</p>
+                        
+                        <div class="space-y-3 mb-8 text-sm text-gray-300">
+                            <div class="flex items-center gap-3">
+                                <i class="fa-solid fa-circle-check text-indigo-400"></i>
+                                <span>Akses Jutaan Aset & Font Pro</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <i class="fa-solid fa-circle-check text-indigo-400"></i>
+                                <span>Background Remover Otomatis</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <i class="fa-solid fa-circle-check text-indigo-400"></i>
+                                <span>Undang Tim Sendiri</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="flex items-baseline justify-between mb-6 pt-4 border-t border-dark-700">
+                            <span class="text-xs text-gray-400 uppercase tracking-wider font-medium">Mulai dari</span>
+                            <div class="text-right">
+                                <span class="text-2xl font-extrabold text-white">Rp 15.000</span>
+                                <span class="text-xs text-gray-400">/bln</span>
+                            </div>
+                        </div>
+                        <button onclick="orderProduct('Canva Pro', 'Rp 15.000')" class="w-full py-3.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-semibold text-sm transition-all shadow-lg shadow-indigo-600/30 flex items-center justify-center gap-2 group-hover:scale-[1.02]">
+                            <i class="fa-brands fa-whatsapp text-lg"></i>
+                            <span>Beli Sekarang</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- ChatGPT Plus Card -->
+                <div class="product-card group bg-dark-800 rounded-3xl p-6 border border-dark-700 hover:border-indigo-500/50 transition-all duration-300 flex flex-col justify-between glow-effect" data-category="tools">
+                    <div>
+                        <div class="flex items-center justify-between mb-6">
+                            <div class="w-14 h-14 rounded-2xl bg-teal-600/15 flex items-center justify-center border border-teal-500/30 text-teal-400 text-2xl font-bold">
+                                <i class="fa-solid fa-robot"></i>
+                            </div>
+                            <span class="px-3 py-1 rounded-full bg-teal-500/10 text-teal-400 text-xs font-semibold border border-teal-500/20">AI Assistant</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">ChatGPT Plus (GPT-4o)</h3>
+                        <p class="text-gray-400 text-sm mb-6">Akses AI tercanggih untuk produktivitas, coding, analisis data, dan kreativitas.</p>
+                        
+                        <div class="space-y-3 mb-8 text-sm text-gray-300">
+                            <div class="flex items-center gap-3">
+                                <i class="fa-solid fa-circle-check text-indigo-400"></i>
+                                <span>Akses Model GPT-4o Terbaru</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <i class="fa-solid fa-circle-check text-indigo-400"></i>
+                                <span>Advanced Data Analysis & Vision</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <i class="fa-solid fa-circle-check text-indigo-400"></i>
+                                <span>Respon Super Cepat</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="flex items-baseline justify-between mb-6 pt-4 border-t border-dark-700">
+                            <span class="text-xs text-gray-400 uppercase tracking-wider font-medium">Mulai dari</span>
+                            <div class="text-right">
+                                <span class="text-2xl font-extrabold text-white">Rp 75.000</span>
+                                <span class="text-xs text-gray-400">/bln</span>
+                            </div>
+                        </div>
+                        <button onclick="orderProduct('ChatGPT Plus', 'Rp 75.000')" class="w-full py-3.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-semibold text-sm transition-all shadow-lg shadow-indigo-600/30 flex items-center justify-center gap-2 group-hover:scale-[1.02]">
+                            <i class="fa-brands fa-whatsapp text-lg"></i>
+                            <span>Beli Sekarang</span>
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-20 bg-dark-900 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-xs font-semibold tracking-wider text-indigo-400 uppercase mb-3">Kenapa Memilih Kami</h2>
+                <p class="text-3xl sm:text-4xl font-extrabold tracking-tight text-white mb-4">Keunggulan & Jaminan Layanan</p>
+                <p class="text-gray-400 text-sm sm:text-base">Kami berkomitmen memberikan pengalaman belanja akun premium yang aman, cepat, dan terpercaya.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div class="bg-dark-800/60 p-8 rounded-3xl border border-dark-700/80 hover:border-indigo-500/40 transition-all">
+                    <div class="w-12 h-12 rounded-2xl bg-indigo-600/20 text-indigo-400 flex items-center justify-center text-xl font-bold mb-6">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">100% Bergaransi</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Garansi penuh selama masa berlangganan. Jika akun bermasalah, langsung kami ganti baru tanpa ribet.</p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="bg-dark-800/60 p-8 rounded-3xl border border-dark-700/80 hover:border-indigo-500/40 transition-all">
+                    <div class="w-12 h-12 rounded-2xl bg-indigo-600/20 text-indigo-400 flex items-center justify-center text-xl font-bold mb-6">
+                        <i class="fa-solid fa-bolt-lightning"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">Proses Kilat</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Setelah pembayaran dikonfirmasi, akun langsung dikirimkan ke WhatsApp Anda dalam hitungan menit.</p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="bg-dark-800/60 p-8 rounded-3xl border border-dark-700/80 hover:border-indigo-500/40 transition-all">
+                    <div class="w-12 h-12 rounded-2xl bg-indigo-600/20 text-indigo-400 flex items-center justify-center text-xl font-bold mb-6">
+                        <i class="fa-solid fa-headset"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">Support 24/7</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Tim admin kami siap membantu pertanyaan, kendala login, atau panduan penggunaan kapan pun dibutuhkan.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-20 bg-dark-800/40 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-xs font-semibold tracking-wider text-indigo-400 uppercase mb-3">Testimoni Pelanggan</h2>
+                <p class="text-3xl sm:text-4xl font-extrabold tracking-tight text-white mb-4">Apa Kata Mereka?</p>
+                <p class="text-gray-400 text-sm sm:text-base">Testimoni nyata dari ribuan pelanggan yang telah berlangganan di StreamVault.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Testi 1 -->
+                <div class="bg-dark-800 p-8 rounded-3xl border border-dark-700 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center gap-1 text-amber-400 text-sm mb-4">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-gray-300 text-sm leading-relaxed mb-6">"Beli Netflix UHD disini prosesnya cepet banget ga sampe 5 menit akun udah dikirim. Udah 3 bulan aman jaya gaada kendala. Mantap!"</p>
+                    </div>
+                    <div class="flex items-center gap-3 pt-4 border-t border-dark-700">
+                        <div class="w-10 h-10 rounded-full bg-indigo-500/20 text-indigo-400 flex items-center justify-center font-bold text-sm">
+                            RD
+                        </div>
+                        <div>
+                            <h4 class="text-sm font-bold text-white">Rizky Darmawan</h4>
+                            <p class="text-xs text-gray-400">Pelanggan Netflix</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testi 2 -->
+                <div class="bg-dark-800 p-8 rounded-3xl border border-dark-700 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center gap-1 text-amber-400 text-sm mb-4">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-gray-300 text-sm leading-relaxed mb-6">"Spotify premiumnya work and no iklan. Harganya jauh lebih murah dibanding langganan pribadi langsung. Recommended seller!"</p>
+                    </div>
+                    <div class="flex items-center gap-3 pt-4 border-t border-dark-700">
+                        <div class="w-10 h-10 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center font-bold text-sm">
+                            AN
+                        </div>
+                        <div>
+                            <h4 class="text-sm font-bold text-white">Alya Nabila</h4>
+                            <p class="text-xs text-gray-400">Pelanggan Spotify</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testi 3 -->
+                <div class="bg-dark-800 p-8 rounded-3xl border border-dark-700 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center gap-1 text-amber-400 text-sm mb-4">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-gray-300 text-sm leading-relaxed mb-6">"Adminnya ramah banget pas ditanya-tanya. Canva pro langsung aktif di email pribadi. Sangat membantu tugas kuliah saya."</p>
+                    </div>
+                    <div class="flex items-center gap-3 pt-4 border-t border-dark-700">
+                        <div class="w-10 h-10 rounded-full bg-purple-500/20 text-purple-400 flex items-center justify-center font-bold text-sm">
+                            FP
+                        </div>
+                        <div>
+                            <h4 class="text-sm font-bold text-white">Fajar Pratama</h4>
+                            <p class="text-xs text-gray-400">Pelanggan Canva Pro</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="py-20 bg-dark-900 relative">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-xs font-semibold tracking-wider text-indigo-400 uppercase mb-3">FAQ</h2>
+                <p class="text-3xl sm:text-4xl font-extrabold tracking-tight text-white mb-4">Pertanyaan yang Sering Diajukan</p>
+                <p class="text-gray-400 text-sm sm:text-base">Temukan jawaban seputar layanan dan cara pembelian akun di sini.</p>
+            </div>
+
+            <div class="space-y-4">
+                <!-- FAQ Item 1 -->
+                <div class="bg-dark-800 rounded-2xl border border-dark-700 overflow-hidden">
+                    <button onclick="toggleFaq(this)" class="w-full px-6 py-5 text-left font-semibold text-white flex items-center justify-between gap-4 focus:outline-none">
+                        <span>Bagaimana cara membeli akun premium di StreamVault?</span>
+                        <i class="fa-solid fa-chevron-down text-indigo-400 transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-5 text-gray-400 text-sm leading-relaxed">
+                        Pilih produk yang diinginkan pada katalog, lalu klik tombol "Beli Sekarang". Anda akan diarahkan otomatis ke WhatsApp admin dengan format pesan produk yang dipilih. Admin akan memberikan instruksi pembayaran dan detail akun setelah transfer dikonfirmasi.
+                    </div>
+                </div>
+
+                <!-- FAQ Item 2 -->
+                <div class="bg-dark-800 rounded-2xl border border-dark-700 overflow-hidden">
+                    <button onclick="toggleFaq(this)" class="w-full px-6 py-5 text-left font-semibold text-white flex items-center justify-between gap-4 focus:outline-none">
+                        <span>Apakah akun ini legal dan aman?</span>
+                        <i class="fa-solid fa-chevron-down text-indigo-400 transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-5 text-gray-400 text-sm leading-relaxed">
+                        Ya, 100% aman dan legal sesuai prosedur layanan resmi masing-masing platform. Kami juga memberikan garansi penuh selama masa aktif berlangganan.
+                    </div>
+                </div>
+
+                <!-- FAQ Item 3 -->
+                <div class="bg-dark-800 rounded-2xl border border-dark-700 overflow-hidden">
+                    <button onclick="toggleFaq(this)" class="w-full px-6 py-5 text-left font-semibold text-white flex items-center justify-between gap-4 focus:outline-none">
+                        <span>Berapa lama proses pengiriman akun setelah pembayaran?</span>
+                        <i class="fa-solid fa-chevron-down text-indigo-400 transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-5 text-gray-400 text-sm leading-relaxed">
+                        Proses sangat cepat! Umumnya hanya membutuhkan waktu 3 sampai 10 menit setelah pembayaran Anda diverifikasi oleh admin.
+                    </div>
+                </div>
+
+                <!-- FAQ Item 4 -->
+                <div class="bg-dark-800 rounded-2xl border border-dark-700 overflow-hidden">
+                    <button onclick="toggleFaq(this)" class="w-full px-6 py-5 text-left font-semibold text-white flex items-center justify-between gap-4 focus:outline-none">
+                        <span>Apa yang terjadi jika akun mengalami kendala atau error?</span>
+                        <i class="fa-solid fa-chevron-down text-indigo-400 transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-5 text-gray-400 text-sm leading-relaxed">
+                        Jangan khawatir! Cukup hubungi admin kami melalui WhatsApp dengan melampirkan screenshot kendala. Kami akan segera memproses penggantian akun baru (garansi).
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark-800/80 border-t border-dark-700 pt-16 pb-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
+                <div class="md:col-span-2">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-indigo-600 to-violet-500 flex items-center justify-center shadow-lg shadow-indigo-500/30">
+                            <i class="fa-solid fa-bolt text-white text-lg"></i>
+                        </div>
+                        <span class="text-xl font-bold tracking-tight text-white">StreamVault</span>
+                    </div>
+                    <p class="text-gray-400 text-sm max-w-sm mb-6 leading-relaxed">
+                        Penyedia layanan akun premium hiburan dan produktivitas terpercaya, resmi, bergaransi, dengan harga terbaik di Indonesia.
+                    </p>
+                    <div class="flex items-center gap-4 text-gray-400">
+                        <a href="#" class="w-10 h-10 rounded-xl bg-dark-700 flex items-center justify-center hover:text-white hover:bg-indigo-600 transition-colors"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-xl bg-dark-700 flex items-center justify-center hover:text-white hover:bg-indigo-600 transition-colors"><i class="fa-brands fa-telegram"></i></a>
+                        <a href="https://wa.me/6281234567890" target="_blank" class="w-10 h-10 rounded-xl bg-dark-700 flex items-center justify-center hover:text-white hover:bg-indigo-600 transition-colors"><i class="fa-brands fa-whatsapp"></i></a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-semibold text-sm mb-4 uppercase tracking-wider">Navigasi Utama</h4>
+                    <ul class="space-y-3 text-sm text-gray-400">
+                        <li><a href="#home" class="hover:text-indigo-400 transition-colors">Beranda</a></li>
+                        <li><a href="#products" class="hover:text-indigo-400 transition-colors">Katalog Produk</a></li>
+                        <li><a href="#features" class="hover:text-indigo-400 transition-colors">Keunggulan</a></li>
+                        <li><a href="#testimonials" class="hover:text-indigo-400 transition-colors">Testimoni</a></li>
+                        <li><a href="#faq" class="hover:text-indigo-400 transition-colors">FAQ</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-semibold text-sm mb-4 uppercase tracking-wider">Metode Pembayaran</h4>
+                    <div class="grid grid-cols-3 gap-2 text-xs text-gray-300">
+                        <div class="p-2.5 rounded-lg bg-dark-700 text-center font-medium">BCA</div>
+                        <div class="p-2.5 rounded-lg bg-dark-700 text-center font-medium">Mandiri</div>
+                        <div class="p-2.5 rounded-lg bg-dark-700 text-center font-medium">BNI</div>
+                        <div class="p-2.5 rounded-lg bg-dark-700 text-center font-medium">GoPay</div>
+                        <div class="p-2.5 rounded-lg bg-dark-700 text-center font-medium">OVO</div>
+                        <div class="p-2.5 rounded-lg bg-dark-700 text-center font-medium">QRIS</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pt-8 border-t border-dark-700/60 text-center text-xs text-gray-500">
+                &copy; 2026 StreamVault. All rights reserved. Designed for Modern Streaming Experience.
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript Interactions -->
+    <script>
+        // Mobile Menu Toggle
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu on link click
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Product Filtering Function
+        function filterProducts(category) {
+            const buttons = document.querySelectorAll('.filter-btn');
+            buttons.forEach(btn => {
+                if(btn.getAttribute('data-filter') === category) {
+                    btn.classList.add('bg-indigo-600', 'text-white', 'shadow-md', 'shadow-indigo-600/20');
+                    btn.classList.remove('bg-dark-800', 'text-gray-300', 'border', 'border-dark-600');
+                } else {
+                    btn.classList.remove('bg-indigo-600', 'text-white', 'shadow-md', 'shadow-indigo-600/20');
+                    btn.classList.add('bg-dark-800', 'text-gray-300', 'border', 'border-dark-600');
+                }
+            });
+
+            const cards = document.querySelectorAll('.product-card');
+            cards.forEach(card => {
+                const cardCategory = card.getAttribute('data-category');
+                if(category === 'all' || cardCategory === category) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        // WhatsApp Direct Order Function
+        function orderProduct(productName, price) {
+            const phoneNumber = "6281234567890"; // Ganti dengan nomor WhatsApp admin Anda
+            const message = `Halo Admin StreamVault, saya ingin memesan akun *${productName}* seharga *${price}*. Mohon informasi selanjutnya. Terima kasih!`;
+            const encodedMessage = encodeURIComponent(message);
+            const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+            window.open(whatsappUrl, '_blank');
+        }
+
+        // FAQ Toggle Function
+        function toggleFaq(button) {
+            const content = button.nextElementSibling;
+            const icon = button.querySelector('i');
+            
+            // Close other items if needed or toggle current
+            content.classList.toggle('hidden');
+            icon.classList.toggle('rotate-180');
+        }
+    </script>
+</body>
+</html>
