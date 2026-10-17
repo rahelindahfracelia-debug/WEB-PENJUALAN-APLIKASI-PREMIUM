@@ -28,7 +28,7 @@
         }
     </script>
     <!-- Google Fonts & FontAwesome -->
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
@@ -36,13 +36,13 @@
             font-family: 'Plus Jakarta Sans', sans-serif;
             background-color: #060812;
             background-image: 
-                radial-gradient(circle at 10% 15%, rgba(99, 102, 241, 0.18) 0%, transparent 45%),
-                radial-gradient(circle at 90% 85%, rgba(168, 85, 247, 0.14) 0%, transparent 45%),
-                radial-gradient(circle at 50% 50%, rgba(59, 130, 246, 0.08) 0%, transparent 60%);
+                radial-gradient(circle at 50% 10%, rgba(99, 102, 241, 0.22) 0%, transparent 50%),
+                radial-gradient(circle at 85% 85%, rgba(168, 85, 247, 0.15) 0%, transparent 45%),
+                radial-gradient(circle at 15% 50%, rgba(59, 130, 246, 0.12) 0%, transparent 50%);
             background-attachment: fixed;
+            overflow-x: hidden;
         }
 
-        /* Mengunci gulir latar belakang saat modal aktif */
         body.modal-open {
             overflow: hidden !important;
             touch-action: none;
@@ -52,60 +52,100 @@
             background: linear-gradient(145deg, rgba(19, 25, 50, 0.8) 0%, rgba(11, 15, 32, 0.9) 100%);
             backdrop-filter: blur(16px);
             -webkit-backdrop-filter: blur(16px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         .gradient-card:hover {
-            border-color: rgba(168, 85, 247, 0.5);
-            box-shadow: 0 10px 30px -10px rgba(124, 58, 237, 0.35);
-            transform: translateY(-4px);
+            border-color: rgba(168, 85, 247, 0.6);
+            box-shadow: 0 20px 40px -15px rgba(124, 58, 237, 0.4);
+            transform: translateY(-6px);
         }
 
         .gradient-btn {
             background: linear-gradient(135deg, #6366f1 0%, #a855f7 50%, #ec4899 100%);
             background-size: 200% auto;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(124, 58, 237, 0.3);
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            box-shadow: 0 4px 20px rgba(124, 58, 237, 0.35);
         }
 
         .gradient-btn:hover {
             background-position: right center;
-            box-shadow: 0 6px 22px rgba(168, 85, 247, 0.5);
-            transform: scale(1.02);
+            box-shadow: 0 8px 25px rgba(168, 85, 247, 0.6);
+            transform: translateY(-2px);
+        }
+
+        .gradient-btn:active {
+            transform: translateY(0) scale(0.98);
+        }
+
+        .clean-guide-btn {
+            background: linear-gradient(135deg, rgba(168, 85, 247, 0.15), rgba(99, 102, 241, 0.15));
+            border: 1px solid rgba(168, 85, 247, 0.35);
+            transition: all 0.3s ease;
+        }
+
+        .clean-guide-btn:hover {
+            border-color: rgba(168, 85, 247, 0.8);
+            box-shadow: 0 0 20px rgba(168, 85, 247, 0.3);
+            transform: translateY(-1px);
         }
 
         .wa-btn-glow {
             background: linear-gradient(135deg, #10b981 0%, #059669 100%);
-            box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
+            box-shadow: 0 4px 20px rgba(16, 185, 129, 0.35);
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         .wa-btn-glow:hover {
-            box-shadow: 0 6px 22px rgba(16, 185, 129, 0.5);
+            box-shadow: 0 8px 30px rgba(16, 185, 129, 0.6);
+            transform: translateY(-2px);
         }
 
-        .gradient-text {
-            background: linear-gradient(135deg, #ffffff 0%, #c084fc 50%, #818cf8 100%);
+        .gradient-title-text {
+            background: linear-gradient(135deg, #ffffff 20%, #c084fc 60%, #e879f9 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
-        /* Styling Varian Pilihan Mewah & Elegan */
         .variant-card-radio {
-            transition: all 0.25s ease;
-            background: rgba(11, 15, 32, 0.8);
+            transition: background-color 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+            background: rgba(11, 15, 32, 0.85);
             border: 1px solid rgba(255, 255, 255, 0.08);
+            width: 100%;
         }
 
         .variant-card-radio:hover {
-            border-color: rgba(168, 85, 247, 0.4);
-            background: rgba(19, 25, 50, 0.9);
+            border-color: rgba(168, 85, 247, 0.5);
+            background: rgba(19, 25, 50, 0.95);
         }
 
         .variant-card-radio:has(input:checked) {
             border-color: #a855f7;
-            background: linear-gradient(135deg, rgba(30, 39, 74, 0.9) 0%, rgba(19, 25, 50, 0.95) 100%);
-            box-shadow: 0 0 20px rgba(168, 85, 247, 0.25);
+            background: linear-gradient(135deg, rgba(30, 39, 74, 0.95) 0%, rgba(19, 25, 50, 0.98) 100%);
+            box-shadow: 0 0 25px rgba(168, 85, 247, 0.3);
+        }
+
+        .modal-backdrop {
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+
+        .modal-backdrop.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .modal-content {
+            transform: scale(0.95) translateY(10px);
+            opacity: 0;
+            transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .modal-backdrop.active .modal-content {
+            transform: scale(1) translateY(0);
+            opacity: 1;
         }
 
         ::-webkit-scrollbar { width: 8px; }
@@ -117,80 +157,81 @@
 <body class="text-gray-100 min-h-screen flex flex-col justify-between antialiased selection:bg-purple-500 selection:text-white">
 
     <!-- Header Navigation -->
-    <header class="sticky top-0 z-40 bg-brand-950/80 backdrop-blur-xl border-b border-brand-800/80">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 h-20 flex items-center justify-between gap-4">
-            <!-- Brand Logo -->
-            <a href="#" class="flex items-center gap-3.5 group">
-                <div class="w-11 h-11 rounded-2xl bg-gradient-to-tr from-indigo-600 via-purple-600 to-pink-500 flex items-center justify-center shadow-lg shadow-purple-500/20 group-hover:scale-105 transition-transform">
-                    <i class="fa-solid fa-gem text-white text-xl"></i>
+    <header class="sticky top-0 z-40 bg-brand-950/80 backdrop-blur-xl border-b border-brand-800/85">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+            <a href="#" class="flex items-center gap-3 group">
+                <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-indigo-600 via-purple-600 to-pink-500 flex items-center justify-center shadow-lg shadow-purple-500/25 group-hover:scale-110 transition-transform duration-300">
+                    <i class="fa-solid fa-gem text-white text-base"></i>
                 </div>
-                <div>
-                    <span class="text-xl font-extrabold tracking-tight gradient-text block leading-none mb-1" id="brand-title">PREMIUM APP STORE</span>
-                    <span class="text-[10px] block font-semibold text-purple-400 tracking-widest uppercase">Katalog Digital Eksklusif</span>
-                </div>
+                <span class="text-base font-extrabold tracking-tight text-white group-hover:text-purple-300 transition-colors">PREMIUM APP STORE</span>
             </a>
 
-            <!-- Quick WhatsApp Action -->
-            <a href="https://wa.me/62895409047979" target="_blank" class="px-4 py-2.5 rounded-xl border border-emerald-500/30 bg-emerald-500/10 hover:bg-emerald-500/20 text-emerald-400 text-xs sm:text-sm font-bold flex items-center gap-2.5 transition-all hover:scale-105">
-                <span class="relative flex h-2.5 w-2.5">
-                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                    <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
-                </span>
-                <i class="fa-brands fa-whatsapp text-base"></i>
-                <span class="hidden sm:inline">Hubungi WhatsApp</span>
-            </a>
+            <div class="flex items-center gap-2">
+                <button onclick="openOrderGuideModal()" class="clean-guide-btn px-3.5 py-2 rounded-xl text-purple-300 text-xs font-bold flex items-center gap-1.5">
+                    <i class="fa-solid fa-circle-question text-sm text-purple-400"></i>
+                    <span>Cara Pemesanan</span>
+                </button>
+                <button onclick="openGuideModal()" class="clean-guide-btn px-3.5 py-2 rounded-xl text-purple-300 text-xs font-bold flex items-center gap-1.5">
+                    <i class="fa-solid fa-book-open text-sm text-purple-400"></i>
+                    <span>Panduan & S&K</span>
+                </button>
+            </div>
         </div>
     </header>
 
-    <!-- Main Content Layout -->
+    <!-- Main Content -->
     <main class="mb-auto py-10 px-4 sm:px-6 max-w-7xl mx-auto w-full">
-        
-        <!-- Controls: Fixed Search & Elegan Category Tabs -->
+        <section class="text-center max-w-4xl mx-auto pt-4 pb-12 space-y-5">
+            <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-tight text-white">
+                Nikmati Akses Hiburan & Fitur Pro dengan <span class="gradient-title-text block sm:inline">Aplikasi Premium Pilihan</span>
+            </h1>
+            <p class="text-xs sm:text-base text-gray-400 max-w-2xl mx-auto font-normal leading-relaxed">
+                Streaming film, musik, alat AI, serta studio kreatif berkualitas Ultra HD tanpa iklan.
+            </p>
+        </section>
+
+        <!-- Search & Categories -->
         <section class="space-y-6 max-w-5xl mx-auto mb-12">
-            <!-- Search Bar -->
-            <div class="relative">
+            <div class="relative max-w-3xl mx-auto">
                 <i class="fa-solid fa-magnifying-glass text-gray-400 absolute left-4 top-1/2 -translate-y-1/2 text-sm z-10 pointer-events-none"></i>
-                <input type="text" id="search-input" placeholder="Cari aplikasi (Netflix, ChatGPT, Canva, Spotify, CapCut...)" class="w-full pl-12 pr-12 py-3.5 rounded-2xl bg-brand-900/90 border border-brand-700/80 text-white placeholder-gray-400 text-sm focus:outline-none focus:border-purple-500 transition-all shadow-inner">
-                <button id="clear-search" class="hidden absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-white p-2">
+                <input type="text" id="search-input" placeholder="Cari aplikasi (Netflix, ChatGPT, Canva, Spotify, CapCut)" class="w-full pl-12 pr-12 py-4 rounded-2xl bg-brand-900/95 border border-brand-700/80 text-white placeholder-gray-400 text-sm focus:outline-none focus:border-purple-500 focus:ring-2 focus:ring-purple-500/20 transition-all shadow-inner">
+                <button id="clear-search" class="hidden absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-white p-2 transition-transform hover:scale-110">
                     <i class="fa-solid fa-xmark"></i>
                 </button>
             </div>
 
-            <!-- Elegan Category Filter Tabs -->
-            <div class="flex flex-wrap items-center justify-center gap-2.5 pt-1" id="category-tabs">
-                <button data-cat="all" class="cat-btn px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all gradient-btn text-white">
+            <div class="flex flex-wrap items-center justify-center gap-2.5 pt-2" id="category-tabs">
+                <button data-cat="all" class="cat-btn px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all duration-300 gradient-btn text-white">
                     <i class="fa-solid fa-border-all mr-1.5"></i> Semua Katalog
                 </button>
-                <button data-cat="nonton" class="cat-btn px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold bg-brand-900 text-gray-300 hover:text-white border border-brand-700/70 transition-all">
+                <button data-cat="nonton" class="cat-btn px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold bg-brand-900 text-gray-300 hover:text-white border border-brand-700/70 hover:border-purple-500/50 hover:bg-brand-800 transition-all duration-300">
                     <i class="fa-solid fa-film mr-1.5 text-purple-400"></i> Sinema & Streaming
                 </button>
-                <button data-cat="edu" class="cat-btn px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold bg-brand-900 text-gray-300 hover:text-white border border-brand-700/70 transition-all">
+                <button data-cat="edu" class="cat-btn px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold bg-brand-900 text-gray-300 hover:text-white border border-brand-700/70 hover:border-purple-500/50 hover:bg-brand-800 transition-all duration-300">
                     <i class="fa-solid fa-graduation-cap mr-1.5 text-indigo-400"></i> Pendidikan & AI
                 </button>
-                <button data-cat="editing" class="cat-btn px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold bg-brand-900 text-gray-300 hover:text-white border border-brand-700/70 transition-all">
+                <button data-cat="editing" class="cat-btn px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold bg-brand-900 text-gray-300 hover:text-white border border-brand-700/70 hover:border-purple-500/50 hover:bg-brand-800 transition-all duration-300">
                     <i class="fa-solid fa-wand-magic-sparkles mr-1.5 text-pink-400"></i> Kreatif & Studio Editing
                 </button>
-                <button data-cat="music" class="cat-btn px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold bg-brand-900 text-gray-300 hover:text-white border border-brand-700/70 transition-all">
+                <button data-cat="music" class="cat-btn px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold bg-brand-900 text-gray-300 hover:text-white border border-brand-700/70 hover:border-purple-500/50 hover:bg-brand-800 transition-all duration-300">
                     <i class="fa-solid fa-music mr-1.5 text-emerald-400"></i> Musik & Audio Premium
                 </button>
             </div>
         </section>
 
-        <!-- Product Cards Grid -->
+        <!-- Product Grid -->
         <section>
             <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"></div>
-
-            <!-- Empty State -->
             <div id="empty-state" class="hidden text-center py-20">
-                <i class="fa-solid fa-magnifying-glass-minus text-4xl text-gray-600 mb-4 block"></i>
+                <i class="fa-solid fa-magnifying-glass-minus text-4xl text-gray-600 mb-4 block animate-bounce"></i>
                 <p class="text-gray-400 text-sm font-semibold mb-3">Aplikasi yang Anda cari tidak ditemukan.</p>
-                <button id="reset-filter-btn" class="px-4 py-2 rounded-xl bg-brand-800 text-purple-400 text-xs font-bold border border-brand-700 hover:bg-brand-700">
+                <button id="reset-filter-btn" class="px-4 py-2 rounded-xl bg-brand-800 text-purple-400 text-xs font-bold border border-brand-700 hover:bg-brand-700 transition-all">
                     Tampilkan Semua Aplikasi
                 </button>
             </div>
         </section>
 
-        <!-- Simple Contact Section -->
+        <!-- Contact Section -->
         <section class="mt-20 pt-10 border-t border-brand-800/60 text-center max-w-xl mx-auto space-y-4">
             <p class="text-xs text-gray-400 font-medium">Layanan Pelanggan & Konsultasi Resmi</p>
             <div class="flex items-center justify-center gap-3">
@@ -202,26 +243,229 @@
         </section>
     </main>
 
-    <!-- Modal 1: Pemilihan Varian Paket Aplikasi -->
-    <div id="variant-modal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 bg-black/80 backdrop-blur-md">
-        <div class="bg-brand-900 border border-brand-700 rounded-3xl max-w-lg w-full p-6 sm:p-7 shadow-2xl relative max-h-[90vh] flex flex-col justify-between">
-            <button onclick="closeVariantModal()" class="absolute top-5 right-5 text-gray-400 hover:text-white p-2 rounded-xl hover:bg-brand-800 transition-colors">
+    <!-- Modal Cara Pemesanan -->
+    <div id="order-guide-modal" class="modal-backdrop fixed inset-0 z-[60] flex items-center justify-center p-4 bg-black/85 backdrop-blur-md">
+        <div class="modal-content bg-brand-900 border border-purple-500/40 rounded-3xl max-w-lg w-full p-6 sm:p-8 shadow-2xl shadow-purple-900/40 relative max-h-[85vh] flex flex-col justify-between">
+            <button onclick="closeOrderGuideModal()" class="absolute top-5 right-5 text-gray-400 hover:text-white p-2 rounded-xl hover:bg-brand-800 transition-all duration-300 hover:rotate-90">
                 <i class="fa-solid fa-xmark text-lg"></i>
             </button>
 
             <div class="flex items-center gap-4 mb-6 pb-4 border-b border-brand-800">
-                <div id="variant-app-icon" class="w-12 h-12 rounded-2xl bg-purple-600/20 border border-purple-500/30 text-purple-400 flex items-center justify-center text-xl font-bold flex-shrink-0">
-                    <i class="fa-solid fa-cube"></i>
+                <div class="w-12 h-12 rounded-2xl bg-gradient-to-tr from-indigo-600 via-purple-600 to-pink-500 text-white flex items-center justify-center text-xl font-bold flex-shrink-0 shadow-lg shadow-purple-500/30">
+                    <i class="fa-solid fa-gem"></i>
                 </div>
                 <div>
-                    <h3 class="text-xl font-extrabold text-white" id="variant-app-title">Nama Aplikasi</h3>
-                    <p class="text-xs text-purple-400 font-semibold" id="variant-app-category">Kategori</p>
+                    <h3 class="text-xl font-black text-white">Cara Pemesanan Layanan</h3>
+                    <p class="text-xs text-purple-300 font-semibold">Panduan mudah alur transaksi di toko kami</p>
                 </div>
             </div>
 
-            <div class="space-y-3 overflow-y-auto pr-1 mb-6 max-h-[50vh]" id="variant-list"></div>
+            <div class="space-y-3 overflow-y-auto pr-1 text-xs text-gray-300 max-h-[55vh]">
+                <div class="p-4 rounded-2xl bg-brand-950 border border-brand-800/80 space-y-1.5">
+                    <span class="font-bold text-purple-300 text-sm">1. Pilih Aplikasi & Paket</span>
+                    <p class="text-gray-400 leading-relaxed">Cari aplikasi yang diinginkan pada katalog, lalu klik tombol <strong>"Lihat Paket"</strong> untuk memilih durasi dan jenis varian.</p>
+                </div>
+                <div class="p-4 rounded-2xl bg-brand-950 border border-brand-800/80 space-y-1.5">
+                    <span class="font-bold text-purple-300 text-sm">2. Isi Formulir</span>
+                    <p class="text-gray-400 leading-relaxed">Lengkapi data pemesanan seperti nama, lokasi login, dan perangkat, lalu klik tombol <strong>"Tanyakan Stok via WhatsApp"</strong>.</p>
+                </div>
+                <div class="p-4 rounded-2xl bg-brand-950 border border-brand-800/80 space-y-1.5">
+                    <span class="font-bold text-purple-300 text-sm">3. Konfirmasi Admin</span>
+                    <p class="text-gray-400 leading-relaxed">Chat akan otomatis terbuka ke WhatsApp admin untuk mengecek ketersediaan stok dan harga terkini.</p>
+                </div>
+                <div class="p-4 rounded-2xl bg-brand-950 border border-brand-800/80 space-y-1.5">
+                    <span class="font-bold text-purple-300 text-sm">4. Pembayaran QRIS</span>
+                    <p class="text-gray-400 leading-relaxed">Lakukan pembayaran dengan memindai kode <strong>QRIS</strong> resmi yang diberikan oleh admin.</p>
+                </div>
+                <div class="p-4 rounded-2xl bg-brand-950 border border-brand-800/80 space-y-1.5">
+                    <span class="font-bold text-purple-300 text-sm">5. Proses Pesanan</span>
+                    <p class="text-gray-400 leading-relaxed">Kirimkan bukti pembayaran, dan pesanan Anda akan langsung diproses serta diaktivasi sesuai antrean.</p>
+                </div>
+            </div>
 
-            <div class="pt-4 border-t border-brand-800">
+            <div class="pt-4 border-t border-brand-800 mt-4">
+                <button onclick="closeOrderGuideModal()" class="w-full py-3.5 rounded-2xl gradient-btn text-white font-extrabold text-xs tracking-wide">
+                    Mengerti, Kembali ke Katalog
+                </button>
+            </div>
+        </div>
+    </div>
+            <div class="pt-4 border-t border-brand-800 mt-4">
+                <button onclick="closeOrderGuideModal()" class="w-full py-3.5 rounded-2xl gradient-btn text-white font-extrabold text-xs tracking-wide">
+                    Mengerti, Kembali ke Katalog
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Panduan Istilah Umum & Syarat Ketentuan -->
+    <div id="guide-modal" class="modal-backdrop fixed inset-0 z-[60] flex items-center justify-center p-4 bg-black/85 backdrop-blur-md">
+        <div class="modal-content bg-brand-900 border border-purple-500/40 rounded-3xl max-w-2xl w-full p-6 sm:p-8 shadow-2xl shadow-purple-900/40 relative max-h-[85vh] flex flex-col justify-between">
+            <button onclick="closeGuideModal()" class="absolute top-5 right-5 text-gray-400 hover:text-white p-2 rounded-xl hover:bg-brand-800 transition-all duration-300 hover:rotate-90">
+                <i class="fa-solid fa-xmark text-lg"></i>
+            </button>
+
+            <div class="flex items-center gap-4 mb-6 pb-4 border-b border-brand-800">
+                <div class="w-12 h-12 rounded-2xl bg-gradient-to-tr from-indigo-600 via-purple-600 to-pink-500 text-white flex items-center justify-center text-xl font-bold flex-shrink-0 shadow-lg shadow-purple-500/30">
+                    <i class="fa-solid fa-gem"></i>
+                </div>
+                <div>
+                    <h3 class="text-xl font-black text-white">Panduan Istilah & Ketentuan Layanan</h3>
+                    <p class="text-xs text-purple-300 font-semibold">Informasi spesifikasi akun dan peraturan transaksi</p>
+                </div>
+            </div>
+
+            <!-- Konten Glosarium + Syarat Ketentuan -->
+            <div class="space-y-3.5 overflow-y-auto pr-1 text-xs text-gray-300 max-h-[58vh]">
+                <!-- 1P1U -->
+                <div class="p-4 rounded-2xl bg-brand-950 border border-brand-800/80 hover:border-purple-500/40 transition-all space-y-2">
+                    <div class="flex items-center justify-between">
+                        <span class="font-black text-purple-300 text-sm">1P1U (1 Profile 1 User)</span>
+                        <span class="px-2.5 py-1 rounded-full bg-purple-500/15 text-purple-300 border border-purple-500/30 text-[10px] font-bold">Privasi Penuh</span>
+                    </div>
+                    <p class="text-gray-400 leading-relaxed">Satu profil khusus yang digunakan oleh satu orang pembeli saja. Dilengkapi PIN privat mandiri sehingga riwayat tontonan aman dan tidak tercampur.</p>
+                </div>
+
+                <!-- 1P2U -->
+                <div class="p-4 rounded-2xl bg-brand-950 border border-brand-800/80 hover:border-purple-500/40 transition-all space-y-2">
+                    <div class="flex items-center justify-between">
+                        <span class="font-black text-amber-300 text-sm">1P2U (1 Profile 2 Users)</span>
+                        <span class="px-2.5 py-1 rounded-full bg-amber-500/15 text-amber-300 border border-amber-500/30 text-[10px] font-bold">Profil Bersama</span>
+                    </div>
+                    <p class="text-gray-400 leading-relaxed">Satu profil yang digunakan secara bergantian oleh dua orang pengguna. Merupakan opsi paling ekonomis untuk kebutuhan streaming harian.</p>
+                </div>
+
+                <!-- Semi Private -->
+                <div class="p-4 rounded-2xl bg-brand-950 border border-brand-800/80 hover:border-purple-500/40 transition-all space-y-2">
+                    <div class="flex items-center justify-between">
+                        <span class="font-black text-teal-300 text-sm">Semi Private</span>
+                        <span class="px-2.5 py-1 rounded-full bg-teal-500/15 text-teal-300 border border-teal-500/30 text-[10px] font-bold">Semi Eksklusif</span>
+                    </div>
+                    <p class="text-gray-400 leading-relaxed">Jenis akun dengan pembatasan jumlah pengguna yang sangat ketat dalam satu akun untuk meminimalisir risiko bentrok layar.</p>
+                </div>
+
+                <!-- Private -->
+                <div class="p-4 rounded-2xl bg-brand-950 border border-brand-800/80 hover:border-purple-500/40 transition-all space-y-2">
+                    <div class="flex items-center justify-between">
+                        <span class="font-black text-emerald-300 text-sm">Akun Private / Full Account</span>
+                        <span class="px-2.5 py-1 rounded-full bg-emerald-500/15 text-emerald-300 border border-emerald-500/30 text-[10px] font-bold">Eksklusif</span>
+                    </div>
+                    <p class="text-gray-400 leading-relaxed">Akun utuh yang digunakan secara eksklusif oleh Anda sendiri tanpa pengguna lain. Dapat menggunakan email pribadi atau akun yang disiapkan toko.</p>
+                </div>
+
+                <!-- Family Plan -->
+                <div class="p-4 rounded-2xl bg-brand-950 border border-brand-800/80 hover:border-purple-500/40 transition-all space-y-2">
+                    <div class="flex items-center justify-between">
+                        <span class="font-black text-blue-300 text-sm">Family Plan & Family Head</span>
+                        <span class="px-2.5 py-1 rounded-full bg-blue-500/15 text-blue-300 border border-blue-500/30 text-[10px] font-bold">Grup Keluarga</span>
+                    </div>
+                    <p class="text-gray-400 leading-relaxed">Paket langganan kolektif yang dibagi ke beberapa anggota dalam satu grup. Family Head adalah posisi admin pengelola utama grup tersebut.</p>
+                </div>
+
+                <!-- Individual Plan -->
+                <div class="p-4 rounded-2xl bg-brand-950 border border-brand-800/80 hover:border-purple-500/40 transition-all space-y-2">
+                    <div class="flex items-center justify-between">
+                        <span class="font-black text-cyan-300 text-sm">Individual Plan</span>
+                        <span class="px-2.5 py-1 rounded-full bg-cyan-500/15 text-cyan-300 border border-cyan-500/30 text-[10px] font-bold">Pribadi</span>
+                    </div>
+                    <p class="text-gray-400 leading-relaxed">Paket langganan resmi khusus untuk satu akun individual secara mandiri tanpa digabung dengan pengguna lain.</p>
+                </div>
+
+                <!-- Seller Account -->
+                <div class="p-4 rounded-2xl bg-brand-950 border border-brand-800/80 hover:border-purple-500/40 transition-all space-y-2">
+                    <div class="flex items-center justify-between">
+                        <span class="font-black text-yellow-300 text-sm">Seller Account</span>
+                        <span class="px-2.5 py-1 rounded-full bg-yellow-500/15 text-yellow-300 border border-yellow-500/30 text-[10px] font-bold">Akun Toko</span>
+                    </div>
+                    <p class="text-gray-400 leading-relaxed">Slot aktivasi khusus yang disediakan langsung dari sistem penjual dengan durasi tertentu yang lebih ekonomis.</p>
+                </div>
+
+                <!-- Canva Roles -->
+                <div class="p-4 rounded-2xl bg-brand-950 border border-brand-800/80 hover:border-purple-500/40 transition-all space-y-2">
+                    <div class="flex items-center justify-between">
+                        <span class="font-black text-sky-300 text-sm">Member, Admin, Designer, Head (Canva)</span>
+                        <span class="px-2.5 py-1 rounded-full bg-sky-500/15 text-sky-300 border border-sky-500/30 text-[10px] font-bold">Peran Tim</span>
+                    </div>
+                    <p class="text-gray-400 leading-relaxed">Pembagian hak akses di dalam tim Canva Pro. Member sebagai anggota, sedangkan Admin/Designer/Head memiliki hak kelola tambahan.</p>
+                </div>
+
+                <!-- Plat TV/Mobile -->
+                <div class="p-4 rounded-2xl bg-brand-950 border border-brand-800/80 hover:border-purple-500/40 transition-all space-y-2">
+                    <div class="flex items-center justify-between">
+                        <span class="font-black text-rose-300 text-sm">Plat TV & Plat Mobile</span>
+                        <span class="px-2.5 py-1 rounded-full bg-rose-500/15 text-rose-300 border border-rose-500/30 text-[10px] font-bold">Platform Khusus</span>
+                    </div>
+                    <p class="text-gray-400 leading-relaxed">Ketentuan platform perangkat login. Plat TV khusus untuk Smart TV, sedangkan Plat Mobile khusus untuk perangkat smartphone.</p>
+                </div>
+
+                <!-- Garansi -->
+                <div class="p-4 rounded-2xl bg-brand-950 border border-brand-800/80 hover:border-purple-500/40 transition-all space-y-2">
+                    <div class="flex items-center justify-between">
+                        <span class="font-black text-pink-300 text-sm">Full Warrant vs No Warrant</span>
+                        <span class="px-2.5 py-1 rounded-full bg-pink-500/15 text-pink-300 border border-pink-500/30 text-[10px] font-bold">Jaminan Layanan</span>
+                    </div>
+                    <p class="text-gray-400 leading-relaxed">Full Warrant dilengkapi garansi penuh perbaikan atau pergantian akun. No Warrant ditawarkan dengan harga lebih murah tanpa fasilitas garansi.</p>
+                </div>
+
+                <!-- SYARAT DAN KETENTUAN (S&K) FORMAL TANPA EMOJI -->
+                <div class="p-5 rounded-2xl bg-gradient-to-br from-purple-950/70 via-brand-950 to-brand-950 border border-purple-500/40 space-y-3 mt-4 shadow-xl">
+                    <div class="flex items-center gap-2 text-purple-300 font-extrabold text-sm border-b border-purple-500/20 pb-2">
+                        <i class="fa-solid fa-file-contract text-base"></i>
+                        <span>Syarat dan Ketentuan Layanan (S&K)</span>
+                    </div>
+                    <div class="text-gray-300 space-y-2.5 leading-relaxed text-[11px] sm:text-xs">
+                        <p>1. Wajib menanyakan ketersediaan stok serta pembaruan harga terlebih dahulu kepada admin sebelum melakukan pemesanan.</p>
+                        <p>2. Bagi aplikasi atau varian layanan yang belum tercantum di dalam daftar katalog web, silakan tanyakan kepada admin.</p>
+                        <p>3. Dimohon kesediaannya untuk bersabar; pesanan akan diproses sesuai antrean dan menunggu koordinasi bersama pihak pemasok.</p>
+                        <p>4. Jaminan garansi (Full Warrant) berlaku sah selama pelanggan mematuhi seluruh aturan dan ketentuan penggunaan akun.</p>
+                        <p>5. Metode pembayaran resmi menggunakan sistem pindai QRIS. Pesanan Anda akan diproses setelah pembayaran berhasil dikonfirmasi.</p>
+                        <p>6. Dengan melakukan transaksi, pembeli dianggap telah membaca, memahami, serta menyetujui seluruh ketentuan layanan di atas.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pt-4 border-t border-brand-800 mt-4">
+                <button onclick="closeGuideModal()" class="w-full py-3.5 rounded-2xl gradient-btn text-white font-extrabold text-xs tracking-wide">
+                    Mengerti, Kembali ke Katalog
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Kontekstual Varian & Panduan Spesifik Aplikasi -->
+    <div id="variant-modal" class="modal-backdrop fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-md">
+        <div class="modal-content bg-brand-900 border border-brand-700 rounded-3xl max-w-lg w-full p-6 sm:p-7 shadow-2xl relative max-h-[90vh] flex flex-col justify-between">
+            <button onclick="closeVariantModal()" class="absolute top-5 right-5 text-gray-400 hover:text-white p-2 rounded-xl hover:bg-brand-800 transition-all duration-300 hover:rotate-90">
+                <i class="fa-solid fa-xmark text-lg"></i>
+            </button>
+
+            <div class="flex items-center justify-between mb-4 pb-4 border-b border-brand-800">
+                <div class="flex items-center gap-3.5 min-w-0">
+                    <div id="variant-app-icon" class="w-12 h-12 rounded-2xl bg-purple-600/20 border border-purple-500/30 text-purple-400 flex items-center justify-center text-xl font-bold flex-shrink-0 shadow-inner">
+                        <i class="fa-solid fa-cube"></i>
+                    </div>
+                    <div class="min-w-0">
+                        <h3 class="text-xl font-extrabold text-white truncate" id="variant-app-title">Nama Aplikasi</h3>
+                        <p class="text-xs text-purple-400 font-semibold truncate" id="variant-app-category">Kategori</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bagian Keterangan Spesifik Aplikasi -->
+            <div id="app-context-guide" class="hidden mb-4 p-3.5 rounded-2xl bg-purple-950/60 border border-purple-500/30 text-xs text-purple-200 space-y-1.5 transition-all duration-300">
+                <div class="flex items-center justify-between font-bold text-purple-300">
+                    <span id="context-guide-title"><i class="fa-solid fa-circle-info mr-1.5"></i> Panduan Varian</span>
+                    <button onclick="toggleAppContextGuide(false)" class="text-gray-400 hover:text-white px-1.5 py-0.5"><i class="fa-solid fa-xmark"></i></button>
+                </div>
+                <p id="context-guide-desc" class="text-gray-300 leading-relaxed text-[11px]"></p>
+            </div>
+
+            <div class="space-y-3 overflow-y-auto pr-1 mb-6 max-h-[45vh]" id="variant-list"></div>
+
+            <div class="pt-4 border-t border-brand-800 flex items-center gap-2">
+                <button onclick="toggleAppContextGuide(true)" id="btn-context-help" title="Penjelasan varian aplikasi ini" class="p-3.5 rounded-2xl bg-brand-950 border border-brand-700 hover:bg-brand-800 hover:border-purple-500/50 text-purple-400 transition-all flex-shrink-0 hover:scale-105">
+                    <i class="fa-solid fa-circle-question text-base"></i>
+                </button>
                 <button id="btn-proceed-order" onclick="proceedToOrderForm()" disabled class="w-full py-3.5 rounded-2xl bg-gray-800 text-gray-500 font-bold text-sm cursor-not-allowed transition-all">
                     Pilih Salah Satu Paket
                 </button>
@@ -230,9 +474,9 @@
     </div>
 
     <!-- Modal 2: Formulir Pemesanan -->
-    <div id="order-modal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 bg-black/80 backdrop-blur-md">
-        <div class="bg-brand-900 border border-brand-700 rounded-3xl max-w-md w-full p-6 sm:p-7 shadow-2xl relative">
-            <button onclick="closeOrderModal()" class="absolute top-5 right-5 text-gray-400 hover:text-white p-2 rounded-xl hover:bg-brand-800 transition-colors">
+    <div id="order-modal" class="modal-backdrop fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-md">
+        <div class="modal-content bg-brand-900 border border-brand-700 rounded-3xl max-w-md w-full p-6 sm:p-7 shadow-2xl relative">
+            <button onclick="closeOrderModal()" class="absolute top-5 right-5 text-gray-400 hover:text-white p-2 rounded-xl hover:bg-brand-800 transition-all duration-300 hover:rotate-90">
                 <i class="fa-solid fa-xmark text-lg"></i>
             </button>
 
@@ -268,22 +512,22 @@
             <form id="order-form" onsubmit="submitToWhatsApp(event)" class="space-y-4">
                 <div>
                     <label class="block text-xs font-bold text-gray-300 mb-1">Nama Pemesan <span class="text-red-400">*</span></label>
-                    <input type="text" id="input-customer-name" required placeholder="Masukkan nama Anda..." class="w-full px-4 py-3 rounded-xl bg-brand-950 border border-brand-800 text-white text-xs focus:outline-none focus:border-purple-500">
+                    <input type="text" id="input-customer-name" required placeholder="Masukkan nama Anda..." class="w-full px-4 py-3 rounded-xl bg-brand-950 border border-brand-800 text-white text-xs focus:outline-none focus:border-purple-500 transition-all">
                 </div>
 
                 <div>
                     <label class="block text-xs font-bold text-gray-300 mb-1">Lokasi Login <span class="text-red-400">*</span></label>
-                    <input type="text" id="input-login-location" required placeholder="Contoh: Jakarta, Surabaya, Bali..." class="w-full px-4 py-3 rounded-xl bg-brand-950 border border-brand-800 text-white text-xs focus:outline-none focus:border-purple-500">
+                    <input type="text" id="input-login-location" required placeholder="Contoh: Jakarta, Surabaya, Bali..." class="w-full px-4 py-3 rounded-xl bg-brand-950 border border-brand-800 text-white text-xs focus:outline-none focus:border-purple-500 transition-all">
                 </div>
 
                 <div id="price-range-container" class="hidden">
                     <label class="block text-xs font-bold text-gray-300 mb-1">Pilih Opsi Harga <span class="text-red-400">*</span></label>
-                    <select id="select-price-range" onchange="updateSelectedRangePrice(this.value)" class="w-full px-4 py-3 rounded-xl bg-brand-950 border border-brand-800 text-purple-300 text-xs font-bold focus:outline-none focus:border-purple-500"></select>
+                    <select id="select-price-range" onchange="updateSelectedRangePrice(this.value)" class="w-full px-4 py-3 rounded-xl bg-brand-950 border border-brand-800 text-purple-300 text-xs font-bold focus:outline-none focus:border-purple-500 transition-all"></select>
                 </div>
 
                 <div>
                     <label class="block text-xs font-bold text-gray-300 mb-1">Merek Perangkat <span class="text-red-400">*</span></label>
-                    <input type="text" id="input-device-brand" required placeholder="Contoh: Samsung, iPhone, Android TV, Laptop..." class="w-full px-4 py-3 rounded-xl bg-brand-950 border border-brand-800 text-white text-xs focus:outline-none focus:border-purple-500">
+                    <input type="text" id="input-device-brand" required placeholder="Contoh: Samsung, iPhone, Android TV, Laptop..." class="w-full px-4 py-3 rounded-xl bg-brand-950 border border-brand-800 text-white text-xs focus:outline-none focus:border-purple-500 transition-all">
                 </div>
 
                 <button type="submit" class="w-full py-3.5 rounded-2xl wa-btn-glow text-white font-extrabold text-sm flex items-center justify-center gap-2 mt-2">
@@ -301,7 +545,7 @@
         </div>
     </footer>
 
-    <!-- Application Script Logic -->
+    <!-- Script Logic -->
     <script>
         const STORE_CONFIG = {
             name: "PREMIUM APP STORE",
@@ -316,6 +560,7 @@
                 category: "nonton",
                 iconClass: "fa-solid fa-n text-red-500",
                 badge: "Terlaris",
+                guideText: "Netflix menyediakan varian 1P1U (1 Profil 1 Pengguna dengan PIN mandiri), 1P2U (1 Profil untuk 2 pengguna bergantian), Semi Private (jumlah pembatas layar lebih sedikit dan stabil), hingga Private Full Account (dikuasai penuh secara mandiri).",
                 highlights: [
                     "Resolusi Ultra HD (4K) + HDR",
                     "Tanpa Iklan & Akses Bebas On-Hold",
@@ -341,6 +586,7 @@
                 category: "nonton",
                 iconClass: "fa-solid fa-play text-yellow-400",
                 badge: "Populer",
+                guideText: "Loklok tersedia dalam pilihan Standard dan Basic Sharing untuk menikmati film, series, serta anime lengkap dengan subtitle bahasa Indonesia resmi.",
                 highlights: [
                     "Akses Film, Series & Anime Terlengkap",
                     "Kualitas Streaming HD Tanpa Gangguan",
@@ -357,6 +603,7 @@
                 category: "nonton",
                 iconClass: "fa-solid fa-tv text-pink-500",
                 badge: "",
+                guideText: "Drama Box menggunakan sistem sharing untuk membuka semua episode drama pendek VIP secara penuh tanpa terkunci.",
                 highlights: [
                     "Koleksi Drama Pendek Eksklusif & Viral",
                     "Buka Semua Episode VIP Bebas Kunci",
@@ -372,6 +619,7 @@
                 category: "nonton",
                 iconClass: "fa-solid fa-ghost text-pink-400",
                 badge: "",
+                guideText: "Bstation menyediakan opsi sharing durasi fleksibel (1 bulan hingga 1 tahun) untuk nonton anime dan donghua kualitas HD tanpa iklan.",
                 highlights: [
                     "Streaming Anime & Donghua Kualitas HD 1080P",
                     "Fitur Download Offline Sepuasnya",
@@ -389,6 +637,7 @@
                 category: "nonton",
                 iconClass: "fa-solid fa-video text-orange-500",
                 badge: "Trending",
+                guideText: "WeTV tersedia dalam opsi sharing beberapa pengguna atau akun private mandiri untuk menikmati drama Asia lebih cepat.",
                 highlights: [
                     "Nonton Drama Asia & Series Lokal Lebih Awal",
                     "Kualitas Video Hingga Full HD 1080P",
@@ -407,6 +656,7 @@
                 category: "nonton",
                 iconClass: "fa-solid fa-eye text-blue-400",
                 badge: "",
+                guideText: "Vision+ menyediakan opsi sharing 2 user atau private untuk tayangan live TV nasional dan original series eksklusif.",
                 highlights: [
                     "Tayangan Live TV Nasional & Internasional",
                     "Akses Eksklusif Original Series Vision+",
@@ -423,6 +673,7 @@
                 category: "nonton",
                 iconClass: "fa-solid fa-film text-purple-400",
                 badge: "",
+                guideText: "Movie Box tersedia khusus untuk perangkat Android atau iOS dengan pilihan durasi bulanan maupun tahunan.",
                 highlights: [
                     "Katalog Film Bioskop Lengkap & Terbaru",
                     "Putar Video Cepat Bebas Buffering",
@@ -440,6 +691,7 @@
                 category: "nonton",
                 iconClass: "fa-solid fa-clapperboard text-blue-500",
                 badge: "Terlaris",
+                guideText: "Disney+ menawarkan varian sharing 6 hingga 10 user serta opsi harian dengan kisaran harga terjangkau.",
                 highlights: [
                     "Film Blockbuster Marvel, Disney & Star Wars",
                     "Resolusi Tinggi Ultra HD & IMAX Enhanced",
@@ -457,6 +709,7 @@
                 category: "nonton",
                 iconClass: "fa-solid fa-compact-disc text-amber-400",
                 badge: "",
+                guideText: "Melolo menyediakan pilihan paket sharing all device dengan durasi 1 bulan hingga 1 tahun penuh.",
                 highlights: [
                     "Streaming Video & Konten Hiburan Kreatif",
                     "Akses Semua Fitur VIP Bebas Batas",
@@ -475,6 +728,7 @@
                 category: "nonton",
                 iconClass: "fa-solid fa-circle-play text-sky-400",
                 badge: "",
+                guideText: "Prime Video tersedia dalam opsi sharing dan private untuk menikmati konten Amazon Originals berkualitas 4K.",
                 highlights: [
                     "Akses Amazon Originals Eksklusif",
                     "Resolusi Kualitas 4K Ultra HD & HDR",
@@ -491,6 +745,7 @@
                 category: "nonton",
                 iconClass: "fa-solid fa-video-slash text-cyan-400",
                 badge: "",
+                guideText: "Youku menyediakan pilihan paket sharing bulanan hingga tahunan untuk streaming drama mandarin dan variety show.",
                 highlights: [
                     "Drama Mandarin & Variety Show Populer",
                     "Kualitas Gambar Jernih HD 1080P",
@@ -508,6 +763,7 @@
                 category: "nonton",
                 iconClass: "fa-solid fa-film text-rose-500",
                 badge: "",
+                guideText: "Reelshort menggunakan sistem sharing agar Anda dapat menikmati semua episode serial vertikal tanpa perlu membeli koin.",
                 highlights: [
                     "Akses Semua Episode Serial Vertikal Eksklusif",
                     "Fitur Buka Kunci Tanpa Perlu Koin",
@@ -523,6 +779,7 @@
                 category: "nonton",
                 iconClass: "fa-solid fa-circle-h text-purple-600",
                 badge: "",
+                guideText: "HBO Max menyediakan paket standard sharing untuk menikmati tayangan eksklusif Warner Bros dan Dolby Atmos.",
                 highlights: [
                     "Tayangan Eksklusif Warner Bros & HBO Originals",
                     "Kualitas Audio Dolby Atmos & Video 4K",
@@ -538,6 +795,7 @@
                 category: "nonton",
                 iconClass: "fa-solid fa-circle-play text-red-600",
                 badge: "Populer",
+                guideText: "Vidio memiliki kategori Plat TV (khusus Smart TV), Plat Mobile Private/Sharing (khusus HP), serta All Device untuk fleksibilitas menonton olahraga dan liga sepak bola.",
                 highlights: [
                     "Live Streaming Olahraga & Liga Sepak Bola",
                     "Vidio Original Series Kualitas HD",
@@ -557,6 +815,7 @@
                 category: "nonton",
                 iconClass: "fa-brands fa-youtube text-red-500",
                 badge: "Rekomendasi",
+                guideText: "YouTube tersedia dalam paket Family Plan (diundang ke grup keluarga), Individual Plan (akun pribadi), dan Family Head (posisi pengelola grup).",
                 highlights: [
                     "Nonton Semua Video Bebas Jeda Iklan",
                     "Putar Di Latar Belakang (Background Play)",
@@ -574,6 +833,7 @@
                 category: "nonton",
                 iconClass: "fa-solid fa-play-circle text-yellow-500",
                 badge: "",
+                guideText: "Viu menyediakan paket Private Unlimited dengan durasi bulanan, tahunan, hingga lifetime untuk nonton drakor sepuasnya.",
                 highlights: [
                     "Drama Korea & Asia Paling Update",
                     "Download Bebas Dan Nonton Offline",
@@ -591,6 +851,7 @@
                 category: "nonton",
                 iconClass: "fa-solid fa-circle-play text-emerald-400",
                 badge: "",
+                guideText: "iQIYI menyediakan varian sharing standard/premium serta private standard/premium untuk drama china dan anime VIP.",
                 highlights: [
                     "Drama China & Anime Kualitas VIP Full HD",
                     "Fitur Dolby Atmos & Subtitle Indonesia",
@@ -613,6 +874,7 @@
                 category: "edu",
                 iconClass: "fa-solid fa-robot text-teal-400",
                 badge: "AI Favorite",
+                guideText: "ChatGPT tersedia dalam opsi Plus Private Full Warrant (garansi penuh), Private No Warrant (harga hemat tanpa garansi), serta opsi sharing.",
                 highlights: [
                     "Akses Model Tercanggih GPT-4o Terbaru",
                     "Fitur Analisis Data, Vision & Koding",
@@ -632,6 +894,7 @@
                 category: "edu",
                 iconClass: "fa-solid fa-video text-blue-400",
                 badge: "",
+                guideText: "Zoom menyediakan paket private berdurasi 14 hari dengan kapasitas meeting besar tanpa batas 40 menit.",
                 highlights: [
                     "Meeting Berdurasi Tanpa Batas 40 Menit",
                     "Kapasitas Peserta Hingga 300 Orang",
@@ -647,6 +910,7 @@
                 category: "edu",
                 iconClass: "fa-solid fa-brain text-teal-300",
                 badge: "",
+                guideText: "Brainly menggunakan paket sharing 1 tahun penuh untuk akses jawaban ahli bebas iklan.",
                 highlights: [
                     "Akses Jawaban Verifikasi Ahli Tanpa Iklan",
                     "Buka Semua Kunci Soal Pelajaran",
@@ -662,6 +926,7 @@
                 category: "edu",
                 iconClass: "fa-solid fa-feather-pointed text-lime-400",
                 badge: "Popular",
+                guideText: "Duolingo menyediakan paket Family Plan, Seller Account, dan Family Head untuk belajar bahasa dengan nyawa tak terbatas.",
                 highlights: [
                     "Fitur Super Duolingo Bebas Iklan",
                     "Hati Nyawa Tak Terbatas (Unlimited Hearts)",
@@ -686,6 +951,7 @@
                 category: "editing",
                 iconClass: "fa-solid fa-palette text-cyan-300",
                 badge: "Best Seller",
+                guideText: "Canva tersedia dalam peran Member, Admin, Designer, Head, serta Lifetime Education untuk akses jutaan template pro.",
                 highlights: [
                     "Akses Jutaan Template, Elemen & Font Pro",
                     "Fitur Penghapus Latar Belakang (Magic Eraser)",
@@ -705,6 +971,7 @@
                 category: "editing",
                 iconClass: "fa-solid fa-paintbrush text-indigo-400",
                 badge: "",
+                guideText: "Picsart menyediakan opsi sharing dan private untuk menikmati aset gold unlocked tanpa watermark.",
                 highlights: [
                     "Aset Premium, Filter & Stiker Gold Unlocked",
                     "Bebas Watermark & Bebas Iklan",
@@ -721,6 +988,7 @@
                 category: "editing",
                 iconClass: "fa-solid fa-wand-magic-sparkles text-pink-400",
                 badge: "",
+                guideText: "Wink tersedia khusus untuk platform Android (Sharing / Private Seller) dan iOS (Sharing / Private) untuk retouch video 4K.",
                 highlights: [
                     "Retouch Video Wajah & Tubuh Kualitas 4K",
                     "Restorasi Video Buram Menjadi Jernih",
@@ -739,6 +1007,7 @@
                 category: "editing",
                 iconClass: "fa-solid fa-scissors text-gray-200",
                 badge: "Popular",
+                guideText: "CapCut Pro menyediakan varian Pro Sharing dan Pro Private dengan durasi harian hingga bulanan.",
                 highlights: [
                     "Akses Semua Efek, Transisi & Teks Pro",
                     "Fitur Auto Caption & AI Body Effects",
@@ -758,6 +1027,7 @@
                 category: "editing",
                 iconClass: "fa-solid fa-sliders text-emerald-400",
                 badge: "",
+                guideText: "Alight Motion menyediakan paket Seller Account berdurasi 1 tahun untuk fitur motion graphics dan preset XML.",
                 highlights: [
                     "Fitur Motion Graphics & Editing Kompleks",
                     "Impor Font, Preset & Format XML",
@@ -775,6 +1045,7 @@
                 category: "music",
                 iconClass: "fa-brands fa-spotify text-emerald-500",
                 badge: "Terlaris",
+                guideText: "Spotify tersedia dalam varian No Warrant (harga hemat), Individual Plan, dan Family Plan bergaransi penuh.",
                 highlights: [
                     "Dengarkan Jutaan Lagu Bebas Iklan",
                     "Fitur Download Lagu & Putar Offline",
@@ -792,6 +1063,7 @@
                 category: "music",
                 iconClass: "fa-brands fa-apple text-rose-400",
                 badge: "",
+                guideText: "Apple Music menyediakan paket Head dan Family Plan untuk menikmati format Lossless & Spatial Audio.",
                 highlights: [
                     "Format Lossless Audio & Spatial Audio (Dolby Atmos)",
                     "Akses Katalog 100+ Juta Lagu Bebas Iklan",
@@ -926,7 +1198,37 @@
             });
         }
 
-        // Buka Modal 1 & Kunci Gulir Latar Belakang
+        // Functions Modal Cara Pemesanan
+        function openOrderGuideModal() {
+            document.body.classList.add("modal-open");
+            document.getElementById("order-guide-modal").classList.add("active");
+        }
+
+        function closeOrderGuideModal() {
+            document.getElementById("order-guide-modal").classList.remove("active");
+            setTimeout(() => {
+                if (!document.getElementById("guide-modal").classList.contains("active") && !document.getElementById("variant-modal").classList.contains("active") && !document.getElementById("order-modal").classList.contains("active")) {
+                    document.body.classList.remove("modal-open");
+                }
+            }, 300);
+        }
+
+        // Functions Modal Panduan Istilah Umum
+        function openGuideModal() {
+            document.body.classList.add("modal-open");
+            document.getElementById("guide-modal").classList.add("active");
+        }
+
+        function closeGuideModal() {
+            document.getElementById("guide-modal").classList.remove("active");
+            setTimeout(() => {
+                if (!document.getElementById("order-guide-modal").classList.contains("active") && !document.getElementById("variant-modal").classList.contains("active") && !document.getElementById("order-modal").classList.contains("active")) {
+                    document.body.classList.remove("modal-open");
+                }
+            }, 300);
+        }
+
+        // Modal 1: Select Variant dengan Panduan Spesifik per Aplikasi
         function openVariantModal(appId) {
             selectedApp = MASTER_APPS.find(a => a.id === appId);
             if (!selectedApp) return;
@@ -939,30 +1241,34 @@
             const iconContainer = document.getElementById("variant-app-icon");
             iconContainer.innerHTML = `<i class="${selectedApp.iconClass}"></i>`;
 
+            document.getElementById("context-guide-title").innerHTML = `<i class="fa-solid fa-circle-info mr-1.5"></i> Panduan Varian ${selectedApp.name}`;
+            document.getElementById("context-guide-desc").textContent = selectedApp.guideText || "Pilih varian paket di bawah sesuai dengan kebutuhan durasi dan jenis akun Anda.";
+            
+            toggleAppContextGuide(false);
+
             const variantList = document.getElementById("variant-list");
             variantList.innerHTML = "";
 
-            // Tampilan Pilihan Varian Yang Lebih Elegan & Sederhana (Menghilangkan AI look)
             selectedApp.variants.forEach((v) => {
                 const vCard = document.createElement("label");
-                vCard.className = "variant-card-radio flex items-center justify-between p-4 rounded-2xl cursor-pointer";
+                vCard.className = "variant-card-radio flex flex-col sm:flex-row sm:items-center justify-between p-4 rounded-2xl cursor-pointer gap-2 sm:gap-4";
 
                 let displayPrice = v.priceRange 
                     ? `${formatRupiah(v.priceRange[0])} - ${formatRupiah(v.priceRange[1])}`
                     : formatRupiah(v.price);
 
                 vCard.innerHTML = `
-                    <div class="flex items-center gap-3.5 min-w-0">
-                        <input type="radio" name="app-variant" value="${v.id}" onchange="selectVariantOption('${v.id}')" class="w-4 h-4 text-purple-600 bg-brand-900 border-brand-700 focus:ring-purple-500 flex-shrink-0">
+                    <div class="flex items-start sm:items-center gap-3.5 min-w-0">
+                        <input type="radio" name="app-variant" value="${v.id}" onchange="selectVariantOption('${v.id}')" class="w-4 h-4 text-purple-600 bg-brand-900 border-brand-700 focus:ring-purple-500 flex-shrink-0 mt-1 sm:mt-0">
                         <div class="min-w-0">
-                            <span class="block text-sm font-bold text-white truncate">${v.name}</span>
-                            <div class="flex items-center gap-2 text-xs text-gray-400 mt-0.5">
-                                <span class="px-2 py-0.5 rounded-md bg-brand-800 border border-brand-700 text-gray-300 text-[10px] font-semibold">${v.duration}</span>
-                                <span class="truncate">${v.plan}</span>
+                            <span class="block text-sm font-bold text-white leading-snug break-words">${v.name}</span>
+                            <div class="flex flex-wrap items-center gap-2 text-xs text-gray-400 mt-1">
+                                <span class="px-2 py-0.5 rounded-md bg-brand-800 border border-brand-700 text-purple-300 text-[10px] font-extrabold flex-shrink-0">${v.duration}</span>
+                                <span class="break-words text-gray-400">${v.plan}</span>
                             </div>
                         </div>
                     </div>
-                    <span class="text-sm font-extrabold text-emerald-400 ml-3 flex-shrink-0">${displayPrice}</span>
+                    <span class="text-xs sm:text-sm font-extrabold text-emerald-400 pl-7 sm:pl-0 sm:ml-2 flex-shrink-0">${displayPrice}</span>
                 `;
 
                 variantList.appendChild(vCard);
@@ -974,7 +1280,16 @@
             btnProceed.textContent = "Pilih Salah Satu Paket";
 
             document.body.classList.add("modal-open");
-            document.getElementById("variant-modal").classList.remove("hidden");
+            document.getElementById("variant-modal").classList.add("active");
+        }
+
+        function toggleAppContextGuide(show) {
+            const guideBox = document.getElementById("app-context-guide");
+            if (show) {
+                guideBox.classList.remove("hidden");
+            } else {
+                guideBox.classList.add("hidden");
+            }
         }
 
         function selectVariantOption(variantId) {
@@ -988,16 +1303,18 @@
         }
 
         function closeVariantModal() {
-            document.getElementById("variant-modal").classList.add("hidden");
-            if (document.getElementById("order-modal").classList.contains("hidden")) {
-                document.body.classList.remove("modal-open");
-            }
+            document.getElementById("variant-modal").classList.remove("active");
+            setTimeout(() => {
+                if (!document.getElementById("order-modal").classList.contains("active") && !document.getElementById("guide-modal").classList.contains("active") && !document.getElementById("order-guide-modal").classList.contains("active")) {
+                    document.body.classList.remove("modal-open");
+                }
+            }, 300);
         }
 
         function proceedToOrderForm() {
             if (!selectedVariant || !selectedApp) return;
 
-            document.getElementById("variant-modal").classList.add("hidden");
+            document.getElementById("variant-modal").classList.remove("active");
 
             document.getElementById("summary-app-name").textContent = selectedApp.name;
             document.getElementById("summary-package-name").textContent = `${selectedVariant.name} (${selectedVariant.plan})`;
@@ -1040,7 +1357,7 @@
             }
 
             document.body.classList.add("modal-open");
-            document.getElementById("order-modal").classList.remove("hidden");
+            document.getElementById("order-modal").classList.add("active");
         }
 
         function updateSelectedRangePrice(val) {
@@ -1049,13 +1366,15 @@
         }
 
         function closeOrderModal() {
-            document.getElementById("order-modal").classList.add("hidden");
+            document.getElementById("order-modal").classList.remove("active");
             document.getElementById("order-form").reset();
-            document.body.classList.remove("modal-open");
+            setTimeout(() => {
+                document.body.classList.remove("modal-open");
+            }, 300);
         }
 
-        function submitToWhatsApp(e) {
-            e.preventDefault();
+        function submitToWhatsApp(event) {
+            event.preventDefault();
 
             if (!selectedApp || !selectedVariant) return;
 
@@ -1092,9 +1411,9 @@ Mohon info apakah stok aplikasi premium dengan spesifikasi di atas masih tersedi
         categoryTabs.forEach(btn => {
             btn.addEventListener("click", () => {
                 categoryTabs.forEach(b => {
-                    b.className = "cat-btn px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold bg-brand-900 text-gray-300 hover:text-white border border-brand-700/70 transition-all";
+                    b.className = "cat-btn px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold bg-brand-900 text-gray-300 hover:text-white border border-brand-700/70 hover:border-purple-500/50 hover:bg-brand-800 transition-all duration-300";
                 });
-                btn.className = "cat-btn px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all gradient-btn text-white";
+                btn.className = "cat-btn px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all duration-300 gradient-btn text-white";
                 currentCategory = btn.dataset.cat;
                 renderCatalog();
             });
@@ -1126,7 +1445,6 @@ Mohon info apakah stok aplikasi premium dengan spesifikasi di atas masih tersedi
         });
 
         document.addEventListener("DOMContentLoaded", () => {
-            document.getElementById("brand-title").textContent = STORE_CONFIG.name;
             renderCatalog();
         });
     </script>
