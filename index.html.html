@@ -57,33 +57,33 @@
             box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
         }
 
-        /* Kartu Produk Ringkas Bergradasi Mewah */
+        /* Kartu Produk Bergradasi Mewah & Hidup */
         .gradient-card {
             background: linear-gradient(135deg, rgba(30, 27, 75, 0.85) 0%, rgba(15, 23, 42, 0.95) 50%, rgba(39, 24, 75, 0.85) 100%);
             backdrop-filter: blur(16px);
             -webkit-backdrop-filter: blur(16px);
             border: 1px solid rgba(168, 85, 247, 0.25);
-            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-            box-shadow: 0 10px 25px -10px rgba(124, 58, 237, 0.2);
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            box-shadow: 0 10px 30px -10px rgba(124, 58, 237, 0.2);
         }
 
         .gradient-card:hover {
             border-color: rgba(168, 85, 247, 0.7);
-            box-shadow: 0 15px 35px -10px rgba(168, 85, 247, 0.45);
-            transform: translateY(-4px);
+            box-shadow: 0 20px 45px -12px rgba(168, 85, 247, 0.45);
+            transform: translateY(-6px);
         }
 
         /* Tombol Utama Gradasi Estetik */
         .gradient-btn {
             background: linear-gradient(135deg, #6366f1 0%, #a855f7 50%, #ec4899 100%);
             background-size: 200% auto;
-            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-            box-shadow: 0 4px 15px rgba(124, 58, 237, 0.35);
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            box-shadow: 0 4px 20px rgba(124, 58, 237, 0.35);
         }
 
         .gradient-btn:hover {
             background-position: right center;
-            box-shadow: 0 6px 20px rgba(168, 85, 247, 0.6);
+            box-shadow: 0 8px 25px rgba(168, 85, 247, 0.6);
             transform: translateY(-2px);
         }
 
@@ -156,7 +156,7 @@
             box-shadow: 0 0 25px rgba(168, 85, 247, 0.35);
         }
 
-        /* Kotak Item Modal */
+        /* Kotak Item Modal dengan Gradasi Estetik */
         .modal-item-box {
             background: linear-gradient(135deg, rgba(30, 27, 75, 0.5) 0%, rgba(15, 23, 42, 0.8) 100%);
             border: 1px solid rgba(168, 85, 247, 0.25);
@@ -216,7 +216,7 @@
             opacity: 1;
         }
 
-        /* SCROLLBAR ELEGAN (TANPA GARIS HITAM KAKU) */
+        /* 🌟 PERBAIKAN SCROLLBAR ELEGAN (TANPA GARIS HITAM KAKU) */
         ::-webkit-scrollbar { 
             width: 6px; 
             height: 6px;
@@ -234,6 +234,7 @@
             box-shadow: 0 0 10px rgba(168, 85, 247, 0.8);
         }
 
+        /* Untuk browser Firefox */
         * {
             scrollbar-width: thin;
             scrollbar-color: rgba(168, 85, 247, 0.5) transparent;
@@ -268,8 +269,8 @@
     </header>
 
     <!-- Main Content -->
-    <main class="mb-auto py-8 px-4 sm:px-6 max-w-7xl mx-auto w-full">
-        <section class="text-center max-w-4xl mx-auto pt-2 pb-8 space-y-3">
+    <main class="mb-auto py-10 px-4 sm:px-6 max-w-7xl mx-auto w-full">
+        <section class="text-center max-w-4xl mx-auto pt-4 pb-12 space-y-5">
             <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-tight text-white">
                 Nikmati Akses Hiburan & Fitur Pro dengan <span class="gradient-title-text block sm:inline">Aplikasi Premium Pilihan</span>
             </h1>
@@ -279,40 +280,40 @@
         </section>
 
         <!-- Search & Categories -->
-        <section class="space-y-4 max-w-5xl mx-auto mb-8">
+        <section class="space-y-6 max-w-5xl mx-auto mb-12">
             <div class="relative max-w-3xl mx-auto">
                 <i class="fa-solid fa-magnifying-glass text-purple-400 absolute left-4 top-1/2 -translate-y-1/2 text-sm z-10 pointer-events-none"></i>
-                <input type="text" id="search-input" placeholder="Cari aplikasi (Netflix, ChatGPT, Canva, Spotify, CapCut)..." class="w-full pl-12 pr-12 py-3.5 rounded-2xl bg-gradient-to-r from-indigo-950/90 via-slate-900/90 to-purple-950/90 border border-purple-500/30 text-white placeholder-gray-400 text-sm focus:outline-none focus:border-purple-400 focus:ring-2 focus:ring-purple-500/30 transition-all shadow-inner">
+                <input type="text" id="search-input" placeholder="Cari aplikasi (Netflix, ChatGPT, Canva, Spotify, CapCut)... tekan Enter untuk mencari" class="w-full pl-12 pr-12 py-4 rounded-2xl bg-gradient-to-r from-indigo-950/90 via-slate-900/90 to-purple-950/90 border border-purple-500/30 text-white placeholder-gray-400 text-sm focus:outline-none focus:border-purple-400 focus:ring-2 focus:ring-purple-500/30 transition-all shadow-inner">
                 <button id="clear-search" class="hidden absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-white p-2 transition-transform hover:scale-110">
                     <i class="fa-solid fa-xmark"></i>
                 </button>
             </div>
 
-            <!-- Tab Kategori -->
-            <div class="flex flex-wrap items-center justify-center gap-2 pt-1" id="category-tabs">
-                <button data-cat="all" class="cat-btn px-4 py-2 rounded-xl text-xs font-bold transition-all duration-300 gradient-btn text-white">
+            <!-- Tab Kategori Bergradasi Estetik -->
+            <div class="flex flex-wrap items-center justify-center gap-2.5 pt-2" id="category-tabs">
+                <button data-cat="all" class="cat-btn px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all duration-300 gradient-btn text-white">
                     <i class="fa-solid fa-border-all mr-1.5"></i> Semua Katalog
                 </button>
-                <button data-cat="nonton" class="cat-btn cat-tab-aesthetic px-4 py-2 rounded-xl text-xs font-bold text-gray-200 hover:text-white">
+                <button data-cat="nonton" class="cat-btn cat-tab-aesthetic px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold text-gray-200 hover:text-white">
                     <i class="fa-solid fa-film mr-1.5 text-purple-400"></i> Sinema & Streaming
                 </button>
-                <button data-cat="edu" class="cat-btn cat-tab-aesthetic px-4 py-2 rounded-xl text-xs font-bold text-gray-200 hover:text-white">
+                <button data-cat="edu" class="cat-btn cat-tab-aesthetic px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold text-gray-200 hover:text-white">
                     <i class="fa-solid fa-graduation-cap mr-1.5 text-indigo-400"></i> Pendidikan & AI
                 </button>
-                <button data-cat="editing" class="cat-btn cat-tab-aesthetic px-4 py-2 rounded-xl text-xs font-bold text-gray-200 hover:text-white">
+                <button data-cat="editing" class="cat-btn cat-tab-aesthetic px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold text-gray-200 hover:text-white">
                     <i class="fa-solid fa-wand-magic-sparkles mr-1.5 text-pink-400"></i> Kreatif & Studio Editing
                 </button>
-                <button data-cat="music" class="cat-btn cat-tab-aesthetic px-4 py-2 rounded-xl text-xs font-bold text-gray-200 hover:text-white">
+                <button data-cat="music" class="cat-btn cat-tab-aesthetic px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold text-gray-200 hover:text-white">
                     <i class="fa-solid fa-music mr-1.5 text-emerald-400"></i> Musik & Audio Premium
                 </button>
             </div>
         </section>
 
-        <!-- Product Grid RINGKAS -->
+        <!-- Product Grid -->
         <section>
-            <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4"></div>
-            <div id="empty-state" class="hidden text-center py-16">
-                <i class="fa-solid fa-magnifying-glass-minus text-4xl text-purple-400 mb-3 block animate-bounce"></i>
+            <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"></div>
+            <div id="empty-state" class="hidden text-center py-20">
+                <i class="fa-solid fa-magnifying-glass-minus text-4xl text-purple-400 mb-4 block animate-bounce"></i>
                 <p class="text-gray-300 text-sm font-semibold mb-3">Aplikasi yang Anda cari tidak ditemukan.</p>
                 <button id="reset-filter-btn" class="px-4 py-2 rounded-xl gradient-btn text-white text-xs font-bold">
                     Tampilkan Semua Aplikasi
@@ -321,11 +322,11 @@
         </section>
 
         <!-- Contact Section -->
-        <section class="mt-14 pt-8 border-t border-purple-500/20 text-center max-w-xl mx-auto space-y-3">
+        <section class="mt-20 pt-10 border-t border-purple-500/20 text-center max-w-xl mx-auto space-y-4">
             <p class="text-xs text-gray-300 font-medium">Layanan Pelanggan & Konsultasi Resmi</p>
             <div class="flex items-center justify-center gap-3">
-                <a href="https://wa.me/62895409047979" target="_blank" class="px-6 py-3 rounded-2xl wa-btn-glow text-white font-bold text-sm inline-flex items-center gap-2.5">
-                    <i class="fa-brands fa-whatsapp text-lg"></i>
+                <a href="https://wa.me/62895409047979" target="_blank" class="px-6 py-3.5 rounded-2xl wa-btn-glow text-white font-bold text-sm inline-flex items-center gap-2.5">
+                    <i class="fa-brands fa-whatsapp text-xl"></i>
                     <span>Chat Admin via WhatsApp</span>
                 </a>
             </div>
@@ -642,6 +643,11 @@
                 iconClass: "fa-solid fa-n text-red-500",
                 badge: "Terlaris",
                 guideText: "Netflix menyediakan varian 1P1U (1 Profil 1 Pengguna dengan PIN mandiri), 1P2U (1 Profil untuk 2 pengguna bergantian), Semi Private (jumlah pembatas layar lebih sedikit dan stabil), hingga Private Full Account (dikuasai penuh secara mandiri).",
+                highlights: [
+                    "Resolusi Ultra HD (4K) + HDR",
+                    "Tanpa Iklan & Akses Bebas On-Hold",
+                    "Dapat Digunakan di Smart TV, HP & Laptop"
+                ],
                 variants: [
                     { id: "netflix-1p1u-1d", name: "1P1U", duration: "1 Hari", plan: "Sharing (1P1U)", device: "", price: 5500 },
                     { id: "netflix-1p1u-3d", name: "1P1U", duration: "3 Hari", plan: "Sharing (1P1U)", device: "", price: 10000 },
@@ -663,6 +669,11 @@
                 iconClass: "fa-solid fa-play text-yellow-400",
                 badge: "Populer",
                 guideText: "Loklok tersedia dalam pilihan Standard dan Basic Sharing untuk menikmati film, series, serta anime lengkap dengan subtitle bahasa Indonesia resmi.",
+                highlights: [
+                    "Akses Film, Series & Anime Terlengkap",
+                    "Kualitas Streaming HD Tanpa Gangguan",
+                    "Subtitle Bahasa Indonesia Resmi"
+                ],
                 variants: [
                     { id: "loklok-std-1m", name: "Standard Sharing", duration: "1 Bulan", plan: "Standard Sharing", device: "", price: 22000 },
                     { id: "loklok-basic-1m", name: "Basic Sharing", duration: "1 Bulan", plan: "Basic Sharing", device: "", price: 17000 }
@@ -675,6 +686,11 @@
                 iconClass: "fa-solid fa-tv text-pink-500",
                 badge: "",
                 guideText: "Drama Box menggunakan sistem sharing untuk membuka semua episode drama pendek VIP secara penuh tanpa terkunci.",
+                highlights: [
+                    "Koleksi Drama Pendek Eksklusif & Viral",
+                    "Buka Semua Episode VIP Bebas Kunci",
+                    "Teks Bahasa Indonesia Jernih"
+                ],
                 variants: [
                     { id: "dramabox-sh-1m", name: "Sharing", duration: "1 Bulan", plan: "Sharing", device: "", price: 15000 }
                 ]
@@ -686,6 +702,11 @@
                 iconClass: "fa-solid fa-ghost text-pink-400",
                 badge: "",
                 guideText: "Bstation menyediakan opsi sharing durasi fleksibel (1 bulan hingga 1 tahun) untuk nonton anime dan donghua kualitas HD tanpa iklan.",
+                highlights: [
+                    "Streaming Anime & Donghua Kualitas HD 1080P",
+                    "Fitur Download Offline Sepuasnya",
+                    "Bebas Iklan Selama Berlangganan"
+                ],
                 variants: [
                     { id: "bstation-sh-1m", name: "Sharing", duration: "1 Bulan", plan: "Sharing", device: "", price: 10000 },
                     { id: "bstation-sh-3m", name: "Sharing", duration: "3 Bulan", plan: "Sharing", device: "", price: 15000 },
@@ -699,6 +720,11 @@
                 iconClass: "fa-solid fa-video text-orange-500",
                 badge: "Trending",
                 guideText: "WeTV tersedia dalam opsi sharing beberapa pengguna atau akun private mandiri untuk menikmati drama Asia lebih cepat.",
+                highlights: [
+                    "Nonton Drama Asia & Series Lokal Lebih Awal",
+                    "Kualitas Video Hingga Full HD 1080P",
+                    "Mendukung Multi-device & Subtitle Indo"
+                ],
                 variants: [
                     { id: "wetv-sh6-1m", name: "Sharing 6 User", duration: "1 Bulan", plan: "Sharing 6 User", device: "", price: 10000 },
                     { id: "wetv-sh3-1m", name: "Sharing 3 User", duration: "1 Bulan", plan: "Sharing 3 User", device: "", price: 16000 },
@@ -713,6 +739,11 @@
                 iconClass: "fa-solid fa-eye text-blue-400",
                 badge: "",
                 guideText: "Vision+ menyediakan opsi sharing 2 user atau private untuk tayangan live TV nasional dan original series eksklusif.",
+                highlights: [
+                    "Tayangan Live TV Nasional & Internasional",
+                    "Akses Eksklusif Original Series Vision+",
+                    "Fitur Catch-up TV Hingga 7 Hari"
+                ],
                 variants: [
                     { id: "vision-sh2-1m", name: "Sharing 2 User", duration: "1 Bulan", plan: "Sharing 2 User", device: "", price: 18000 },
                     { id: "vision-priv-1m", name: "Private", duration: "1 Bulan", plan: "Private", device: "", price: 27000 }
@@ -725,6 +756,11 @@
                 iconClass: "fa-solid fa-film text-purple-400",
                 badge: "",
                 guideText: "Movie Box tersedia khusus untuk perangkat Android atau iOS dengan pilihan durasi bulanan maupun tahunan.",
+                highlights: [
+                    "Katalog Film Bioskop Lengkap & Terbaru",
+                    "Putar Video Cepat Bebas Buffering",
+                    "Tersedia Khusus Perangkat Android & iOS"
+                ],
                 variants: [
                     { id: "moviebox-android-1m", name: "Android", duration: "1 Bulan", plan: "Standard", device: "Android", price: 13000 },
                     { id: "moviebox-ios-1m", name: "iOS", duration: "1 Bulan", plan: "Standard", device: "iOS", price: 15000 },
@@ -738,6 +774,11 @@
                 iconClass: "fa-solid fa-clapperboard text-blue-500",
                 badge: "Terlaris",
                 guideText: "Disney+ menawarkan varian sharing 6 hingga 10 user serta opsi harian dengan kisaran harga terjangkau.",
+                highlights: [
+                    "Film Blockbuster Marvel, Disney & Star Wars",
+                    "Resolusi Tinggi Ultra HD & IMAX Enhanced",
+                    "Audios & Subtitle Indonesia Lengkap"
+                ],
                 variants: [
                     { id: "disney-sh10-1m", name: "Sharing 10 User", duration: "1 Bulan", plan: "Sharing 10 User", device: "", price: 20000 },
                     { id: "disney-sh6-1m", name: "Sharing 6 User", duration: "1 Bulan", plan: "Sharing 6 User", device: "", price: 25000 },
@@ -751,6 +792,11 @@
                 iconClass: "fa-solid fa-compact-disc text-amber-400",
                 badge: "",
                 guideText: "Melolo menyediakan pilihan paket sharing all device dengan durasi 1 bulan hingga 1 tahun penuh.",
+                highlights: [
+                    "Streaming Video & Konten Hiburan Kreatif",
+                    "Akses Semua Fitur VIP Bebas Batas",
+                    "Mendukung Pemutaran Semua Perangkat"
+                ],
                 variants: [
                     { id: "melolo-alldev-1m", name: "Sharing All Device", duration: "1 Bulan", plan: "Sharing All Device", device: "", price: 12000 },
                     { id: "melolo-sh-3m", name: "Sharing", duration: "3 Bulan", plan: "Sharing", device: "", price: 15000 },
@@ -765,6 +811,11 @@
                 iconClass: "fa-solid fa-circle-play text-sky-400",
                 badge: "",
                 guideText: "Prime Video tersedia dalam opsi sharing dan private untuk menikmati konten Amazon Originals berkualitas 4K.",
+                highlights: [
+                    "Akses Amazon Originals Eksklusif",
+                    "Resolusi Kualitas 4K Ultra HD & HDR",
+                    "Fitur Download & Nonton Offline"
+                ],
                 variants: [
                     { id: "prime-sh-1m", name: "Sharing", duration: "1 Bulan", plan: "Sharing", device: "", price: 10000 },
                     { id: "prime-priv-1m", name: "Private", duration: "1 Bulan", plan: "Private", device: "", price: 15000 }
@@ -777,6 +828,11 @@
                 iconClass: "fa-solid fa-video-slash text-cyan-400",
                 badge: "",
                 guideText: "Youku menyediakan pilihan paket sharing bulanan hingga tahunan untuk streaming drama mandarin dan variety show.",
+                highlights: [
+                    "Drama Mandarin & Variety Show Populer",
+                    "Kualitas Gambar Jernih HD 1080P",
+                    "Fitur Bebas Iklan Saat Nonton"
+                ],
                 variants: [
                     { id: "youku-sh-1m", name: "Sharing", duration: "1 Bulan", plan: "Sharing", device: "", price: 10000 },
                     { id: "youku-sh-3m", name: "Sharing", duration: "3 Bulan", plan: "Sharing", device: "", price: 17000 },
@@ -790,6 +846,11 @@
                 iconClass: "fa-solid fa-film text-rose-500",
                 badge: "",
                 guideText: "Reelshort menggunakan sistem sharing agar Anda dapat menikmati semua episode serial vertikal tanpa perlu membeli koin.",
+                highlights: [
+                    "Akses Semua Episode Serial Vertikal Eksklusif",
+                    "Fitur Buka Kunci Tanpa Perlu Koin",
+                    "Tampilan Nyaman Di Layar Smartphone"
+                ],
                 variants: [
                     { id: "reelshort-sh-1m", name: "Sharing", duration: "1 Bulan", plan: "Sharing", device: "", price: 18000 }
                 ]
@@ -801,6 +862,11 @@
                 iconClass: "fa-solid fa-circle-h text-purple-600",
                 badge: "",
                 guideText: "HBO Max menyediakan paket standard sharing untuk menikmati tayangan eksklusif Warner Bros dan Dolby Atmos.",
+                highlights: [
+                    "Tayangan Eksklusif Warner Bros & HBO Originals",
+                    "Kualitas Audio Dolby Atmos & Video 4K",
+                    "Akses Serial Populer Dunia"
+                ],
                 variants: [
                     { id: "hbomax-std-1m", name: "Standard Sharing", duration: "1 Bulan", plan: "Standard Sharing", device: "", price: 13000 }
                 ]
@@ -812,6 +878,11 @@
                 iconClass: "fa-solid fa-circle-play text-red-600",
                 badge: "Populer",
                 guideText: "Vidio memiliki kategori Plat TV (khusus Smart TV), Plat Mobile Private/Sharing (khusus HP), serta All Device untuk fleksibilitas menonton olahraga dan liga sepak bola.",
+                highlights: [
+                    "Live Streaming Olahraga & Liga Sepak Bola",
+                    "Vidio Original Series Kualitas HD",
+                    "Tersedia Opsi TV, Mobile & All Device"
+                ],
                 variants: [
                     { id: "vidio-tv-1y", name: "Plat TV", duration: "1 Tahun", plan: "Plat TV", device: "Smart TV", price: 7000 },
                     { id: "vidio-mobpriv-1m", name: "Plat Mobile Private", duration: "1 Bulan", plan: "Private Mobile", device: "Mobile", price: 30000 },
@@ -827,6 +898,11 @@
                 iconClass: "fa-brands fa-youtube text-red-500",
                 badge: "Rekomendasi",
                 guideText: "YouTube tersedia dalam paket Family Plan (diundang ke grup keluarga), Individual Plan (akun pribadi), dan Family Head (posisi pengelola grup).",
+                highlights: [
+                    "Nonton Semua Video Bebas Jeda Iklan",
+                    "Putar Di Latar Belakang (Background Play)",
+                    "Termasuk Akses Gratis YouTube Music Premium"
+                ],
                 variants: [
                     { id: "yt-family-1m", name: "Family Plan", duration: "1 Bulan", plan: "Family Plan", device: "", price: 7000 },
                     { id: "yt-indiv-1m", name: "Individual Plan", duration: "1 Bulan", plan: "Individual Plan", device: "", price: 10000 },
@@ -840,6 +916,11 @@
                 iconClass: "fa-solid fa-play-circle text-yellow-500",
                 badge: "",
                 guideText: "Viu menyediakan paket Private Unlimited dengan durasi bulanan, tahunan, hingga lifetime untuk nonton drakor sepuasnya.",
+                highlights: [
+                    "Drama Korea & Asia Paling Update",
+                    "Download Bebas Dan Nonton Offline",
+                    "Tanpa Gangguan Iklan Saat Streaming"
+                ],
                 variants: [
                     { id: "viu-priv-1m", name: "Private Unlimited", duration: "1 Bulan", plan: "Private Unlimited", device: "", price: 5000 },
                     { id: "viu-priv-life", name: "Private Unlimited", duration: "Lifetime", plan: "Private Unlimited", device: "", price: 5000 },
@@ -853,6 +934,11 @@
                 iconClass: "fa-solid fa-circle-play text-emerald-400",
                 badge: "",
                 guideText: "iQIYI menyediakan varian sharing standard/premium serta private standard/premium untuk drama china dan anime VIP.",
+                highlights: [
+                    "Drama China & Anime Kualitas VIP Full HD",
+                    "Fitur Dolby Atmos & Subtitle Indonesia",
+                    "Akses Episode Terbaru Lebih Cepat"
+                ],
                 variants: [
                     { id: "iqiyi-shstd-1m", name: "Sharing Standard", duration: "1 Bulan", plan: "Sharing Standard", device: "", price: 11000 },
                     { id: "iqiyi-shstd-3m", name: "Sharing Standard", duration: "3 Bulan", plan: "Sharing Standard", device: "", price: 15000 },
@@ -871,6 +957,11 @@
                 iconClass: "fa-solid fa-robot text-teal-400",
                 badge: "AI Favorite",
                 guideText: "ChatGPT tersedia dalam opsi Plus Private Full Warrant (garansi penuh), Private No Warrant (harga hemat tanpa garansi), serta opsi sharing.",
+                highlights: [
+                    "Akses Model Tercanggih GPT-4o Terbaru",
+                    "Fitur Analisis Data, Vision & Koding",
+                    "Respon Super Cepat Tanpa Antrean"
+                ],
                 variants: [
                     { id: "gpt-plus-full-1m", name: "Plus Private Full Warrant", duration: "1 Bulan", plan: "Private Full Warrant", device: "", price: 35000 },
                     { id: "gpt-plus-nowar-1m", name: "Plus Private No Warrant", duration: "1 Bulan", plan: "Private No Warrant", device: "", price: 10000 },
@@ -886,6 +977,11 @@
                 iconClass: "fa-solid fa-video text-blue-400",
                 badge: "",
                 guideText: "Zoom menyediakan paket private berdurasi 14 hari dengan kapasitas meeting besar tanpa batas 40 menit.",
+                highlights: [
+                    "Meeting Berdurasi Tanpa Batas 40 Menit",
+                    "Kapasitas Peserta Hingga 300 Orang",
+                    "Fitur Cloud Recording & Co-Host"
+                ],
                 variants: [
                     { id: "zoom-priv-14d", name: "Private", duration: "14 Hari", plan: "Private", device: "", price: 12000 }
                 ]
@@ -897,6 +993,11 @@
                 iconClass: "fa-solid fa-brain text-teal-300",
                 badge: "",
                 guideText: "Brainly menggunakan paket sharing 1 tahun penuh untuk akses jawaban ahli bebas iklan.",
+                highlights: [
+                    "Akses Jawaban Verifikasi Ahli Tanpa Iklan",
+                    "Buka Semua Kunci Soal Pelajaran",
+                    "Bantuan Belajar 24 Jam Instan"
+                ],
                 variants: [
                     { id: "brainly-sh-1y", name: "Sharing", duration: "1 Tahun", plan: "Sharing", device: "", price: 15000 }
                 ]
@@ -908,6 +1009,11 @@
                 iconClass: "fa-solid fa-feather-pointed text-lime-400",
                 badge: "Popular",
                 guideText: "Duolingo menyediakan paket Family Plan, Seller Account, dan Family Head untuk belajar bahasa dengan nyawa tak terbatas.",
+                highlights: [
+                    "Fitur Super Duolingo Bebas Iklan",
+                    "Hati Nyawa Tak Terbatas (Unlimited Hearts)",
+                    "Uji Kemampuan Bahasa Sepuasnya"
+                ],
                 variants: [
                     { id: "duo-fam-7d", name: "Family Plan", duration: "7 Hari", plan: "Family Plan", device: "", price: 7000 },
                     { id: "duo-seller-7d", name: "Seller Account", duration: "7 Hari", plan: "Seller Account", device: "", price: 7500 },
@@ -928,6 +1034,11 @@
                 iconClass: "fa-solid fa-palette text-cyan-300",
                 badge: "Best Seller",
                 guideText: "Canva tersedia dalam peran Member, Admin, Designer, Head, serta Lifetime Education untuk akses jutaan template pro.",
+                highlights: [
+                    "Akses Jutaan Template, Elemen & Font Pro",
+                    "Fitur Penghapus Latar Belakang (Magic Eraser)",
+                    "Ekspor Gambar & Video Kualitas Maksimal"
+                ],
                 variants: [
                     { id: "canva-mem-1m", name: "Member", duration: "1 Bulan", plan: "Member", device: "", price: 3000 },
                     { id: "canva-adm-1m", name: "Admin", duration: "1 Bulan", plan: "Admin", device: "", price: 5000 },
@@ -943,6 +1054,11 @@
                 iconClass: "fa-solid fa-paintbrush text-indigo-400",
                 badge: "",
                 guideText: "Picsart menyediakan opsi sharing dan private untuk menikmati aset gold unlocked tanpa watermark.",
+                highlights: [
+                    "Aset Premium, Filter & Stiker Gold Unlocked",
+                    "Bebas Watermark & Bebas Iklan",
+                    "Fitur Edit Foto AI Canggih"
+                ],
                 variants: [
                     { id: "picsart-sh-1m", name: "Sharing", duration: "1 Bulan", plan: "Sharing", device: "", price: 8000 },
                     { id: "picsart-priv-1m", name: "Private", duration: "1 Bulan", plan: "Private", device: "", price: 15000 }
@@ -955,6 +1071,11 @@
                 iconClass: "fa-solid fa-wand-magic-sparkles text-pink-400",
                 badge: "",
                 guideText: "Wink tersedia khusus untuk platform Android (Sharing / Private Seller) dan iOS (Sharing / Private) untuk retouch video 4K.",
+                highlights: [
+                    "Retouch Video Wajah & Tubuh Kualitas 4K",
+                    "Restorasi Video Buram Menjadi Jernih",
+                    "Buka Semua Fitur VIP Eksklusif"
+                ],
                 variants: [
                     { id: "wink-andsh-7d", name: "Android Sharing", duration: "7 Hari", plan: "Sharing", device: "Android", price: 3000 },
                     { id: "wink-andpriv-7d", name: "Android Private Seller Account", duration: "7 Hari", plan: "Private Seller Account", device: "Android", price: 8000 },
@@ -969,6 +1090,11 @@
                 iconClass: "fa-solid fa-scissors text-gray-200",
                 badge: "Popular",
                 guideText: "CapCut Pro menyediakan varian Pro Sharing dan Pro Private dengan durasi harian hingga bulanan.",
+                highlights: [
+                    "Akses Semua Efek, Transisi & Teks Pro",
+                    "Fitur Auto Caption & AI Body Effects",
+                    "Ekspor Video Bebas Watermark Kualitas 60FPS"
+                ],
                 variants: [
                     { id: "capcut-sh-1d", name: "Pro Sharing", duration: "1 Hari", plan: "Pro Sharing", device: "", price: 5000 },
                     { id: "capcut-sh-7d", name: "Pro Sharing", duration: "7 Hari", plan: "Pro Sharing", device: "", price: 7000 },
@@ -984,6 +1110,11 @@
                 iconClass: "fa-solid fa-sliders text-emerald-400",
                 badge: "",
                 guideText: "Alight Motion menyediakan paket Seller Account berdurasi 1 tahun untuk fitur motion graphics dan preset XML.",
+                highlights: [
+                    "Fitur Motion Graphics & Editing Kompleks",
+                    "Impor Font, Preset & Format XML",
+                    "Ekspor Video Tanpa Watermark"
+                ],
                 variants: [
                     { id: "alight-seller-1y", name: "Seller Account", duration: "1 Tahun", plan: "Seller Account", device: "", price: 5000 }
                 ]
@@ -997,6 +1128,11 @@
                 iconClass: "fa-brands fa-spotify text-emerald-500",
                 badge: "Terlaris",
                 guideText: "Spotify tersedia dalam varian No Warrant (harga hemat), Individual Plan, dan Family Plan bergaransi penuh.",
+                highlights: [
+                    "Dengarkan Jutaan Lagu Bebas Iklan",
+                    "Fitur Download Lagu & Putar Offline",
+                    "Kualitas Audio Sangat Tinggi (Very High)"
+                ],
                 variants: [
                     { id: "spotify-nowar-3m", name: "No Warrant", duration: "3 Bulan", plan: "Standard No Warrant", device: "", price: 20000 },
                     { id: "spotify-indiv-1m", name: "Individual Plan Full Warrant", duration: "1 Bulan", plan: "Individual Plan", device: "", price: 18000 },
@@ -1010,6 +1146,11 @@
                 iconClass: "fa-brands fa-apple text-rose-400",
                 badge: "",
                 guideText: "Apple Music menyediakan paket Head dan Family Plan untuk menikmati format Lossless & Spatial Audio.",
+                highlights: [
+                    "Format Lossless Audio & Spatial Audio (Dolby Atmos)",
+                    "Akses Katalog 100+ Juta Lagu Bebas Iklan",
+                    "Dukungan Lirik Lagu Real-time Interaktif"
+                ],
                 variants: [
                     { id: "apple-head-1m", name: "Head", duration: "1 Bulan", plan: "Head Plan", device: "Apple / All Device", price: 15000 },
                     { id: "apple-fam-1m", name: "Family Plan", duration: "1 Bulan", plan: "Family Plan", device: "Apple / All Device", price: 10000 }
@@ -1086,35 +1227,51 @@
 
             filteredApps.forEach(app => {
                 const card = document.createElement("div");
-                card.className = "gradient-card rounded-2xl p-4 flex flex-col justify-between";
+                card.className = "gradient-card rounded-3xl p-6 flex flex-col justify-between";
 
                 const variantCount = app.variants.length;
                 const priceSummary = getAppPriceSummary(app);
 
+                let highlightsHtml = "";
+                if (app.highlights && app.highlights.length > 0) {
+                    highlightsHtml = `<ul class="space-y-1.5 mb-6 text-xs text-gray-300">`;
+                    app.highlights.forEach(item => {
+                        highlightsHtml += `
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-circle-check text-purple-400 text-[11px] mt-0.5 flex-shrink-0"></i>
+                                <span>${item}</span>
+                            </li>
+                        `;
+                    });
+                    highlightsHtml += `</ul>`;
+                }
+
                 card.innerHTML = `
                     <div>
-                        <div class="flex items-center justify-between mb-3">
-                            <div class="w-10 h-10 rounded-xl bg-slate-950/80 border border-purple-500/30 flex items-center justify-center text-xl shadow-inner flex-shrink-0">
+                        <div class="flex items-center justify-between mb-5">
+                            <div class="w-12 h-12 rounded-2xl bg-slate-950/80 border border-purple-500/30 flex items-center justify-center text-2xl shadow-inner flex-shrink-0">
                                 <i class="${app.iconClass}"></i>
                             </div>
-                            ${app.badge ? `<span class="px-2.5 py-0.5 rounded-full text-[9px] font-extrabold uppercase tracking-wider bg-gradient-to-r from-purple-600/30 to-pink-600/30 text-purple-200 border border-purple-500/40 flex-shrink-0">${app.badge}</span>` : `<span class="text-[9px] text-gray-400 uppercase font-bold flex-shrink-0">${getCategoryLabel(app.category)}</span>`}
+                            ${app.badge ? `<span class="px-3 py-1 rounded-full text-[10px] font-extrabold uppercase tracking-wider bg-gradient-to-r from-purple-600/30 to-pink-600/30 text-purple-200 border border-purple-500/40 flex-shrink-0">${app.badge}</span>` : `<span class="text-[10px] text-gray-400 uppercase font-bold flex-shrink-0">${getCategoryLabel(app.category)}</span>`}
                         </div>
 
-                        <h3 class="text-base font-extrabold text-white mb-0.5">${app.name}</h3>
-                        <p class="text-[11px] text-purple-300 font-semibold mb-3 flex items-center gap-1">
-                            <i class="fa-solid fa-layer-group text-[9px]"></i>
-                            <span>${variantCount} Pilihan Paket</span>
+                        <h3 class="text-xl font-extrabold text-white mb-1">${app.name}</h3>
+                        <p class="text-xs text-purple-300 font-semibold mb-4 flex items-center gap-1.5">
+                            <i class="fa-solid fa-layer-group text-[10px]"></i>
+                            <span>${variantCount} Pilihan Paket Tersedia</span>
                         </p>
+
+                        ${highlightsHtml}
                     </div>
 
-                    <div class="pt-3 border-t border-purple-500/20 flex items-center justify-between gap-2">
+                    <div class="pt-4 border-t border-purple-500/20 flex items-end justify-between gap-3">
                         <div class="min-w-0 flex-1">
-                            <span class="block text-[9px] font-bold text-gray-400 uppercase leading-none mb-1">Mulai Dari</span>
-                            <span class="text-xs sm:text-sm font-extrabold text-white truncate block leading-none">${priceSummary}</span>
+                            <span class="block text-[10px] font-bold text-gray-400 uppercase">Mulai Dari</span>
+                            <span class="text-sm sm:text-base lg:text-lg font-extrabold text-white truncate block">${priceSummary}</span>
                         </div>
-                        <button onclick="openVariantModal('${app.id}')" class="px-3 py-2 rounded-xl gradient-btn text-white text-[11px] font-extrabold flex items-center justify-center gap-1.5 whitespace-nowrap flex-shrink-0">
-                            <span>Pilih</span>
-                            <i class="fa-solid fa-chevron-right text-[9px]"></i>
+                        <button onclick="openVariantModal('${app.id}')" class="px-4 py-2.5 rounded-xl gradient-btn text-white text-xs font-extrabold flex items-center justify-center gap-2 whitespace-nowrap flex-shrink-0">
+                            <span>Lihat Paket</span>
+                            <i class="fa-solid fa-chevron-right text-[10px]"></i>
                         </button>
                     </div>
                 `;
@@ -1336,9 +1493,9 @@ Mohon info apakah stok aplikasi premium dengan spesifikasi di atas masih tersedi
         categoryTabs.forEach(btn => {
             btn.addEventListener("click", () => {
                 categoryTabs.forEach(b => {
-                    b.className = "cat-btn cat-tab-aesthetic px-4 py-2 rounded-xl text-xs font-bold text-gray-200 hover:text-white";
+                    b.className = "cat-btn cat-tab-aesthetic px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold text-gray-200 hover:text-white";
                 });
-                btn.className = "cat-btn px-4 py-2 rounded-xl text-xs font-bold transition-all duration-300 gradient-btn text-white";
+                btn.className = "cat-btn px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all duration-300 gradient-btn text-white";
                 currentCategory = btn.dataset.cat;
                 renderCatalog();
             });
