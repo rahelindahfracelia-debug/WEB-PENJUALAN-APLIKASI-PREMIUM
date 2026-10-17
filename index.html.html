@@ -13,11 +13,11 @@
                 extend: {
                     colors: {
                         brand: {
-                            950: '#060812',
-                            900: '#0b0f20',
-                            800: '#131932',
-                            700: '#1e274a',
-                            600: '#2d3a66'
+                            950: '#070a17',
+                            900: '#10162f',
+                            800: '#1a2347',
+                            700: '#283567',
+                            600: '#3b4b8a'
                         }
                     },
                     fontFamily: {
@@ -34,11 +34,11 @@
     <style>
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
-            background-color: #060812;
+            background-color: #070a17;
             background-image: 
-                radial-gradient(circle at 50% 10%, rgba(99, 102, 241, 0.22) 0%, transparent 50%),
-                radial-gradient(circle at 85% 85%, rgba(168, 85, 247, 0.15) 0%, transparent 45%),
-                radial-gradient(circle at 15% 50%, rgba(59, 130, 246, 0.12) 0%, transparent 50%);
+                radial-gradient(circle at 50% 10%, rgba(99, 102, 241, 0.25) 0%, transparent 50%),
+                radial-gradient(circle at 85% 85%, rgba(168, 85, 247, 0.18) 0%, transparent 45%),
+                radial-gradient(circle at 15% 50%, rgba(59, 130, 246, 0.15) 0%, transparent 50%);
             background-attachment: fixed;
             overflow-x: hidden;
         }
@@ -49,10 +49,10 @@
         }
 
         .gradient-card {
-            background: linear-gradient(145deg, rgba(19, 25, 50, 0.8) 0%, rgba(11, 15, 32, 0.9) 100%);
+            background: linear-gradient(145deg, rgba(26, 35, 71, 0.85) 0%, rgba(16, 22, 47, 0.95) 100%);
             backdrop-filter: blur(16px);
             -webkit-backdrop-filter: blur(16px);
-            border: 1px solid rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.1);
             transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
@@ -80,8 +80,8 @@
         }
 
         .clean-guide-btn {
-            background: linear-gradient(135deg, rgba(168, 85, 247, 0.15), rgba(99, 102, 241, 0.15));
-            border: 1px solid rgba(168, 85, 247, 0.35);
+            background: linear-gradient(135deg, rgba(168, 85, 247, 0.2), rgba(99, 102, 241, 0.2));
+            border: 1px solid rgba(168, 85, 247, 0.4);
             transition: all 0.3s ease;
         }
 
@@ -110,20 +110,20 @@
 
         .variant-card-radio {
             transition: background-color 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
-            background: rgba(11, 15, 32, 0.85);
-            border: 1px solid rgba(255, 255, 255, 0.08);
+            background: linear-gradient(135deg, rgba(22, 30, 61, 0.9) 0%, rgba(16, 22, 47, 0.95) 100%);
+            border: 1px solid rgba(255, 255, 255, 0.1);
             width: 100%;
         }
 
         .variant-card-radio:hover {
             border-color: rgba(168, 85, 247, 0.5);
-            background: rgba(19, 25, 50, 0.95);
+            background: linear-gradient(135deg, rgba(30, 41, 79, 0.95) 0%, rgba(20, 28, 58, 0.98) 100%);
         }
 
         .variant-card-radio:has(input:checked) {
-            border-color: #a855f7;
-            background: linear-gradient(135deg, rgba(30, 39, 74, 0.95) 0%, rgba(19, 25, 50, 0.98) 100%);
-            box-shadow: 0 0 25px rgba(168, 85, 247, 0.3);
+            border-color: #c084fc;
+            background: linear-gradient(135deg, rgba(45, 38, 85, 0.95) 0%, rgba(24, 32, 68, 0.98) 100%);
+            box-shadow: 0 0 25px rgba(168, 85, 247, 0.25);
         }
 
         .modal-backdrop {
@@ -141,6 +141,9 @@
             transform: scale(0.95) translateY(10px);
             opacity: 0;
             transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+            background: linear-gradient(145deg, #131b3b 0%, #0d122b 100%);
+            border: 1px solid rgba(168, 85, 247, 0.3);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
         }
 
         .modal-backdrop.active .modal-content {
@@ -149,30 +152,32 @@
         }
 
         ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: #060812; }
-        ::-webkit-scrollbar-thumb { background: #1e274a; border-radius: 4px; }
-        ::-webkit-scrollbar-thumb:hover { background: #2d3a66; }
+        ::-webkit-scrollbar-track { background: #070a17; }
+        ::-webkit-scrollbar-thumb { background: #283567; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #3b4b8a; }
     </style>
 </head>
 <body class="text-gray-100 min-h-screen flex flex-col justify-between antialiased selection:bg-purple-500 selection:text-white">
 
-    <!-- Header Navigation -->
-    <header class="sticky top-0 z-40 bg-brand-950/80 backdrop-blur-xl border-b border-brand-800/85">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
-            <a href="#" class="flex items-center gap-3 group">
-                <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-indigo-600 via-purple-600 to-pink-500 flex items-center justify-center shadow-lg shadow-purple-500/25 group-hover:scale-110 transition-transform duration-300">
-                    <i class="fa-solid fa-gem text-white text-base"></i>
+    <!-- Header Navigation (Responsive & Spaced for Mobile) -->
+    <header class="sticky top-0 z-40 bg-brand-950/85 backdrop-blur-xl border-b border-brand-800/85">
+        <div class="max-w-7xl mx-auto px-3 sm:px-6 h-auto sm:h-16 py-2.5 sm:py-0 flex flex-col sm:flex-row items-center justify-between gap-2.5 sm:gap-0">
+            <a href="#" class="flex items-center gap-2.5 group w-full sm:w-auto justify-between sm:justify-start">
+                <div class="flex items-center gap-2.5">
+                    <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-xl bg-gradient-to-tr from-indigo-600 via-purple-600 to-pink-500 flex items-center justify-center shadow-lg shadow-purple-500/25 group-hover:scale-110 transition-transform duration-300 flex-shrink-0">
+                        <i class="fa-solid fa-gem text-white text-sm sm:text-base"></i>
+                    </div>
+                    <span class="text-xs sm:text-base font-extrabold tracking-tight text-white group-hover:text-purple-300 transition-colors truncate">PREMIUM APP STORE</span>
                 </div>
-                <span class="text-base font-extrabold tracking-tight text-white group-hover:text-purple-300 transition-colors">PREMIUM APP STORE</span>
             </a>
 
-            <div class="flex items-center gap-2">
-                <button onclick="openOrderGuideModal()" class="clean-guide-btn px-3.5 py-2 rounded-xl text-purple-300 text-xs font-bold flex items-center gap-1.5">
-                    <i class="fa-solid fa-circle-question text-sm text-purple-400"></i>
+            <div class="flex items-center gap-2 w-full sm:w-auto justify-end">
+                <button onclick="openOrderGuideModal()" class="clean-guide-btn px-3 py-1.5 sm:px-3.5 sm:py-2 rounded-xl text-purple-200 text-[11px] sm:text-xs font-bold flex items-center gap-1.5 flex-1 sm:flex-initial justify-center">
+                    <i class="fa-solid fa-circle-question text-xs sm:text-sm text-purple-400"></i>
                     <span>Cara Pemesanan</span>
                 </button>
-                <button onclick="openGuideModal()" class="clean-guide-btn px-3.5 py-2 rounded-xl text-purple-300 text-xs font-bold flex items-center gap-1.5">
-                    <i class="fa-solid fa-book-open text-sm text-purple-400"></i>
+                <button onclick="openGuideModal()" class="clean-guide-btn px-3 py-1.5 sm:px-3.5 sm:py-2 rounded-xl text-purple-200 text-[11px] sm:text-xs font-bold flex items-center gap-1.5 flex-1 sm:flex-initial justify-center">
+                    <i class="fa-solid fa-book-open text-xs sm:text-sm text-purple-400"></i>
                     <span>Panduan & S&K</span>
                 </button>
             </div>
@@ -185,7 +190,7 @@
             <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-tight text-white">
                 Nikmati Akses Hiburan & Fitur Pro dengan <span class="gradient-title-text block sm:inline">Aplikasi Premium Pilihan</span>
             </h1>
-            <p class="text-xs sm:text-base text-gray-400 max-w-2xl mx-auto font-normal leading-relaxed">
+            <p class="text-xs sm:text-base text-gray-300 max-w-2xl mx-auto font-normal leading-relaxed">
                 Streaming film, musik, alat AI, serta studio kreatif berkualitas Ultra HD tanpa iklan.
             </p>
         </section>
@@ -194,7 +199,7 @@
         <section class="space-y-6 max-w-5xl mx-auto mb-12">
             <div class="relative max-w-3xl mx-auto">
                 <i class="fa-solid fa-magnifying-glass text-gray-400 absolute left-4 top-1/2 -translate-y-1/2 text-sm z-10 pointer-events-none"></i>
-                <input type="text" id="search-input" placeholder="Cari aplikasi (Netflix, ChatGPT, Canva, Spotify, CapCut)" class="w-full pl-12 pr-12 py-4 rounded-2xl bg-brand-900/95 border border-brand-700/80 text-white placeholder-gray-400 text-sm focus:outline-none focus:border-purple-500 focus:ring-2 focus:ring-purple-500/20 transition-all shadow-inner">
+                <input type="text" id="search-input" placeholder="Cari aplikasi (Netflix, ChatGPT, Canva, Spotify, CapCut)... tekan Enter untuk mencari" class="w-full pl-12 pr-12 py-4 rounded-2xl bg-brand-900/95 border border-brand-700/80 text-white placeholder-gray-400 text-sm focus:outline-none focus:border-purple-500 focus:ring-2 focus:ring-purple-500/20 transition-all shadow-inner">
                 <button id="clear-search" class="hidden absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-white p-2 transition-transform hover:scale-110">
                     <i class="fa-solid fa-xmark"></i>
                 </button>
@@ -204,16 +209,16 @@
                 <button data-cat="all" class="cat-btn px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all duration-300 gradient-btn text-white">
                     <i class="fa-solid fa-border-all mr-1.5"></i> Semua Katalog
                 </button>
-                <button data-cat="nonton" class="cat-btn px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold bg-brand-900 text-gray-300 hover:text-white border border-brand-700/70 hover:border-purple-500/50 hover:bg-brand-800 transition-all duration-300">
+                <button data-cat="nonton" class="cat-btn px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold bg-brand-900/90 text-gray-200 hover:text-white border border-brand-700/70 hover:border-purple-500/60 hover:bg-brand-800 transition-all duration-300">
                     <i class="fa-solid fa-film mr-1.5 text-purple-400"></i> Sinema & Streaming
                 </button>
-                <button data-cat="edu" class="cat-btn px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold bg-brand-900 text-gray-300 hover:text-white border border-brand-700/70 hover:border-purple-500/50 hover:bg-brand-800 transition-all duration-300">
+                <button data-cat="edu" class="cat-btn px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold bg-brand-900/90 text-gray-200 hover:text-white border border-brand-700/70 hover:border-purple-500/60 hover:bg-brand-800 transition-all duration-300">
                     <i class="fa-solid fa-graduation-cap mr-1.5 text-indigo-400"></i> Pendidikan & AI
                 </button>
-                <button data-cat="editing" class="cat-btn px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold bg-brand-900 text-gray-300 hover:text-white border border-brand-700/70 hover:border-purple-500/50 hover:bg-brand-800 transition-all duration-300">
+                <button data-cat="editing" class="cat-btn px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold bg-brand-900/90 text-gray-200 hover:text-white border border-brand-700/70 hover:border-purple-500/60 hover:bg-brand-800 transition-all duration-300">
                     <i class="fa-solid fa-wand-magic-sparkles mr-1.5 text-pink-400"></i> Kreatif & Studio Editing
                 </button>
-                <button data-cat="music" class="cat-btn px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold bg-brand-900 text-gray-300 hover:text-white border border-brand-700/70 hover:border-purple-500/50 hover:bg-brand-800 transition-all duration-300">
+                <button data-cat="music" class="cat-btn px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold bg-brand-900/90 text-gray-200 hover:text-white border border-brand-700/70 hover:border-purple-500/60 hover:bg-brand-800 transition-all duration-300">
                     <i class="fa-solid fa-music mr-1.5 text-emerald-400"></i> Musik & Audio Premium
                 </button>
             </div>
@@ -223,9 +228,9 @@
         <section>
             <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"></div>
             <div id="empty-state" class="hidden text-center py-20">
-                <i class="fa-solid fa-magnifying-glass-minus text-4xl text-gray-600 mb-4 block animate-bounce"></i>
-                <p class="text-gray-400 text-sm font-semibold mb-3">Aplikasi yang Anda cari tidak ditemukan.</p>
-                <button id="reset-filter-btn" class="px-4 py-2 rounded-xl bg-brand-800 text-purple-400 text-xs font-bold border border-brand-700 hover:bg-brand-700 transition-all">
+                <i class="fa-solid fa-magnifying-glass-minus text-4xl text-gray-500 mb-4 block animate-bounce"></i>
+                <p class="text-gray-300 text-sm font-semibold mb-3">Aplikasi yang Anda cari tidak ditemukan.</p>
+                <button id="reset-filter-btn" class="px-4 py-2 rounded-xl bg-brand-800 text-purple-300 text-xs font-bold border border-brand-700 hover:bg-brand-700 transition-all">
                     Tampilkan Semua Aplikasi
                 </button>
             </div>
@@ -233,7 +238,7 @@
 
         <!-- Contact Section -->
         <section class="mt-20 pt-10 border-t border-brand-800/60 text-center max-w-xl mx-auto space-y-4">
-            <p class="text-xs text-gray-400 font-medium">Layanan Pelanggan & Konsultasi Resmi</p>
+            <p class="text-xs text-gray-300 font-medium">Layanan Pelanggan & Konsultasi Resmi</p>
             <div class="flex items-center justify-center gap-3">
                 <a href="https://wa.me/62895409047979" target="_blank" class="px-6 py-3.5 rounded-2xl wa-btn-glow text-white font-bold text-sm inline-flex items-center gap-2.5">
                     <i class="fa-brands fa-whatsapp text-xl"></i>
@@ -245,12 +250,12 @@
 
     <!-- Modal Cara Pemesanan -->
     <div id="order-guide-modal" class="modal-backdrop fixed inset-0 z-[60] flex items-center justify-center p-4 bg-black/85 backdrop-blur-md">
-        <div class="modal-content bg-brand-900 border border-purple-500/40 rounded-3xl max-w-lg w-full p-6 sm:p-8 shadow-2xl shadow-purple-900/40 relative max-h-[85vh] flex flex-col justify-between">
-            <button onclick="closeOrderGuideModal()" class="absolute top-5 right-5 text-gray-400 hover:text-white p-2 rounded-xl hover:bg-brand-800 transition-all duration-300 hover:rotate-90">
+        <div class="modal-content rounded-3xl max-w-lg w-full p-6 sm:p-8 relative max-h-[85vh] flex flex-col justify-between">
+            <button onclick="closeOrderGuideModal()" class="absolute top-5 right-5 text-gray-300 hover:text-white p-2 rounded-xl hover:bg-brand-800 transition-all duration-300 hover:rotate-90">
                 <i class="fa-solid fa-xmark text-lg"></i>
             </button>
 
-            <div class="flex items-center gap-4 mb-6 pb-4 border-b border-brand-800">
+            <div class="flex items-center gap-4 mb-6 pb-4 border-b border-brand-700/60">
                 <div class="w-12 h-12 rounded-2xl bg-gradient-to-tr from-indigo-600 via-purple-600 to-pink-500 text-white flex items-center justify-center text-xl font-bold flex-shrink-0 shadow-lg shadow-purple-500/30">
                     <i class="fa-solid fa-gem"></i>
                 </div>
@@ -260,37 +265,30 @@
                 </div>
             </div>
 
-            <div class="space-y-3 overflow-y-auto pr-1 text-xs text-gray-300 max-h-[55vh]">
-                <div class="p-4 rounded-2xl bg-brand-950 border border-brand-800/80 space-y-1.5">
+            <div class="space-y-3.5 overflow-y-auto pr-1 text-xs text-gray-200 max-h-[55vh]">
+                <div class="p-4 rounded-2xl bg-brand-950/70 border border-brand-700/50 space-y-1.5 shadow-sm">
                     <span class="font-bold text-purple-300 text-sm">1. Pilih Aplikasi & Paket</span>
-                    <p class="text-gray-400 leading-relaxed">Cari aplikasi yang diinginkan pada katalog, lalu klik tombol <strong>"Lihat Paket"</strong> untuk memilih durasi dan jenis varian.</p>
+                    <p class="text-gray-300 leading-relaxed">Cari aplikasi yang diinginkan pada katalog, lalu klik tombol <strong>"Lihat Paket"</strong> untuk memilih durasi dan jenis varian.</p>
                 </div>
-                <div class="p-4 rounded-2xl bg-brand-950 border border-brand-800/80 space-y-1.5">
+                <div class="p-4 rounded-2xl bg-brand-950/70 border border-brand-700/50 space-y-1.5 shadow-sm">
                     <span class="font-bold text-purple-300 text-sm">2. Isi Formulir</span>
-                    <p class="text-gray-400 leading-relaxed">Lengkapi data pemesanan seperti nama, lokasi login, dan perangkat, lalu klik tombol <strong>"Tanyakan Stok via WhatsApp"</strong>.</p>
+                    <p class="text-gray-300 leading-relaxed">Lengkapi data pemesanan seperti nama, lokasi login, dan perangkat, lalu klik tombol <strong>"Tanyakan Stok via WhatsApp"</strong>.</p>
                 </div>
-                <div class="p-4 rounded-2xl bg-brand-950 border border-brand-800/80 space-y-1.5">
+                <div class="p-4 rounded-2xl bg-brand-950/70 border border-brand-700/50 space-y-1.5 shadow-sm">
                     <span class="font-bold text-purple-300 text-sm">3. Konfirmasi Admin</span>
-                    <p class="text-gray-400 leading-relaxed">Chat akan otomatis terbuka ke WhatsApp admin untuk mengecek ketersediaan stok dan harga terkini.</p>
+                    <p class="text-gray-300 leading-relaxed">Chat akan otomatis terbuka ke WhatsApp admin untuk mengecek ketersediaan stok dan harga terkini.</p>
                 </div>
-                <div class="p-4 rounded-2xl bg-brand-950 border border-brand-800/80 space-y-1.5">
+                <div class="p-4 rounded-2xl bg-brand-950/70 border border-brand-700/50 space-y-1.5 shadow-sm">
                     <span class="font-bold text-purple-300 text-sm">4. Pembayaran QRIS</span>
-                    <p class="text-gray-400 leading-relaxed">Lakukan pembayaran dengan memindai kode <strong>QRIS</strong> resmi yang diberikan oleh admin.</p>
+                    <p class="text-gray-300 leading-relaxed">Lakukan pembayaran dengan memindai kode <strong>QRIS</strong> resmi yang diberikan oleh admin.</p>
                 </div>
-                <div class="p-4 rounded-2xl bg-brand-950 border border-brand-800/80 space-y-1.5">
+                <div class="p-4 rounded-2xl bg-brand-950/70 border border-brand-700/50 space-y-1.5 shadow-sm">
                     <span class="font-bold text-purple-300 text-sm">5. Proses Pesanan</span>
-                    <p class="text-gray-400 leading-relaxed">Kirimkan bukti pembayaran, dan pesanan Anda akan langsung diproses serta diaktivasi sesuai antrean.</p>
+                    <p class="text-gray-300 leading-relaxed">Kirimkan bukti pembayaran, dan pesanan Anda akan langsung diproses serta diaktivasi sesuai antrean.</p>
                 </div>
             </div>
 
-            <div class="pt-4 border-t border-brand-800 mt-4">
-                <button onclick="closeOrderGuideModal()" class="w-full py-3.5 rounded-2xl gradient-btn text-white font-extrabold text-xs tracking-wide">
-                    Mengerti, Kembali ke Katalog
-                </button>
-            </div>
-        </div>
-    </div>
-            <div class="pt-4 border-t border-brand-800 mt-4">
+            <div class="pt-4 border-t border-brand-700/60 mt-4">
                 <button onclick="closeOrderGuideModal()" class="w-full py-3.5 rounded-2xl gradient-btn text-white font-extrabold text-xs tracking-wide">
                     Mengerti, Kembali ke Katalog
                 </button>
@@ -300,12 +298,12 @@
 
     <!-- Modal Panduan Istilah Umum & Syarat Ketentuan -->
     <div id="guide-modal" class="modal-backdrop fixed inset-0 z-[60] flex items-center justify-center p-4 bg-black/85 backdrop-blur-md">
-        <div class="modal-content bg-brand-900 border border-purple-500/40 rounded-3xl max-w-2xl w-full p-6 sm:p-8 shadow-2xl shadow-purple-900/40 relative max-h-[85vh] flex flex-col justify-between">
-            <button onclick="closeGuideModal()" class="absolute top-5 right-5 text-gray-400 hover:text-white p-2 rounded-xl hover:bg-brand-800 transition-all duration-300 hover:rotate-90">
+        <div class="modal-content rounded-3xl max-w-2xl w-full p-6 sm:p-8 relative max-h-[85vh] flex flex-col justify-between">
+            <button onclick="closeGuideModal()" class="absolute top-5 right-5 text-gray-300 hover:text-white p-2 rounded-xl hover:bg-brand-800 transition-all duration-300 hover:rotate-90">
                 <i class="fa-solid fa-xmark text-lg"></i>
             </button>
 
-            <div class="flex items-center gap-4 mb-6 pb-4 border-b border-brand-800">
+            <div class="flex items-center gap-4 mb-6 pb-4 border-b border-brand-700/60">
                 <div class="w-12 h-12 rounded-2xl bg-gradient-to-tr from-indigo-600 via-purple-600 to-pink-500 text-white flex items-center justify-center text-xl font-bold flex-shrink-0 shadow-lg shadow-purple-500/30">
                     <i class="fa-solid fa-gem"></i>
                 </div>
@@ -316,104 +314,104 @@
             </div>
 
             <!-- Konten Glosarium + Syarat Ketentuan -->
-            <div class="space-y-3.5 overflow-y-auto pr-1 text-xs text-gray-300 max-h-[58vh]">
+            <div class="space-y-3.5 overflow-y-auto pr-1 text-xs text-gray-200 max-h-[58vh]">
                 <!-- 1P1U -->
-                <div class="p-4 rounded-2xl bg-brand-950 border border-brand-800/80 hover:border-purple-500/40 transition-all space-y-2">
+                <div class="p-4 rounded-2xl bg-brand-950/70 border border-brand-700/50 hover:border-purple-500/50 transition-all space-y-2">
                     <div class="flex items-center justify-between">
                         <span class="font-black text-purple-300 text-sm">1P1U (1 Profile 1 User)</span>
-                        <span class="px-2.5 py-1 rounded-full bg-purple-500/15 text-purple-300 border border-purple-500/30 text-[10px] font-bold">Privasi Penuh</span>
+                        <span class="px-2.5 py-1 rounded-full bg-purple-500/20 text-purple-200 border border-purple-500/40 text-[10px] font-bold">Privasi Penuh</span>
                     </div>
-                    <p class="text-gray-400 leading-relaxed">Satu profil khusus yang digunakan oleh satu orang pembeli saja. Dilengkapi PIN privat mandiri sehingga riwayat tontonan aman dan tidak tercampur.</p>
+                    <p class="text-gray-300 leading-relaxed">Satu profil khusus yang digunakan oleh satu orang pembeli saja. Dilengkapi PIN privat mandiri sehingga riwayat tontonan aman dan tidak tercampur.</p>
                 </div>
 
                 <!-- 1P2U -->
-                <div class="p-4 rounded-2xl bg-brand-950 border border-brand-800/80 hover:border-purple-500/40 transition-all space-y-2">
+                <div class="p-4 rounded-2xl bg-brand-950/70 border border-brand-700/50 hover:border-purple-500/50 transition-all space-y-2">
                     <div class="flex items-center justify-between">
                         <span class="font-black text-amber-300 text-sm">1P2U (1 Profile 2 Users)</span>
-                        <span class="px-2.5 py-1 rounded-full bg-amber-500/15 text-amber-300 border border-amber-500/30 text-[10px] font-bold">Profil Bersama</span>
+                        <span class="px-2.5 py-1 rounded-full bg-amber-500/20 text-amber-200 border border-amber-500/40 text-[10px] font-bold">Profil Bersama</span>
                     </div>
-                    <p class="text-gray-400 leading-relaxed">Satu profil yang digunakan secara bergantian oleh dua orang pengguna. Merupakan opsi paling ekonomis untuk kebutuhan streaming harian.</p>
+                    <p class="text-gray-300 leading-relaxed">Satu profil yang digunakan secara bergantian oleh dua orang pengguna. Merupakan opsi paling ekonomis untuk kebutuhan streaming harian.</p>
                 </div>
 
                 <!-- Semi Private -->
-                <div class="p-4 rounded-2xl bg-brand-950 border border-brand-800/80 hover:border-purple-500/40 transition-all space-y-2">
+                <div class="p-4 rounded-2xl bg-brand-950/70 border border-brand-700/50 hover:border-purple-500/50 transition-all space-y-2">
                     <div class="flex items-center justify-between">
                         <span class="font-black text-teal-300 text-sm">Semi Private</span>
-                        <span class="px-2.5 py-1 rounded-full bg-teal-500/15 text-teal-300 border border-teal-500/30 text-[10px] font-bold">Semi Eksklusif</span>
+                        <span class="px-2.5 py-1 rounded-full bg-teal-500/20 text-teal-200 border border-teal-500/40 text-[10px] font-bold">Semi Eksklusif</span>
                     </div>
-                    <p class="text-gray-400 leading-relaxed">Jenis akun dengan pembatasan jumlah pengguna yang sangat ketat dalam satu akun untuk meminimalisir risiko bentrok layar.</p>
+                    <p class="text-gray-300 leading-relaxed">Jenis akun dengan pembatasan jumlah pengguna yang sangat ketat dalam satu akun untuk meminimalisir risiko bentrok layar.</p>
                 </div>
 
                 <!-- Private -->
-                <div class="p-4 rounded-2xl bg-brand-950 border border-brand-800/80 hover:border-purple-500/40 transition-all space-y-2">
+                <div class="p-4 rounded-2xl bg-brand-950/70 border border-brand-700/50 hover:border-purple-500/50 transition-all space-y-2">
                     <div class="flex items-center justify-between">
                         <span class="font-black text-emerald-300 text-sm">Akun Private / Full Account</span>
-                        <span class="px-2.5 py-1 rounded-full bg-emerald-500/15 text-emerald-300 border border-emerald-500/30 text-[10px] font-bold">Eksklusif</span>
+                        <span class="px-2.5 py-1 rounded-full bg-emerald-500/20 text-emerald-200 border border-emerald-500/40 text-[10px] font-bold">Eksklusif</span>
                     </div>
-                    <p class="text-gray-400 leading-relaxed">Akun utuh yang digunakan secara eksklusif oleh Anda sendiri tanpa pengguna lain. Dapat menggunakan email pribadi atau akun yang disiapkan toko.</p>
+                    <p class="text-gray-300 leading-relaxed">Akun utuh yang digunakan secara eksklusif oleh Anda sendiri tanpa pengguna lain. Dapat menggunakan email pribadi atau akun yang disiapkan toko.</p>
                 </div>
 
                 <!-- Family Plan -->
-                <div class="p-4 rounded-2xl bg-brand-950 border border-brand-800/80 hover:border-purple-500/40 transition-all space-y-2">
+                <div class="p-4 rounded-2xl bg-brand-950/70 border border-brand-700/50 hover:border-purple-500/50 transition-all space-y-2">
                     <div class="flex items-center justify-between">
                         <span class="font-black text-blue-300 text-sm">Family Plan & Family Head</span>
-                        <span class="px-2.5 py-1 rounded-full bg-blue-500/15 text-blue-300 border border-blue-500/30 text-[10px] font-bold">Grup Keluarga</span>
+                        <span class="px-2.5 py-1 rounded-full bg-blue-500/20 text-blue-200 border border-blue-500/40 text-[10px] font-bold">Grup Keluarga</span>
                     </div>
-                    <p class="text-gray-400 leading-relaxed">Paket langganan kolektif yang dibagi ke beberapa anggota dalam satu grup. Family Head adalah posisi admin pengelola utama grup tersebut.</p>
+                    <p class="text-gray-300 leading-relaxed">Paket langganan kolektif yang dibagi ke beberapa anggota dalam satu grup. Family Head adalah posisi admin pengelola utama grup tersebut.</p>
                 </div>
 
                 <!-- Individual Plan -->
-                <div class="p-4 rounded-2xl bg-brand-950 border border-brand-800/80 hover:border-purple-500/40 transition-all space-y-2">
+                <div class="p-4 rounded-2xl bg-brand-950/70 border border-brand-700/50 hover:border-purple-500/50 transition-all space-y-2">
                     <div class="flex items-center justify-between">
                         <span class="font-black text-cyan-300 text-sm">Individual Plan</span>
-                        <span class="px-2.5 py-1 rounded-full bg-cyan-500/15 text-cyan-300 border border-cyan-500/30 text-[10px] font-bold">Pribadi</span>
+                        <span class="px-2.5 py-1 rounded-full bg-cyan-500/20 text-cyan-200 border border-cyan-500/40 text-[10px] font-bold">Pribadi</span>
                     </div>
-                    <p class="text-gray-400 leading-relaxed">Paket langganan resmi khusus untuk satu akun individual secara mandiri tanpa digabung dengan pengguna lain.</p>
+                    <p class="text-gray-300 leading-relaxed">Paket langganan resmi khusus untuk satu akun individual secara mandiri tanpa digabung dengan pengguna lain.</p>
                 </div>
 
                 <!-- Seller Account -->
-                <div class="p-4 rounded-2xl bg-brand-950 border border-brand-800/80 hover:border-purple-500/40 transition-all space-y-2">
+                <div class="p-4 rounded-2xl bg-brand-950/70 border border-brand-700/50 hover:border-purple-500/50 transition-all space-y-2">
                     <div class="flex items-center justify-between">
                         <span class="font-black text-yellow-300 text-sm">Seller Account</span>
-                        <span class="px-2.5 py-1 rounded-full bg-yellow-500/15 text-yellow-300 border border-yellow-500/30 text-[10px] font-bold">Akun Toko</span>
+                        <span class="px-2.5 py-1 rounded-full bg-yellow-500/20 text-yellow-200 border border-yellow-500/40 text-[10px] font-bold">Akun Toko</span>
                     </div>
-                    <p class="text-gray-400 leading-relaxed">Slot aktivasi khusus yang disediakan langsung dari sistem penjual dengan durasi tertentu yang lebih ekonomis.</p>
+                    <p class="text-gray-300 leading-relaxed">Slot aktivasi khusus yang disediakan langsung dari sistem penjual dengan durasi tertentu yang lebih ekonomis.</p>
                 </div>
 
                 <!-- Canva Roles -->
-                <div class="p-4 rounded-2xl bg-brand-950 border border-brand-800/80 hover:border-purple-500/40 transition-all space-y-2">
+                <div class="p-4 rounded-2xl bg-brand-950/70 border border-brand-700/50 hover:border-purple-500/50 transition-all space-y-2">
                     <div class="flex items-center justify-between">
                         <span class="font-black text-sky-300 text-sm">Member, Admin, Designer, Head (Canva)</span>
-                        <span class="px-2.5 py-1 rounded-full bg-sky-500/15 text-sky-300 border border-sky-500/30 text-[10px] font-bold">Peran Tim</span>
+                        <span class="px-2.5 py-1 rounded-full bg-sky-500/20 text-sky-200 border border-sky-500/40 text-[10px] font-bold">Peran Tim</span>
                     </div>
-                    <p class="text-gray-400 leading-relaxed">Pembagian hak akses di dalam tim Canva Pro. Member sebagai anggota, sedangkan Admin/Designer/Head memiliki hak kelola tambahan.</p>
+                    <p class="text-gray-300 leading-relaxed">Pembagian hak akses di dalam tim Canva Pro. Member sebagai anggota, sedangkan Admin/Designer/Head memiliki hak kelola tambahan.</p>
                 </div>
 
                 <!-- Plat TV/Mobile -->
-                <div class="p-4 rounded-2xl bg-brand-950 border border-brand-800/80 hover:border-purple-500/40 transition-all space-y-2">
+                <div class="p-4 rounded-2xl bg-brand-950/70 border border-brand-700/50 hover:border-purple-500/50 transition-all space-y-2">
                     <div class="flex items-center justify-between">
                         <span class="font-black text-rose-300 text-sm">Plat TV & Plat Mobile</span>
-                        <span class="px-2.5 py-1 rounded-full bg-rose-500/15 text-rose-300 border border-rose-500/30 text-[10px] font-bold">Platform Khusus</span>
+                        <span class="px-2.5 py-1 rounded-full bg-rose-500/20 text-rose-200 border border-rose-500/40 text-[10px] font-bold">Platform Khusus</span>
                     </div>
-                    <p class="text-gray-400 leading-relaxed">Ketentuan platform perangkat login. Plat TV khusus untuk Smart TV, sedangkan Plat Mobile khusus untuk perangkat smartphone.</p>
+                    <p class="text-gray-300 leading-relaxed">Ketentuan platform perangkat login. Plat TV khusus untuk Smart TV, sedangkan Plat Mobile khusus untuk perangkat smartphone.</p>
                 </div>
 
                 <!-- Garansi -->
-                <div class="p-4 rounded-2xl bg-brand-950 border border-brand-800/80 hover:border-purple-500/40 transition-all space-y-2">
+                <div class="p-4 rounded-2xl bg-brand-950/70 border border-brand-700/50 hover:border-purple-500/50 transition-all space-y-2">
                     <div class="flex items-center justify-between">
                         <span class="font-black text-pink-300 text-sm">Full Warrant vs No Warrant</span>
-                        <span class="px-2.5 py-1 rounded-full bg-pink-500/15 text-pink-300 border border-pink-500/30 text-[10px] font-bold">Jaminan Layanan</span>
+                        <span class="px-2.5 py-1 rounded-full bg-pink-500/20 text-pink-200 border border-pink-500/40 text-[10px] font-bold">Jaminan Layanan</span>
                     </div>
-                    <p class="text-gray-400 leading-relaxed">Full Warrant dilengkapi garansi penuh perbaikan atau pergantian akun. No Warrant ditawarkan dengan harga lebih murah tanpa fasilitas garansi.</p>
+                    <p class="text-gray-300 leading-relaxed">Full Warrant dilengkapi garansi penuh perbaikan atau pergantian akun. No Warrant ditawarkan dengan harga lebih murah tanpa fasilitas garansi.</p>
                 </div>
 
                 <!-- SYARAT DAN KETENTUAN (S&K) FORMAL TANPA EMOJI -->
-                <div class="p-5 rounded-2xl bg-gradient-to-br from-purple-950/70 via-brand-950 to-brand-950 border border-purple-500/40 space-y-3 mt-4 shadow-xl">
-                    <div class="flex items-center gap-2 text-purple-300 font-extrabold text-sm border-b border-purple-500/20 pb-2">
+                <div class="p-5 rounded-2xl bg-gradient-to-br from-indigo-950/80 via-brand-950 to-brand-950 border border-purple-500/40 space-y-3 mt-4 shadow-xl">
+                    <div class="flex items-center gap-2 text-purple-200 font-extrabold text-sm border-b border-purple-500/20 pb-2">
                         <i class="fa-solid fa-file-contract text-base"></i>
                         <span>Syarat dan Ketentuan Layanan (S&K)</span>
                     </div>
-                    <div class="text-gray-300 space-y-2.5 leading-relaxed text-[11px] sm:text-xs">
+                    <div class="text-gray-200 space-y-2.5 leading-relaxed text-[11px] sm:text-xs">
                         <p>1. Wajib menanyakan ketersediaan stok serta pembaruan harga terlebih dahulu kepada admin sebelum melakukan pemesanan.</p>
                         <p>2. Bagi aplikasi atau varian layanan yang belum tercantum di dalam daftar katalog web, silakan tanyakan kepada admin.</p>
                         <p>3. Dimohon kesediaannya untuk bersabar; pesanan akan diproses sesuai antrean dan menunggu koordinasi bersama pihak pemasok.</p>
@@ -424,7 +422,7 @@
                 </div>
             </div>
 
-            <div class="pt-4 border-t border-brand-800 mt-4">
+            <div class="pt-4 border-t border-brand-700/60 mt-4">
                 <button onclick="closeGuideModal()" class="w-full py-3.5 rounded-2xl gradient-btn text-white font-extrabold text-xs tracking-wide">
                     Mengerti, Kembali ke Katalog
                 </button>
@@ -434,39 +432,39 @@
 
     <!-- Modal Kontekstual Varian & Panduan Spesifik Aplikasi -->
     <div id="variant-modal" class="modal-backdrop fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-md">
-        <div class="modal-content bg-brand-900 border border-brand-700 rounded-3xl max-w-lg w-full p-6 sm:p-7 shadow-2xl relative max-h-[90vh] flex flex-col justify-between">
-            <button onclick="closeVariantModal()" class="absolute top-5 right-5 text-gray-400 hover:text-white p-2 rounded-xl hover:bg-brand-800 transition-all duration-300 hover:rotate-90">
+        <div class="modal-content rounded-3xl max-w-lg w-full p-6 sm:p-7 relative max-h-[90vh] flex flex-col justify-between">
+            <button onclick="closeVariantModal()" class="absolute top-5 right-5 text-gray-300 hover:text-white p-2 rounded-xl hover:bg-brand-800 transition-all duration-300 hover:rotate-90">
                 <i class="fa-solid fa-xmark text-lg"></i>
             </button>
 
-            <div class="flex items-center justify-between mb-4 pb-4 border-b border-brand-800">
+            <div class="flex items-center justify-between mb-4 pb-4 border-b border-brand-700/60">
                 <div class="flex items-center gap-3.5 min-w-0">
-                    <div id="variant-app-icon" class="w-12 h-12 rounded-2xl bg-purple-600/20 border border-purple-500/30 text-purple-400 flex items-center justify-center text-xl font-bold flex-shrink-0 shadow-inner">
+                    <div id="variant-app-icon" class="w-12 h-12 rounded-2xl bg-purple-600/30 border border-purple-500/40 text-purple-300 flex items-center justify-center text-xl font-bold flex-shrink-0 shadow-inner">
                         <i class="fa-solid fa-cube"></i>
                     </div>
                     <div class="min-w-0">
                         <h3 class="text-xl font-extrabold text-white truncate" id="variant-app-title">Nama Aplikasi</h3>
-                        <p class="text-xs text-purple-400 font-semibold truncate" id="variant-app-category">Kategori</p>
+                        <p class="text-xs text-purple-300 font-semibold truncate" id="variant-app-category">Kategori</p>
                     </div>
                 </div>
             </div>
 
             <!-- Bagian Keterangan Spesifik Aplikasi -->
-            <div id="app-context-guide" class="hidden mb-4 p-3.5 rounded-2xl bg-purple-950/60 border border-purple-500/30 text-xs text-purple-200 space-y-1.5 transition-all duration-300">
+            <div id="app-context-guide" class="hidden mb-4 p-3.5 rounded-2xl bg-purple-950/70 border border-purple-500/40 text-xs text-purple-200 space-y-1.5 transition-all duration-300">
                 <div class="flex items-center justify-between font-bold text-purple-300">
                     <span id="context-guide-title"><i class="fa-solid fa-circle-info mr-1.5"></i> Panduan Varian</span>
-                    <button onclick="toggleAppContextGuide(false)" class="text-gray-400 hover:text-white px-1.5 py-0.5"><i class="fa-solid fa-xmark"></i></button>
+                    <button onclick="toggleAppContextGuide(false)" class="text-gray-300 hover:text-white px-1.5 py-0.5"><i class="fa-solid fa-xmark"></i></button>
                 </div>
-                <p id="context-guide-desc" class="text-gray-300 leading-relaxed text-[11px]"></p>
+                <p id="context-guide-desc" class="text-gray-200 leading-relaxed text-[11px]"></p>
             </div>
 
             <div class="space-y-3 overflow-y-auto pr-1 mb-6 max-h-[45vh]" id="variant-list"></div>
 
-            <div class="pt-4 border-t border-brand-800 flex items-center gap-2">
-                <button onclick="toggleAppContextGuide(true)" id="btn-context-help" title="Penjelasan varian aplikasi ini" class="p-3.5 rounded-2xl bg-brand-950 border border-brand-700 hover:bg-brand-800 hover:border-purple-500/50 text-purple-400 transition-all flex-shrink-0 hover:scale-105">
+            <div class="pt-4 border-t border-brand-700/60 flex items-center gap-2">
+                <button onclick="toggleAppContextGuide(true)" id="btn-context-help" title="Penjelasan varian aplikasi ini" class="p-3.5 rounded-2xl bg-brand-950/80 border border-brand-700 hover:bg-brand-800 hover:border-purple-500/50 text-purple-300 transition-all flex-shrink-0 hover:scale-105">
                     <i class="fa-solid fa-circle-question text-base"></i>
                 </button>
-                <button id="btn-proceed-order" onclick="proceedToOrderForm()" disabled class="w-full py-3.5 rounded-2xl bg-gray-800 text-gray-500 font-bold text-sm cursor-not-allowed transition-all">
+                <button id="btn-proceed-order" onclick="proceedToOrderForm()" disabled class="w-full py-3.5 rounded-2xl bg-brand-800/70 text-gray-400 font-bold text-sm cursor-not-allowed transition-all">
                     Pilih Salah Satu Paket
                 </button>
             </div>
@@ -475,35 +473,35 @@
 
     <!-- Modal 2: Formulir Pemesanan -->
     <div id="order-modal" class="modal-backdrop fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-md">
-        <div class="modal-content bg-brand-900 border border-brand-700 rounded-3xl max-w-md w-full p-6 sm:p-7 shadow-2xl relative">
-            <button onclick="closeOrderModal()" class="absolute top-5 right-5 text-gray-400 hover:text-white p-2 rounded-xl hover:bg-brand-800 transition-all duration-300 hover:rotate-90">
+        <div class="modal-content rounded-3xl max-w-md w-full p-6 sm:p-7 relative">
+            <button onclick="closeOrderModal()" class="absolute top-5 right-5 text-gray-300 hover:text-white p-2 rounded-xl hover:bg-brand-800 transition-all duration-300 hover:rotate-90">
                 <i class="fa-solid fa-xmark text-lg"></i>
             </button>
 
             <div class="flex items-center gap-3 mb-5">
-                <div class="w-10 h-10 rounded-2xl bg-purple-600/20 text-purple-400 flex items-center justify-center font-bold border border-purple-500/20 flex-shrink-0">
+                <div class="w-10 h-10 rounded-2xl bg-purple-600/30 text-purple-300 flex items-center justify-center font-bold border border-purple-500/30 flex-shrink-0">
                     <i class="fa-solid fa-receipt text-lg"></i>
                 </div>
                 <div>
                     <h3 class="text-lg font-extrabold text-white">Formulir Pemesanan</h3>
-                    <p class="text-xs text-gray-400">Lengkapi data untuk membuat format WhatsApp</p>
+                    <p class="text-xs text-gray-300">Lengkapi data untuk membuat format WhatsApp</p>
                 </div>
             </div>
 
-            <div class="p-3.5 rounded-2xl bg-brand-950 border border-brand-800 mb-5 text-xs space-y-2">
-                <div class="flex justify-between text-gray-400">
+            <div class="p-3.5 rounded-2xl bg-brand-950/80 border border-brand-700/60 mb-5 text-xs space-y-2">
+                <div class="flex justify-between text-gray-300">
                     <span>Aplikasi:</span>
                     <span id="summary-app-name" class="font-bold text-white"></span>
                 </div>
-                <div class="flex justify-between text-gray-400">
+                <div class="flex justify-between text-gray-300">
                     <span>Varian Paket:</span>
-                    <span id="summary-package-name" class="font-bold text-purple-400"></span>
+                    <span id="summary-package-name" class="font-bold text-purple-300"></span>
                 </div>
-                <div class="flex justify-between text-gray-400">
+                <div class="flex justify-between text-gray-300">
                     <span>Durasi:</span>
                     <span id="summary-duration" class="font-bold text-white"></span>
                 </div>
-                <div class="flex justify-between text-gray-400 pt-1 border-t border-brand-800">
+                <div class="flex justify-between text-gray-300 pt-1 border-t border-brand-700/60">
                     <span>Harga Pas:</span>
                     <span id="summary-price" class="font-extrabold text-emerald-400 text-sm"></span>
                 </div>
@@ -511,23 +509,23 @@
 
             <form id="order-form" onsubmit="submitToWhatsApp(event)" class="space-y-4">
                 <div>
-                    <label class="block text-xs font-bold text-gray-300 mb-1">Nama Pemesan <span class="text-red-400">*</span></label>
-                    <input type="text" id="input-customer-name" required placeholder="Masukkan nama Anda..." class="w-full px-4 py-3 rounded-xl bg-brand-950 border border-brand-800 text-white text-xs focus:outline-none focus:border-purple-500 transition-all">
+                    <label class="block text-xs font-bold text-gray-200 mb-1">Nama Pemesan <span class="text-red-400">*</span></label>
+                    <input type="text" id="input-customer-name" required placeholder="Masukkan nama Anda..." class="w-full px-4 py-3 rounded-xl bg-brand-950 border border-brand-700 text-white text-xs focus:outline-none focus:border-purple-500 transition-all">
                 </div>
 
                 <div>
-                    <label class="block text-xs font-bold text-gray-300 mb-1">Lokasi Login <span class="text-red-400">*</span></label>
-                    <input type="text" id="input-login-location" required placeholder="Contoh: Jakarta, Surabaya, Bali..." class="w-full px-4 py-3 rounded-xl bg-brand-950 border border-brand-800 text-white text-xs focus:outline-none focus:border-purple-500 transition-all">
+                    <label class="block text-xs font-bold text-gray-200 mb-1">Lokasi Login <span class="text-red-400">*</span></label>
+                    <input type="text" id="input-login-location" required placeholder="Contoh: Jakarta, Surabaya, Bali..." class="w-full px-4 py-3 rounded-xl bg-brand-950 border border-brand-700 text-white text-xs focus:outline-none focus:border-purple-500 transition-all">
                 </div>
 
                 <div id="price-range-container" class="hidden">
-                    <label class="block text-xs font-bold text-gray-300 mb-1">Pilih Opsi Harga <span class="text-red-400">*</span></label>
-                    <select id="select-price-range" onchange="updateSelectedRangePrice(this.value)" class="w-full px-4 py-3 rounded-xl bg-brand-950 border border-brand-800 text-purple-300 text-xs font-bold focus:outline-none focus:border-purple-500 transition-all"></select>
+                    <label class="block text-xs font-bold text-gray-200 mb-1">Pilih Opsi Harga <span class="text-red-400">*</span></label>
+                    <select id="select-price-range" onchange="updateSelectedRangePrice(this.value)" class="w-full px-4 py-3 rounded-xl bg-brand-950 border border-brand-700 text-purple-200 text-xs font-bold focus:outline-none focus:border-purple-500 transition-all"></select>
                 </div>
 
                 <div>
-                    <label class="block text-xs font-bold text-gray-300 mb-1">Merek Perangkat <span class="text-red-400">*</span></label>
-                    <input type="text" id="input-device-brand" required placeholder="Contoh: Samsung, iPhone, Android TV, Laptop..." class="w-full px-4 py-3 rounded-xl bg-brand-950 border border-brand-800 text-white text-xs focus:outline-none focus:border-purple-500 transition-all">
+                    <label class="block text-xs font-bold text-gray-200 mb-1">Merek Perangkat <span class="text-red-400">*</span></label>
+                    <input type="text" id="input-device-brand" required placeholder="Contoh: Samsung, iPhone, Android TV, Laptop..." class="w-full px-4 py-3 rounded-xl bg-brand-950 border border-brand-700 text-white text-xs focus:outline-none focus:border-purple-500 transition-all">
                 </div>
 
                 <button type="submit" class="w-full py-3.5 rounded-2xl wa-btn-glow text-white font-extrabold text-sm flex items-center justify-center gap-2 mt-2">
@@ -539,7 +537,7 @@
     </div>
 
     <!-- Footer -->
-    <footer class="bg-brand-950 border-t border-brand-800/80 py-6 text-center text-xs text-gray-500 mt-12">
+    <footer class="bg-brand-950 border-t border-brand-800/80 py-6 text-center text-xs text-gray-400 mt-12">
         <div class="max-w-7xl mx-auto px-4 space-y-1">
             <p>© 2026 PREMIUM APP STORE. All rights reserved.</p>
         </div>
@@ -1170,11 +1168,11 @@
                             <div class="w-12 h-12 rounded-2xl bg-brand-950/80 border border-brand-800 flex items-center justify-center text-2xl shadow-inner flex-shrink-0">
                                 <i class="${app.iconClass}"></i>
                             </div>
-                            ${app.badge ? `<span class="px-3 py-1 rounded-full text-[10px] font-extrabold uppercase tracking-wider bg-purple-500/10 text-purple-300 border border-purple-500/30 flex-shrink-0">${app.badge}</span>` : `<span class="text-[10px] text-gray-400 uppercase font-bold flex-shrink-0">${getCategoryLabel(app.category)}</span>`}
+                            ${app.badge ? `<span class="px-3 py-1 rounded-full text-[10px] font-extrabold uppercase tracking-wider bg-purple-500/15 text-purple-200 border border-purple-500/40 flex-shrink-0">${app.badge}</span>` : `<span class="text-[10px] text-gray-400 uppercase font-bold flex-shrink-0">${getCategoryLabel(app.category)}</span>`}
                         </div>
 
                         <h3 class="text-xl font-extrabold text-white mb-1">${app.name}</h3>
-                        <p class="text-xs text-purple-400 font-semibold mb-4 flex items-center gap-1.5">
+                        <p class="text-xs text-purple-300 font-semibold mb-4 flex items-center gap-1.5">
                             <i class="fa-solid fa-layer-group text-[10px]"></i>
                             <span>${variantCount} Pilihan Paket Tersedia</span>
                         </p>
@@ -1251,7 +1249,7 @@
 
             selectedApp.variants.forEach((v) => {
                 const vCard = document.createElement("label");
-                vCard.className = "variant-card-radio flex flex-col sm:flex-row sm:items-center justify-between p-4 rounded-2xl cursor-pointer gap-2 sm:gap-4";
+                vCard.className = "variant-card-radio flex flex-col sm:flex-row sm:items-center justify-between p-4 rounded-2xl cursor-pointer gap-2 sm:gap-4 shadow-sm";
 
                 let displayPrice = v.priceRange 
                     ? `${formatRupiah(v.priceRange[0])} - ${formatRupiah(v.priceRange[1])}`
@@ -1259,12 +1257,12 @@
 
                 vCard.innerHTML = `
                     <div class="flex items-start sm:items-center gap-3.5 min-w-0">
-                        <input type="radio" name="app-variant" value="${v.id}" onchange="selectVariantOption('${v.id}')" class="w-4 h-4 text-purple-600 bg-brand-900 border-brand-700 focus:ring-purple-500 flex-shrink-0 mt-1 sm:mt-0">
+                        <input type="radio" name="app-variant" value="${v.id}" onchange="selectVariantOption('${v.id}')" class="w-4 h-4 text-purple-600 bg-brand-950 border-brand-700 focus:ring-purple-500 flex-shrink-0 mt-1 sm:mt-0">
                         <div class="min-w-0">
                             <span class="block text-sm font-bold text-white leading-snug break-words">${v.name}</span>
-                            <div class="flex flex-wrap items-center gap-2 text-xs text-gray-400 mt-1">
-                                <span class="px-2 py-0.5 rounded-md bg-brand-800 border border-brand-700 text-purple-300 text-[10px] font-extrabold flex-shrink-0">${v.duration}</span>
-                                <span class="break-words text-gray-400">${v.plan}</span>
+                            <div class="flex flex-wrap items-center gap-2 text-xs text-gray-300 mt-1">
+                                <span class="px-2 py-0.5 rounded-md bg-purple-900/60 border border-purple-500/30 text-purple-200 text-[10px] font-extrabold flex-shrink-0">${v.duration}</span>
+                                <span class="break-words text-gray-300">${v.plan}</span>
                             </div>
                         </div>
                     </div>
@@ -1276,7 +1274,7 @@
 
             const btnProceed = document.getElementById("btn-proceed-order");
             btnProceed.disabled = true;
-            btnProceed.className = "w-full py-3.5 rounded-2xl bg-gray-800 text-gray-500 font-bold text-sm cursor-not-allowed transition-all";
+            btnProceed.className = "w-full py-3.5 rounded-2xl bg-brand-800/70 text-gray-400 font-bold text-sm cursor-not-allowed transition-all";
             btnProceed.textContent = "Pilih Salah Satu Paket";
 
             document.body.classList.add("modal-open");
@@ -1411,7 +1409,7 @@ Mohon info apakah stok aplikasi premium dengan spesifikasi di atas masih tersedi
         categoryTabs.forEach(btn => {
             btn.addEventListener("click", () => {
                 categoryTabs.forEach(b => {
-                    b.className = "cat-btn px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold bg-brand-900 text-gray-300 hover:text-white border border-brand-700/70 hover:border-purple-500/50 hover:bg-brand-800 transition-all duration-300";
+                    b.className = "cat-btn px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold bg-brand-900/90 text-gray-200 hover:text-white border border-brand-700/70 hover:border-purple-500/60 hover:bg-brand-800 transition-all duration-300";
                 });
                 btn.className = "cat-btn px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all duration-300 gradient-btn text-white";
                 currentCategory = btn.dataset.cat;
@@ -1419,6 +1417,7 @@ Mohon info apakah stok aplikasi premium dengan spesifikasi di atas masih tersedi
             });
         });
 
+        // Event listener pencarian realtime & dukungan tombol Enter pada keyboard
         searchInput.addEventListener("input", (e) => {
             searchQuery = e.target.value.trim();
             if (searchQuery.length > 0) {
@@ -1427,6 +1426,15 @@ Mohon info apakah stok aplikasi premium dengan spesifikasi di atas masih tersedi
                 clearSearch.classList.add("hidden");
             }
             renderCatalog();
+        });
+
+        searchInput.addEventListener("keydown", (e) => {
+            if (e.key === "Enter") {
+                e.preventDefault();
+                searchQuery = searchInput.value.trim();
+                renderCatalog();
+                searchInput.blur(); // Menyembunyikan keyboard virtual di HP setelah enter ditekan agar langsung melihat hasil
+            }
         });
 
         clearSearch.addEventListener("click", () => {
