@@ -42,6 +42,12 @@
             background-attachment: fixed;
         }
 
+        /* Mengunci gulir latar belakang saat modal aktif */
+        body.modal-open {
+            overflow: hidden !important;
+            touch-action: none;
+        }
+
         .gradient-card {
             background: linear-gradient(145deg, rgba(19, 25, 50, 0.8) 0%, rgba(11, 15, 32, 0.9) 100%);
             backdrop-filter: blur(16px);
@@ -84,6 +90,24 @@
             -webkit-text-fill-color: transparent;
         }
 
+        /* Styling Varian Pilihan Mewah & Elegan */
+        .variant-card-radio {
+            transition: all 0.25s ease;
+            background: rgba(11, 15, 32, 0.8);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .variant-card-radio:hover {
+            border-color: rgba(168, 85, 247, 0.4);
+            background: rgba(19, 25, 50, 0.9);
+        }
+
+        .variant-card-radio:has(input:checked) {
+            border-color: #a855f7;
+            background: linear-gradient(135deg, rgba(30, 39, 74, 0.9) 0%, rgba(19, 25, 50, 0.95) 100%);
+            box-shadow: 0 0 20px rgba(168, 85, 247, 0.25);
+        }
+
         ::-webkit-scrollbar { width: 8px; }
         ::-webkit-scrollbar-track { background: #060812; }
         ::-webkit-scrollbar-thumb { background: #1e274a; border-radius: 4px; }
@@ -121,13 +145,13 @@
     <!-- Main Content Layout -->
     <main class="mb-auto py-10 px-4 sm:px-6 max-w-7xl mx-auto w-full">
         
-        <!-- Controls: Search & Elegan Category Tabs -->
+        <!-- Controls: Fixed Search & Elegan Category Tabs -->
         <section class="space-y-6 max-w-5xl mx-auto mb-12">
             <!-- Search Bar -->
             <div class="relative">
-                <i class="fa-solid fa-magnifying-glass text-gray-400 absolute left-5 top-1/2 -translate-y-1/2 text-base"></i>
-                <input type="text" id="search-input" placeholder="Cari aplikasi (Netflix, ChatGPT, Canva, Spotify, CapCut...)..." class="w-full pl-13 pr-12 py-4 rounded-2xl bg-brand-900/90 border border-brand-700/80 text-white placeholder-gray-400 text-sm focus:outline-none focus:border-purple-500 transition-all shadow-inner">
-                <button id="clear-search" class="hidden absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 hover:text-white p-2">
+                <i class="fa-solid fa-magnifying-glass text-gray-400 absolute left-4 top-1/2 -translate-y-1/2 text-sm z-10 pointer-events-none"></i>
+                <input type="text" id="search-input" placeholder="Cari aplikasi (Netflix, ChatGPT, Canva, Spotify, CapCut...)..." class="w-full pl-12 pr-12 py-3.5 rounded-2xl bg-brand-900/90 border border-brand-700/80 text-white placeholder-gray-400 text-sm focus:outline-none focus:border-purple-500 transition-all shadow-inner">
+                <button id="clear-search" class="hidden absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-white p-2">
                     <i class="fa-solid fa-xmark"></i>
                 </button>
             </div>
@@ -152,11 +176,9 @@
             </div>
         </section>
 
-        <!-- Product Cards Grid (One Card Per Application) -->
+        <!-- Product Cards Grid -->
         <section>
-            <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-                <!-- Dynamically Populated by JavaScript -->
-            </div>
+            <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"></div>
 
             <!-- Empty State -->
             <div id="empty-state" class="hidden text-center py-20">
@@ -172,9 +194,9 @@
         <section class="mt-20 pt-10 border-t border-brand-800/60 text-center max-w-xl mx-auto space-y-4">
             <p class="text-xs text-gray-400 font-medium">Layanan Pelanggan & Konsultasi Resmi</p>
             <div class="flex items-center justify-center gap-3">
-                <a href="https://wa.me/62895409047979" target="_blank" class="px-6 py-3 rounded-2xl wa-btn-glow text-white font-bold text-sm inline-flex items-center gap-2">
-                    <i class="fa-brands fa-whatsapp text-lg"></i>
-                    <span>WhatsApp: 0895409047979</span>
+                <a href="https://wa.me/62895409047979" target="_blank" class="px-6 py-3.5 rounded-2xl wa-btn-glow text-white font-bold text-sm inline-flex items-center gap-2.5">
+                    <i class="fa-brands fa-whatsapp text-xl"></i>
+                    <span>Chat Admin via WhatsApp</span>
                 </a>
             </div>
         </section>
@@ -183,13 +205,12 @@
     <!-- Modal 1: Pemilihan Varian Paket Aplikasi -->
     <div id="variant-modal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 bg-black/80 backdrop-blur-md">
         <div class="bg-brand-900 border border-brand-700 rounded-3xl max-w-lg w-full p-6 sm:p-7 shadow-2xl relative max-h-[90vh] flex flex-col justify-between">
-            <button onclick="closeVariantModal()" class="absolute top-5 right-5 text-gray-400 hover:text-white p-2 rounded-xl hover:bg-brand-800">
+            <button onclick="closeVariantModal()" class="absolute top-5 right-5 text-gray-400 hover:text-white p-2 rounded-xl hover:bg-brand-800 transition-colors">
                 <i class="fa-solid fa-xmark text-lg"></i>
             </button>
 
-            <!-- App Title Header -->
             <div class="flex items-center gap-4 mb-6 pb-4 border-b border-brand-800">
-                <div id="variant-app-icon" class="w-12 h-12 rounded-2xl bg-purple-600/20 border border-purple-500/30 text-purple-400 flex items-center justify-center text-xl font-bold">
+                <div id="variant-app-icon" class="w-12 h-12 rounded-2xl bg-purple-600/20 border border-purple-500/30 text-purple-400 flex items-center justify-center text-xl font-bold flex-shrink-0">
                     <i class="fa-solid fa-cube"></i>
                 </div>
                 <div>
@@ -198,12 +219,8 @@
                 </div>
             </div>
 
-            <!-- List of Variants -->
-            <div class="space-y-3 overflow-y-auto pr-1 mb-6 max-h-[50vh]" id="variant-list">
-                <!-- Variant Radio Cards Rendered via JS -->
-            </div>
+            <div class="space-y-3 overflow-y-auto pr-1 mb-6 max-h-[50vh]" id="variant-list"></div>
 
-            <!-- Action Button -->
             <div class="pt-4 border-t border-brand-800">
                 <button id="btn-proceed-order" onclick="proceedToOrderForm()" disabled class="w-full py-3.5 rounded-2xl bg-gray-800 text-gray-500 font-bold text-sm cursor-not-allowed transition-all">
                     Pilih Salah Satu Paket
@@ -215,12 +232,12 @@
     <!-- Modal 2: Formulir Pemesanan -->
     <div id="order-modal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 bg-black/80 backdrop-blur-md">
         <div class="bg-brand-900 border border-brand-700 rounded-3xl max-w-md w-full p-6 sm:p-7 shadow-2xl relative">
-            <button onclick="closeOrderModal()" class="absolute top-5 right-5 text-gray-400 hover:text-white p-2 rounded-xl hover:bg-brand-800">
+            <button onclick="closeOrderModal()" class="absolute top-5 right-5 text-gray-400 hover:text-white p-2 rounded-xl hover:bg-brand-800 transition-colors">
                 <i class="fa-solid fa-xmark text-lg"></i>
             </button>
 
             <div class="flex items-center gap-3 mb-5">
-                <div class="w-10 h-10 rounded-2xl bg-purple-600/20 text-purple-400 flex items-center justify-center font-bold border border-purple-500/20">
+                <div class="w-10 h-10 rounded-2xl bg-purple-600/20 text-purple-400 flex items-center justify-center font-bold border border-purple-500/20 flex-shrink-0">
                     <i class="fa-solid fa-receipt text-lg"></i>
                 </div>
                 <div>
@@ -229,7 +246,6 @@
                 </div>
             </div>
 
-            <!-- Order Package Summary -->
             <div class="p-3.5 rounded-2xl bg-brand-950 border border-brand-800 mb-5 text-xs space-y-2">
                 <div class="flex justify-between text-gray-400">
                     <span>Aplikasi:</span>
@@ -249,7 +265,6 @@
                 </div>
             </div>
 
-            <!-- Dynamic Input Form -->
             <form id="order-form" onsubmit="submitToWhatsApp(event)" class="space-y-4">
                 <div>
                     <label class="block text-xs font-bold text-gray-300 mb-1">Nama Pemesan <span class="text-red-400">*</span></label>
@@ -261,12 +276,9 @@
                     <input type="text" id="input-login-location" required placeholder="Contoh: Jakarta, Surabaya, Bali..." class="w-full px-4 py-3 rounded-xl bg-brand-950 border border-brand-800 text-white text-xs focus:outline-none focus:border-purple-500">
                 </div>
 
-                <!-- Custom Price Option Selector for Price Range Items -->
                 <div id="price-range-container" class="hidden">
                     <label class="block text-xs font-bold text-gray-300 mb-1">Pilih Opsi Harga <span class="text-red-400">*</span></label>
-                    <select id="select-price-range" onchange="updateSelectedRangePrice(this.value)" class="w-full px-4 py-3 rounded-xl bg-brand-950 border border-brand-800 text-purple-300 text-xs font-bold focus:outline-none focus:border-purple-500">
-                        <!-- Populated dynamically if price range exists -->
-                    </select>
+                    <select id="select-price-range" onchange="updateSelectedRangePrice(this.value)" class="w-full px-4 py-3 rounded-xl bg-brand-950 border border-brand-800 text-purple-300 text-xs font-bold focus:outline-none focus:border-purple-500"></select>
                 </div>
 
                 <div>
@@ -286,19 +298,16 @@
     <footer class="bg-brand-950 border-t border-brand-800/80 py-6 text-center text-xs text-gray-500 mt-12">
         <div class="max-w-7xl mx-auto px-4 space-y-1">
             <p>© 2026 PREMIUM APP STORE. All rights reserved.</p>
-            <p>Admin Order WA: <a href="https://wa.me/62895409047979" target="_blank" class="text-emerald-400 hover:underline font-bold">0895409047979</a></p>
         </div>
     </footer>
 
     <!-- Application Script Logic -->
     <script>
-        // Store Configuration
         const STORE_CONFIG = {
             name: "PREMIUM APP STORE",
             waPhone: "62895409047979"
         };
 
-        // Complete Centralized Master Data Catalog with Added App Highlights
         const MASTER_APPS = [
             // 🎬 SINEMA & STREAMING
             {
@@ -795,14 +804,12 @@
             }
         ];
 
-        // State Tracking
         let currentCategory = "all";
         let searchQuery = "";
         let selectedApp = null;
         let selectedVariant = null;
         let activeSelectedPrice = 0;
 
-        // Helpers
         function formatRupiah(num) {
             return "Rp" + num.toLocaleString("id-ID");
         }
@@ -837,14 +844,12 @@
             return `${formatRupiah(min)} - ${formatRupiah(max)}`;
         }
 
-        // DOM Elements
         const productGrid = document.getElementById("product-grid");
         const emptyState = document.getElementById("empty-state");
         const searchInput = document.getElementById("search-input");
         const clearSearch = document.getElementById("clear-search");
         const categoryTabs = document.querySelectorAll("#category-tabs button");
 
-        // Render Cards (One Card Per App with Highlights)
         function renderCatalog() {
             productGrid.innerHTML = "";
 
@@ -873,14 +878,13 @@
                 const variantCount = app.variants.length;
                 const priceSummary = getAppPriceSummary(app);
 
-                // Build highlights list HTML
                 let highlightsHtml = "";
                 if (app.highlights && app.highlights.length > 0) {
                     highlightsHtml = `<ul class="space-y-1.5 mb-6 text-xs text-gray-300">`;
                     app.highlights.forEach(item => {
                         highlightsHtml += `
                             <li class="flex items-start gap-2">
-                                <i class="fa-solid fa-circle-check text-purple-400 text-[11px] mt-0.5"></i>
+                                <i class="fa-solid fa-circle-check text-purple-400 text-[11px] mt-0.5 flex-shrink-0"></i>
                                 <span>${item}</span>
                             </li>
                         `;
@@ -891,10 +895,10 @@
                 card.innerHTML = `
                     <div>
                         <div class="flex items-center justify-between mb-5">
-                            <div class="w-12 h-12 rounded-2xl bg-brand-950/80 border border-brand-800 flex items-center justify-center text-2xl shadow-inner">
+                            <div class="w-12 h-12 rounded-2xl bg-brand-950/80 border border-brand-800 flex items-center justify-center text-2xl shadow-inner flex-shrink-0">
                                 <i class="${app.iconClass}"></i>
                             </div>
-                            ${app.badge ? `<span class="px-3 py-1 rounded-full text-[10px] font-extrabold uppercase tracking-wider bg-purple-500/10 text-purple-300 border border-purple-500/30">${app.badge}</span>` : `<span class="text-[10px] text-gray-400 uppercase font-bold">${getCategoryLabel(app.category)}</span>`}
+                            ${app.badge ? `<span class="px-3 py-1 rounded-full text-[10px] font-extrabold uppercase tracking-wider bg-purple-500/10 text-purple-300 border border-purple-500/30 flex-shrink-0">${app.badge}</span>` : `<span class="text-[10px] text-gray-400 uppercase font-bold flex-shrink-0">${getCategoryLabel(app.category)}</span>`}
                         </div>
 
                         <h3 class="text-xl font-extrabold text-white mb-1">${app.name}</h3>
@@ -907,11 +911,11 @@
                     </div>
 
                     <div class="pt-4 border-t border-brand-800/80 flex items-end justify-between gap-3">
-                        <div>
+                        <div class="min-w-0 flex-1">
                             <span class="block text-[10px] font-bold text-gray-400 uppercase">Mulai Dari</span>
-                            <span class="text-base sm:text-lg font-extrabold text-white">${priceSummary}</span>
+                            <span class="text-sm sm:text-base lg:text-lg font-extrabold text-white truncate block">${priceSummary}</span>
                         </div>
-                        <button onclick="openVariantModal('${app.id}')" class="px-4 py-2.5 rounded-xl gradient-btn text-white text-xs font-extrabold flex items-center gap-2">
+                        <button onclick="openVariantModal('${app.id}')" class="px-4 py-2.5 rounded-xl gradient-btn text-white text-xs font-extrabold flex items-center justify-center gap-2 whitespace-nowrap flex-shrink-0">
                             <span>Lihat Paket</span>
                             <i class="fa-solid fa-chevron-right text-[10px]"></i>
                         </button>
@@ -922,7 +926,7 @@
             });
         }
 
-        // Modal 1: Select Variant
+        // Buka Modal 1 & Kunci Gulir Latar Belakang
         function openVariantModal(appId) {
             selectedApp = MASTER_APPS.find(a => a.id === appId);
             if (!selectedApp) return;
@@ -938,23 +942,27 @@
             const variantList = document.getElementById("variant-list");
             variantList.innerHTML = "";
 
-            selectedApp.variants.forEach((v, index) => {
+            // Tampilan Pilihan Varian Yang Lebih Elegan & Sederhana (Menghilangkan AI look)
+            selectedApp.variants.forEach((v) => {
                 const vCard = document.createElement("label");
-                vCard.className = "flex items-center justify-between p-4 rounded-2xl bg-brand-950 border border-brand-800 hover:border-purple-500/40 cursor-pointer transition-all";
+                vCard.className = "variant-card-radio flex items-center justify-between p-4 rounded-2xl cursor-pointer";
 
                 let displayPrice = v.priceRange 
                     ? `${formatRupiah(v.priceRange[0])} - ${formatRupiah(v.priceRange[1])}`
                     : formatRupiah(v.price);
 
                 vCard.innerHTML = `
-                    <div class="flex items-center gap-3.5">
-                        <input type="radio" name="app-variant" value="${v.id}" onchange="selectVariantOption('${v.id}')" class="w-4 h-4 text-purple-600 bg-brand-900 border-brand-700 focus:ring-purple-500">
-                        <div>
-                            <span class="block text-sm font-bold text-white">${v.name}</span>
-                            <span class="text-xs text-gray-400">Durasi: <strong class="text-gray-200">${v.duration}</strong> • Plan: ${v.plan}</span>
+                    <div class="flex items-center gap-3.5 min-w-0">
+                        <input type="radio" name="app-variant" value="${v.id}" onchange="selectVariantOption('${v.id}')" class="w-4 h-4 text-purple-600 bg-brand-900 border-brand-700 focus:ring-purple-500 flex-shrink-0">
+                        <div class="min-w-0">
+                            <span class="block text-sm font-bold text-white truncate">${v.name}</span>
+                            <div class="flex items-center gap-2 text-xs text-gray-400 mt-0.5">
+                                <span class="px-2 py-0.5 rounded-md bg-brand-800 border border-brand-700 text-gray-300 text-[10px] font-semibold">${v.duration}</span>
+                                <span class="truncate">${v.plan}</span>
+                            </div>
                         </div>
                     </div>
-                    <span class="text-sm font-extrabold text-emerald-400 ml-2">${displayPrice}</span>
+                    <span class="text-sm font-extrabold text-emerald-400 ml-3 flex-shrink-0">${displayPrice}</span>
                 `;
 
                 variantList.appendChild(vCard);
@@ -965,6 +973,7 @@
             btnProceed.className = "w-full py-3.5 rounded-2xl bg-gray-800 text-gray-500 font-bold text-sm cursor-not-allowed transition-all";
             btnProceed.textContent = "Pilih Salah Satu Paket";
 
+            document.body.classList.add("modal-open");
             document.getElementById("variant-modal").classList.remove("hidden");
         }
 
@@ -980,13 +989,15 @@
 
         function closeVariantModal() {
             document.getElementById("variant-modal").classList.add("hidden");
+            if (document.getElementById("order-modal").classList.contains("hidden")) {
+                document.body.classList.remove("modal-open");
+            }
         }
 
-        // Modal 2: Order Form
         function proceedToOrderForm() {
             if (!selectedVariant || !selectedApp) return;
 
-            closeVariantModal();
+            document.getElementById("variant-modal").classList.add("hidden");
 
             document.getElementById("summary-app-name").textContent = selectedApp.name;
             document.getElementById("summary-package-name").textContent = `${selectedVariant.name} (${selectedVariant.plan})`;
@@ -1021,7 +1032,6 @@
                 document.getElementById("summary-price").textContent = formatRupiah(selectedVariant.price);
             }
 
-            // Pre-fill Device if available
             const deviceInput = document.getElementById("input-device-brand");
             if (selectedVariant.device) {
                 deviceInput.value = selectedVariant.device;
@@ -1029,6 +1039,7 @@
                 deviceInput.value = "";
             }
 
+            document.body.classList.add("modal-open");
             document.getElementById("order-modal").classList.remove("hidden");
         }
 
@@ -1040,9 +1051,9 @@
         function closeOrderModal() {
             document.getElementById("order-modal").classList.add("hidden");
             document.getElementById("order-form").reset();
+            document.body.classList.remove("modal-open");
         }
 
-        // Submit WhatsApp Form
         function submitToWhatsApp(e) {
             e.preventDefault();
 
@@ -1059,7 +1070,6 @@
 
             const formattedPrice = formatRupiah(activeSelectedPrice);
 
-            // EXACT TEMPLATE FORMAT
             const message = `🌷 ─── ᴛᴀɴʏᴀ sᴛᴏᴋ ᴀᴘᴋ ᴘʀᴇᴍ ─── 🌷
 
 👤 Nama : ${name}
@@ -1079,7 +1089,6 @@ Mohon info apakah stok aplikasi premium dengan spesifikasi di atas masih tersedi
             closeOrderModal();
         }
 
-        // Event Listeners
         categoryTabs.forEach(btn => {
             btn.addEventListener("click", () => {
                 categoryTabs.forEach(b => {
@@ -1116,7 +1125,6 @@ Mohon info apakah stok aplikasi premium dengan spesifikasi di atas masih tersedi
             categoryTabs[0].click();
         });
 
-        // Initialize App
         document.addEventListener("DOMContentLoaded", () => {
             document.getElementById("brand-title").textContent = STORE_CONFIG.name;
             renderCatalog();
