@@ -168,6 +168,28 @@
             background: linear-gradient(135deg, rgba(49, 36, 102, 0.6) 0%, rgba(22, 17, 51, 0.85) 100%);
         }
 
+        /* Perbaikan khusus agar input form tidak berubah menjadi putih saat diisi di HP/Desktop */
+        .custom-input-dark {
+            background: linear-gradient(135deg, rgba(15, 23, 42, 0.9) 0%, rgba(30, 27, 75, 0.8) 100%) !important;
+            border: 1px solid rgba(168, 85, 247, 0.3);
+            color: #ffffff !important;
+            -webkit-text-fill-color: #ffffff !important;
+        }
+        .custom-input-dark:focus {
+            background: linear-gradient(135deg, rgba(15, 23, 42, 0.95) 0%, rgba(49, 36, 102, 0.9) 100%) !important;
+            border-color: #c084fc !important;
+            box-shadow: 0 0 15px rgba(168, 85, 247, 0.25);
+            outline: none;
+        }
+        /* Mencegah autofill browser mengubah background input menjadi putih */
+        input:-webkit-autofill,
+        input:-webkit-autofill:hover, 
+        input:-webkit-autofill:focus, 
+        input:-webkit-autofill:active {
+            -webkit-box-shadow: 0 0 0 30px #0f172a inset !important;
+            -webkit-text-fill-color: #ffffff !important;
+        }
+
         .modal-backdrop {
             opacity: 0;
             visibility: hidden;
@@ -202,7 +224,7 @@
 </head>
 <body class="text-gray-100 min-h-screen flex flex-col justify-between antialiased selection:bg-purple-500 selection:text-white">
 
-    <!-- Header Navigation (Blur Transparan Glassmorphism di HP & PC) -->
+    <!-- Header Navigation -->
     <header class="sticky top-0 z-40 glass-header">
         <div class="max-w-7xl mx-auto px-3 sm:px-6 h-auto sm:h-16 py-2.5 sm:py-0 flex flex-col sm:flex-row items-center justify-between gap-2.5 sm:gap-0">
             <a href="#" class="flex items-center gap-2.5 group w-full sm:w-auto justify-between sm:justify-start">
@@ -357,7 +379,6 @@
                 </div>
             </div>
 
-            <!-- Konten Glosarium + Syarat Ketentuan -->
             <div class="space-y-3.5 overflow-y-auto pr-1 text-xs text-gray-200 max-h-[58vh]">
                 <!-- 1P1U -->
                 <div class="p-4 rounded-2xl modal-item-box space-y-2">
@@ -449,7 +470,7 @@
                     <p class="text-gray-300 leading-relaxed">Full Warrant dilengkapi garansi penuh perbaikan atau pergantian akun. No Warrant ditawarkan dengan harga lebih murah tanpa fasilitas garansi.</p>
                 </div>
 
-                <!-- SYARAT DAN KETENTUAN (S&K) -->
+                <!-- S&K -->
                 <div class="p-5 rounded-2xl bg-gradient-to-br from-indigo-950 via-purple-950/80 to-slate-950 border border-purple-500/40 space-y-3 mt-4 shadow-xl">
                     <div class="flex items-center gap-2 text-purple-200 font-extrabold text-sm border-b border-purple-500/20 pb-2">
                         <i class="fa-solid fa-file-contract text-base"></i>
@@ -551,25 +572,26 @@
                 </div>
             </div>
 
+            <!-- Formulir Pemesanan dengan input gelap anti-putih -->
             <form id="order-form" onsubmit="submitToWhatsApp(event)" class="space-y-4">
                 <div>
                     <label class="block text-xs font-bold text-gray-200 mb-1">Nama Pemesan <span class="text-red-400">*</span></label>
-                    <input type="text" id="input-customer-name" required placeholder="Masukkan nama Anda..." class="w-full px-4 py-3 rounded-xl bg-slate-950/80 border border-purple-500/30 text-white text-xs focus:outline-none focus:border-purple-400 transition-all">
+                    <input type="text" id="input-customer-name" required placeholder="Masukkan nama Anda..." class="w-full px-4 py-3 rounded-xl custom-input-dark text-xs transition-all placeholder-gray-500">
                 </div>
 
                 <div>
                     <label class="block text-xs font-bold text-gray-200 mb-1">Lokasi Login <span class="text-red-400">*</span></label>
-                    <input type="text" id="input-login-location" required placeholder="Contoh: Jakarta, Surabaya, Bali..." class="w-full px-4 py-3 rounded-xl bg-slate-950/80 border border-purple-500/30 text-white text-xs focus:outline-none focus:border-purple-400 transition-all">
+                    <input type="text" id="input-login-location" required placeholder="Contoh: Jakarta, Surabaya, Bali..." class="w-full px-4 py-3 rounded-xl custom-input-dark text-xs transition-all placeholder-gray-500">
                 </div>
 
                 <div id="price-range-container" class="hidden">
                     <label class="block text-xs font-bold text-gray-200 mb-1">Pilih Opsi Harga <span class="text-red-400">*</span></label>
-                    <select id="select-price-range" onchange="updateSelectedRangePrice(this.value)" class="w-full px-4 py-3 rounded-xl bg-slate-950/80 border border-purple-500/30 text-purple-200 text-xs font-bold focus:outline-none focus:border-purple-400 transition-all"></select>
+                    <select id="select-price-range" onchange="updateSelectedRangePrice(this.value)" class="w-full px-4 py-3 rounded-xl custom-input-dark text-xs font-bold transition-all"></select>
                 </div>
 
                 <div>
                     <label class="block text-xs font-bold text-gray-200 mb-1">Merek Perangkat <span class="text-red-400">*</span></label>
-                    <input type="text" id="input-device-brand" required placeholder="Contoh: Samsung, iPhone, Android TV, Laptop..." class="w-full px-4 py-3 rounded-xl bg-slate-950/80 border border-purple-500/30 text-white text-xs focus:outline-none focus:border-purple-400 transition-all">
+                    <input type="text" id="input-device-brand" required placeholder="Contoh: Samsung, iPhone, Android TV, Laptop..." class="w-full px-4 py-3 rounded-xl custom-input-dark text-xs transition-all placeholder-gray-500">
                 </div>
 
                 <button type="submit" class="w-full py-3.5 rounded-2xl wa-btn-glow text-white font-extrabold text-sm flex items-center justify-center gap-2 mt-2">
