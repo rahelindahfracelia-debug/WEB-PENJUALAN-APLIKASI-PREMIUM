@@ -168,17 +168,24 @@
             background: linear-gradient(135deg, rgba(49, 36, 102, 0.6) 0%, rgba(22, 17, 51, 0.85) 100%);
         }
 
-        /* Custom Input Gelap */
+        /* Custom Input Gelap & Placeholder Tipis Lembut (Low Opacity) */
         .custom-input-dark {
-            background: linear-gradient(135deg, rgba(15, 23, 42, 0.9) 0%, rgba(30, 27, 75, 0.8) 100%) !important;
-            border: 1px solid rgba(168, 85, 247, 0.3);
+            background: linear-gradient(135deg, rgba(15, 23, 42, 0.8) 0%, rgba(30, 27, 75, 0.7) 100%) !important;
+            border: 1px solid rgba(168, 85, 247, 0.2);
             color: #ffffff !important;
             -webkit-text-fill-color: #ffffff !important;
         }
+
+        .custom-input-dark::placeholder {
+            color: rgba(216, 180, 254, 0.25) !important;
+            -webkit-text-fill-color: rgba(216, 180, 254, 0.25) !important;
+            font-weight: 400;
+        }
+
         .custom-input-dark:focus {
             background: linear-gradient(135deg, rgba(15, 23, 42, 0.95) 0%, rgba(49, 36, 102, 0.9) 100%) !important;
-            border-color: #c084fc !important;
-            box-shadow: 0 0 15px rgba(168, 85, 247, 0.25);
+            border-color: rgba(192, 132, 252, 0.6) !important;
+            box-shadow: 0 0 15px rgba(168, 85, 247, 0.2);
             outline: none;
         }
 
@@ -216,7 +223,7 @@
             opacity: 1;
         }
 
-        /* 🌟 PERBAIKAN SCROLLBAR ELEGAN (TANPA GARIS HITAM KAKU) */
+        /* PERBAIKAN SCROLLBAR ELEGAN (TANPA GARIS HITAM KAKU) */
         ::-webkit-scrollbar { 
             width: 6px; 
             height: 6px;
@@ -283,13 +290,13 @@
         <section class="space-y-6 max-w-5xl mx-auto mb-12">
             <div class="relative max-w-3xl mx-auto">
                 <i class="fa-solid fa-magnifying-glass text-purple-400 absolute left-4 top-1/2 -translate-y-1/2 text-sm z-10 pointer-events-none"></i>
-                <input type="text" id="search-input" placeholder="Cari aplikasi (Netflix, ChatGPT, Canva, Spotify, CapCut)..." class="w-full pl-12 pr-12 py-4 rounded-2xl bg-gradient-to-r from-indigo-950/90 via-slate-900/90 to-purple-950/90 border border-purple-500/30 text-white placeholder-gray-400 text-sm focus:outline-none focus:border-purple-400 focus:ring-2 focus:ring-purple-500/30 transition-all shadow-inner">
+                <input type="text" id="search-input" placeholder="Cari aplikasi (Netflix, ChatGPT, Canva, Spotify, CapCut)..." class="w-full pl-12 pr-12 py-4 rounded-2xl bg-gradient-to-r from-indigo-950/90 via-slate-900/90 to-purple-950/90 border border-purple-500/30 text-white placeholder-purple-200/30 text-sm focus:outline-none focus:border-purple-400 focus:ring-2 focus:ring-purple-500/30 transition-all shadow-inner">
                 <button id="clear-search" class="hidden absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-white p-2 transition-transform hover:scale-110">
                     <i class="fa-solid fa-xmark"></i>
                 </button>
             </div>
 
-            <!-- Tab Kategori Bergradasi Estetik -->
+            <!-- Tab Kategori Bergradasi Dinamis -->
             <div class="flex flex-wrap items-center justify-center gap-2.5 pt-2" id="category-tabs">
                 <button data-cat="all" class="cat-btn px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all duration-300 gradient-btn text-white">
                     <i class="fa-solid fa-border-all mr-1.5"></i> Semua Katalog
@@ -361,7 +368,7 @@
                 </div>
                 <div class="p-4 rounded-2xl modal-item-box space-y-1.5 shadow-sm">
                     <span class="font-bold text-purple-300 text-sm">3. Konfirmasi Admin</span>
-                    <p class="text-gray-300 leading-relaxed">Chat akan otomatis terbuka ke WhatsApp admin untuk mengecek ketersediaan stok dan harga terkini.</p>
+                    <p class="text-gray-300 leading-relaxed">Chat akan otomatis terbuka ke WhatsApp admin untuk mengecek ketersediaan stok.</p>
                 </div>
                 <div class="p-4 rounded-2xl modal-item-box space-y-1.5 shadow-sm">
                     <span class="font-bold text-purple-300 text-sm">4. Pembayaran QRIS</span>
@@ -496,7 +503,7 @@
                         <span>Syarat dan Ketentuan Layanan (S&K)</span>
                     </div>
                     <div class="text-gray-200 space-y-2.5 leading-relaxed text-[11px] sm:text-xs">
-                        <p>1. Wajib menanyakan ketersediaan stok serta pembaruan harga terlebih dahulu kepada admin sebelum melakukan pemesanan.</p>
+                        <p>1. Wajib menanyakan ketersediaan stok terlebih dahulu kepada admin sebelum melakukan pemesanan.</p>
                         <p>2. Bagi aplikasi atau varian layanan yang belum tercantum di dalam daftar katalog web, silakan tanyakan kepada admin.</p>
                         <p>3. Dimohon kesediaannya untuk bersabar; pesanan akan diproses sesuai antrean dan menunggu koordinasi bersama pihak pemasok.</p>
                         <p>4. Jaminan garansi (Full Warrant) berlaku sah selama pelanggan mematuhi seluruh aturan dan ketentuan penggunaan akun.</p>
@@ -586,7 +593,7 @@
                     <span id="summary-duration" class="font-bold text-white"></span>
                 </div>
                 <div class="flex justify-between text-gray-300 pt-1 border-t border-purple-500/20">
-                    <span>Harga Pas:</span>
+                    <span>Harga:</span>
                     <span id="summary-price" class="font-extrabold text-emerald-400 text-sm"></span>
                 </div>
             </div>
@@ -594,22 +601,22 @@
             <form id="order-form" onsubmit="submitToWhatsApp(event)" class="space-y-4">
                 <div>
                     <label class="block text-xs font-bold text-gray-200 mb-1">Nama Pemesan <span class="text-red-400">*</span></label>
-                    <input type="text" id="input-customer-name" required placeholder="Masukkan nama Anda..." class="w-full px-4 py-3 rounded-xl custom-input-dark text-xs transition-all placeholder-gray-500">
+                    <input type="text" id="input-customer-name" required placeholder="Masukkan nama Anda..." class="w-full px-4 py-3 rounded-xl custom-input-dark text-xs transition-all">
                 </div>
 
                 <div>
                     <label class="block text-xs font-bold text-gray-200 mb-1">Lokasi Login <span class="text-red-400">*</span></label>
-                    <input type="text" id="input-login-location" required placeholder="Contoh: Jakarta, Surabaya, Bali..." class="w-full px-4 py-3 rounded-xl custom-input-dark text-xs transition-all placeholder-gray-500">
+                    <input type="text" id="input-login-location" required placeholder="Contoh: Jakarta, Surabaya, Bali..." class="w-full px-4 py-3 rounded-xl custom-input-dark text-xs transition-all">
                 </div>
 
                 <div id="price-range-container" class="hidden">
-                    <label class="block text-xs font-bold text-gray-200 mb-1">Pilih Opsi Harga <span class="text-red-400">*</span></label>
+                    <label class="block text-xs font-bold text-gray-200 mb-1">Pilih Opsi Paket <span class="text-red-400">*</span></label>
                     <select id="select-price-range" onchange="updateSelectedRangePrice(this.value)" class="w-full px-4 py-3 rounded-xl custom-input-dark text-xs font-bold transition-all"></select>
                 </div>
 
                 <div>
                     <label class="block text-xs font-bold text-gray-200 mb-1">Merek Perangkat <span class="text-red-400">*</span></label>
-                    <input type="text" id="input-device-brand" required placeholder="Contoh: Samsung, iPhone, Android TV, Laptop..." class="w-full px-4 py-3 rounded-xl custom-input-dark text-xs transition-all placeholder-gray-500">
+                    <input type="text" id="input-device-brand" required placeholder="Contoh: Samsung, iPhone, Android TV, Laptop..." class="w-full px-4 py-3 rounded-xl custom-input-dark text-xs transition-all">
                 </div>
 
                 <button type="submit" class="w-full py-3.5 rounded-2xl wa-btn-glow text-white font-extrabold text-sm flex items-center justify-center gap-2 mt-2">
@@ -1483,7 +1490,7 @@
 💻 Merek Perangkat : ${device}
 💰 Harga : ${formattedPrice}
 
-Mohon info apakah stok aplikasi premium dengan spesifikasi di atas masih tersedia ya, kak. Jika tersedia, mohon informasikan harga sesuai spesifikasi tersebut. Terima kasih 🙏🏻✨`;
+Mohon info apakah stok aplikasi premium dengan spesifikasi di atas masih tersedia ya, kak. Terima kasih 🙏🏻✨`;
 
             const waUrl = `https://wa.me/${STORE_CONFIG.waPhone}?text=${encodeURIComponent(message)}`;
             window.open(waUrl, "_blank");
@@ -1509,15 +1516,6 @@ Mohon info apakah stok aplikasi premium dengan spesifikasi di atas masih tersedi
                 clearSearch.classList.add("hidden");
             }
             renderCatalog();
-        });
-
-        searchInput.addEventListener("keydown", (e) => {
-            if (e.key === "Enter") {
-                e.preventDefault();
-                searchQuery = searchInput.value.trim();
-                renderCatalog();
-                searchInput.blur();
-            }
         });
 
         clearSearch.addEventListener("click", () => {
