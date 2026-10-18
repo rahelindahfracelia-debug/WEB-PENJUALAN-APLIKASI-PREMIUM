@@ -552,11 +552,11 @@
             <div class="space-y-3 overflow-y-auto pr-2 mb-6 max-h-[45vh]" id="variant-list"></div>
 
             <div class="pt-4 border-t border-purple-500/30 flex items-center gap-2">
-                <button onclick="toggleAppContextGuide(true)" id="btn-context-help" title="Penjelasan varian aplikasi ini" class="p-3.5 rounded-2xl modal-item-box text-purple-300 transition-all flex-shrink-0 hover:scale-105">
+                <button onclick="toggleAppContextGuide(true)" id="btn-context-help" title="Penjelasan varian aplikasi ini" class="p-3 sm:p-3.5 rounded-2xl modal-item-box text-purple-300 transition-all flex-shrink-0 hover:scale-105">
                     <i class="fa-solid fa-circle-question text-base"></i>
                 </button>
-                <button id="btn-proceed-order" onclick="proceedToOrderForm()" disabled class="w-full py-3.5 rounded-2xl bg-slate-800/80 text-gray-400 font-bold text-sm cursor-not-allowed transition-all">
-                    Pilih Salah Satu Paket
+                <button id="btn-proceed-order" onclick="proceedToOrderForm()" disabled class="w-full min-w-0 p-3 sm:p-3.5 rounded-2xl bg-slate-800/80 text-gray-400 font-bold text-xs sm:text-sm cursor-not-allowed transition-all flex items-center justify-center text-center">
+                    <span class="truncate block w-full">Pilih Salah Satu Paket</span>
                 </button>
             </div>
         </div>
@@ -1365,8 +1365,8 @@
 
             const btnProceed = document.getElementById("btn-proceed-order");
             btnProceed.disabled = true;
-            btnProceed.className = "w-full py-3.5 rounded-2xl bg-slate-800/80 text-gray-400 font-bold text-sm cursor-not-allowed transition-all";
-            btnProceed.textContent = "Pilih Salah Satu Paket";
+            btnProceed.className = "w-full min-w-0 p-3 sm:p-3.5 rounded-2xl bg-slate-800/80 text-gray-400 font-bold text-xs sm:text-sm cursor-not-allowed transition-all flex items-center justify-center text-center";
+            btnProceed.innerHTML = `<span class="truncate block w-full">Pilih Salah Satu Paket</span>`;
 
             document.body.classList.add("modal-open");
             document.getElementById("variant-modal").classList.add("active");
@@ -1386,8 +1386,8 @@
             const btnProceed = document.getElementById("btn-proceed-order");
             if (selectedVariant) {
                 btnProceed.disabled = false;
-                btnProceed.className = "w-full py-3.5 rounded-2xl gradient-btn text-white font-bold text-sm cursor-pointer transition-all";
-                btnProceed.textContent = `Lanjut Order: ${selectedVariant.name} (${selectedVariant.duration})`;
+                btnProceed.className = "w-full min-w-0 p-3 sm:p-3.5 rounded-2xl gradient-btn text-white font-bold text-xs sm:text-sm cursor-pointer transition-all flex items-center justify-center text-center";
+                btnProceed.innerHTML = `<span class="truncate block w-full">Lanjut Order: ${selectedVariant.name} (${selectedVariant.duration})</span>`;
             }
         }
 
