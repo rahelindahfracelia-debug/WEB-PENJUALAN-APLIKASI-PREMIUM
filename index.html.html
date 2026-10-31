@@ -564,7 +564,7 @@
 
     <!-- Modal 2: Formulir Pemesanan -->
     <div id="order-modal" class="modal-backdrop fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-md">
-        <div class="modal-content rounded-3xl max-w-md w-full p-6 sm:p-7 relative">
+        <div class="modal-content rounded-3xl max-w-md w-full p-6 sm:p-7 relative max-h-[90vh] overflow-y-auto">
             <button onclick="closeOrderModal()" class="absolute top-5 right-5 text-gray-300 hover:text-white p-2 rounded-xl hover:bg-purple-900/40 transition-all duration-300 hover:rotate-90">
                 <i class="fa-solid fa-xmark text-lg"></i>
             </button>
@@ -600,8 +600,16 @@
 
             <form id="order-form" onsubmit="submitToWhatsApp(event)" class="space-y-4">
                 <div>
-                    <label class="block text-xs font-bold text-gray-200 mb-1">Nama Pemesan <span class="text-red-400">*</span></label>
-                    <input type="text" id="input-customer-name" required placeholder="Masukkan nama Anda..." class="w-full px-4 py-3 rounded-xl custom-input-dark text-xs transition-all">
+                    <label class="block text-xs font-bold text-gray-200 mb-1">Nama Pemesan / WA <span class="text-red-400">*</span></label>
+                    <input type="text" id="input-customer-name" required placeholder="Masukkan nama atau nomor WhatsApp Anda..." class="w-full px-4 py-3 rounded-xl custom-input-dark text-xs transition-all">
+                </div>
+
+                <div>
+                    <label class="block text-xs font-bold text-gray-200 mb-1">Pemakaian <span class="text-red-400">*</span></label>
+                    <select id="input-pemakaian" required class="w-full px-4 py-3 rounded-xl custom-input-dark text-xs font-bold transition-all">
+                        <option value="Pribadi">Pribadi</option>
+                        <option value="Reseller">Reseller</option>
+                    </select>
                 </div>
 
                 <div>
@@ -617,6 +625,15 @@
                 <div>
                     <label class="block text-xs font-bold text-gray-200 mb-1">Merek Perangkat <span class="text-red-400">*</span></label>
                     <input type="text" id="input-device-brand" required placeholder="Contoh: Samsung, iPhone, Android TV, Laptop..." class="w-full px-4 py-3 rounded-xl custom-input-dark text-xs transition-all">
+                </div>
+
+                <div>
+                    <label class="block text-xs font-bold text-gray-200 mb-1">Metode Pembayaran <span class="text-red-400">*</span></label>
+                    <select id="input-pembayaran" required class="w-full px-4 py-3 rounded-xl custom-input-dark text-xs font-bold transition-all">
+                        <option value="QRIS">QRIS</option>
+                        <option value="Transfer Bank">Transfer Bank</option>
+                        <option value="E-Wallet">E-Wallet</option>
+                    </select>
                 </div>
 
                 <button type="submit" class="w-full py-3.5 rounded-2xl wa-btn-glow text-white font-extrabold text-sm flex items-center justify-center gap-2 mt-2">
@@ -636,6 +653,16 @@
 
     <!-- Script Logic -->
     <script>
+        // ========================================
+        // USERNAME ADMIN PERMANEN - PREMSTORE
+        // Username ini merupakan identitas tetap admin.
+        // DILARANG mengganti, mengubah, atau menghapus username ini.
+        // Jangan mengambil username dari input customer.
+        // Gunakan variabel ini pada setiap form order WhatsApp.
+        // Pertahankan komentar ini saat melakukan pembaruan kode.
+        // ========================================
+        const ADMIN_USERNAME = "@rahelindahfracelia";
+
         const STORE_CONFIG = {
             name: "PREMIUM APP STORE",
             waPhone: "62895409047979"
@@ -1185,6 +1212,12 @@
             }
         }
 
+        // Fungsi mendapatkan tanggal aktual dengan zona waktu Asia/Makassar (WITA)
+        function getCurrentWitaDate() {
+            const options = { timeZone: 'Asia/Makassar', day: 'numeric', month: 'long', year: 'numeric' };
+            return new Intl.DateTimeFormat('id-ID', options).format(new Date());
+        }
+
         function getAppPriceSummary(app) {
             let prices = [];
             app.variants.forEach(v => {
@@ -1468,8 +1501,10 @@
             if (!selectedApp || !selectedVariant) return;
 
             const name = document.getElementById("input-customer-name").value.trim();
+            const pemakaian = document.getElementById("input-pemakaian").value.trim();
             const location = document.getElementById("input-login-location").value.trim();
             const device = document.getElementById("input-device-brand").value.trim();
+            const pembayaran = document.getElementById("input-pembayaran").value.trim();
 
             if (!name || !location || !device) {
                 alert("Mohon lengkapi seluruh kolom yang wajib diisi (*).");
@@ -1477,20 +1512,29 @@
             }
 
             const formattedPrice = formatRupiah(activeSelectedPrice);
+            const orderDate = getCurrentWitaDate();
 
-            const message = `🌷 ─── ᴛᴀɴʏᴀ sᴛᴏᴋ ᴀᴘᴋ ᴘʀᴇᴍ ─── 🌷
+            const message = `──── FORM ORDER APK PREM ────
 
-👤 Nama : ${name}
-📱 Aplikasi : ${selectedApp.name}
-⏳ Durasi : ${selectedVariant.duration}
-📍 Lokasi login : ${location}
+Username : ${ADMIN_USERNAME}
+Tanggal Order : ${orderDate}
 
-〔 📋 DETAIL PLAN 〕
-🍃 Jenis Plan (Sharing/Privat) : ${selectedVariant.plan}
-💻 Merek Perangkat : ${device}
-💰 Harga : ${formattedPrice}
+Nama/WA : ${name}
+Aplikasi : ${selectedApp.name}
+Durasi : ${selectedVariant.duration}
+Harga : ${formattedPrice}
+Pemakaian (Pribadi/Reseller) : ${pemakaian}
+Lokasi Login : ${location}
+Pembayaran : ${pembayaran}
 
-Mohon info apakah stok aplikasi premium dengan spesifikasi di atas masih tersedia ya, kak. Terima kasih 🙏🏻✨`;
+〔 DETAIL PLAN 〕
+
+Jenis Plan : ${selectedVariant.plan}
+Merek Perangkat : ${device}
+
+Mohon info apakah stok aplikasi premium dengan spesifikasi di atas masih tersedia ya, kak. Terima kasih.
+
+────────────────────────────`;
 
             const waUrl = `https://wa.me/${STORE_CONFIG.waPhone}?text=${encodeURIComponent(message)}`;
             window.open(waUrl, "_blank");
