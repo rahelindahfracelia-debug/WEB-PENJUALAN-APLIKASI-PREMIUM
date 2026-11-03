@@ -290,7 +290,7 @@
         <section class="space-y-6 max-w-5xl mx-auto mb-12">
             <div class="relative max-w-3xl mx-auto">
                 <i class="fa-solid fa-magnifying-glass text-purple-400 absolute left-4 top-1/2 -translate-y-1/2 text-sm z-10 pointer-events-none"></i>
-                <input type="text" id="search-input" placeholder="Cari aplikasi (Netflix, ChatGPT, Canva, Spotify, CapCut)..." class="w-full pl-12 pr-12 py-4 rounded-2xl bg-gradient-to-r from-indigo-950/90 via-slate-900/90 to-purple-950/90 border border-purple-500/30 text-white placeholder-purple-200/30 text-sm focus:outline-none focus:border-purple-400 focus:ring-2 focus:ring-purple-500/30 transition-all shadow-inner">
+                <input type="text" id="search-input" placeholder="Cari aplikasi (Netflix, Claude AI, ChatGPT, Canva, Spotify)..." class="w-full pl-12 pr-12 py-4 rounded-2xl bg-gradient-to-r from-indigo-950/90 via-slate-900/90 to-purple-950/90 border border-purple-500/30 text-white placeholder-purple-200/30 text-sm focus:outline-none focus:border-purple-400 focus:ring-2 focus:ring-purple-500/30 transition-all shadow-inner">
                 <button id="clear-search" class="hidden absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-white p-2 transition-transform hover:scale-110">
                     <i class="fa-solid fa-xmark"></i>
                 </button>
@@ -985,23 +985,42 @@
 
             // 📚 PENDIDIKAN & AI
             {
+                id: "claude-ai",
+                name: "Claude AI",
+                category: "edu",
+                iconClass: "fa-solid fa-brain text-orange-400",
+                badge: "New AI",
+                guideText: "Claude AI akun fresh, garansi backfree full, deactive 1x, support all devices, tersedia dalam varian Sharing 5U dan Private.",
+                highlights: [
+                    "Akun Fresh & Garansi Backfree Full",
+                    "Support All Devices & Deactive 1x",
+                    "AI Asisten Pintar & Analisis Tingkat Lanjut"
+                ],
+                variants: [
+                    { id: "claude-sh5u-1d", name: "Sharing 5U", duration: "1 Hari", plan: "Sharing 5U (Garansi Backfree Full, Deactive 1x)", device: "All Device", price: 20000 },
+                    { id: "claude-sh5u-7d", name: "Sharing 5U", duration: "7 Hari", plan: "Sharing 5U (Garansi Backfree Full, Deactive 1x)", device: "All Device", price: 50000 },
+                    { id: "claude-sh5u-1m", name: "Sharing 5U", duration: "1 Bulan", plan: "Sharing 5U (Garansi Backfree Full, Deactive 1x)", device: "All Device", price: 110000 },
+                    { id: "claude-priv-1d", name: "Private", duration: "1 Hari", plan: "Private (Garansi Backfree Full, Deactive 1x)", device: "All Device", price: 40000 },
+                    { id: "claude-priv-7d", name: "Private", duration: "7 Hari", plan: "Private (Garansi Backfree Full, Deactive 1x)", device: "All Device", price: 75000 }
+                ]
+            },
+            {
                 id: "chatgpt",
                 name: "ChatGPT",
                 category: "edu",
                 iconClass: "fa-solid fa-robot text-teal-400",
                 badge: "AI Favorite",
-                guideText: "ChatGPT tersedia dalam opsi Plus Private Full Warrant (garansi penuh), Private No Warrant (harga hemat tanpa garansi), serta opsi sharing.",
+                guideText: "ChatGPT tersedia dalam pilihan Plus Privat, Plus sharing, Go sharing, dan Go privat lengkap dengan garansi.",
                 highlights: [
-                    "Akses Model Tercanggih GPT-4o Terbaru",
+                    "Akses Model GPT Terbaru & Terkini",
                     "Fitur Analisis Data, Vision & Koding",
-                    "Respon Super Cepat Tanpa Antrean"
+                    "Dilengkapi Garansi Penuh & Respon Cepat"
                 ],
                 variants: [
-                    { id: "gpt-plus-full-1m", name: "Plus Private Full Warrant", duration: "1 Bulan", plan: "Private Full Warrant", device: "", price: 35000 },
-                    { id: "gpt-plus-nowar-1m", name: "Plus Private No Warrant", duration: "1 Bulan", plan: "Private No Warrant", device: "", price: 10000 },
-                    { id: "gpt-go-nowar-3m", name: "ChatGPT Go No Warrant", duration: "3 Bulan", plan: "Go No Warrant", device: "", price: 15000 },
-                    { id: "gpt-plus-sh-1m", name: "Plus Sharing", duration: "1 Bulan", plan: "Sharing", device: "", price: 20000 },
-                    { id: "gpt-plus-sh-7d", name: "Plus Sharing", duration: "7 Hari", plan: "Sharing", device: "", price: 15000 }
+                    { id: "gpt-plus-priv-1b", name: "Plus Privat", duration: "1 Bulan", plan: "Plus Privat 1b (Garansi Full)", device: "", price: 150000 },
+                    { id: "gpt-plus-shar-1b", name: "Plus sharing", duration: "1 Bulan", plan: "Plus sharing 1b (Garansi Full)", device: "", price: 27000 },
+                    { id: "gpt-go-shar-1b", name: "Go sharing", duration: "1 Bulan", plan: "Go sharing 1b (Garansi Full)", device: "", price: 18000 },
+                    { id: "gpt-go-priv-3b", name: "Go privat", duration: "3 Bulan", plan: "Go privat 3b (Garansi Full)", device: "", price: 80000 }
                 ]
             },
             {
